@@ -37,12 +37,27 @@ Use a MariaDB connection with:
 
 Port `3307` is bound only to the host loopback interface and is not exposed to the local network.
 
+## Reset the Database
+
+The tracked `database/schema.sql` contains the five production-derived table definitions but no production rows or production auto-increment positions. Recreate that empty schema with:
+
+```sh
+php bin/migrate.php --force
+```
+
+Run it from the repository root while the Docker services are running. The host command loads only the tracked Docker-local configuration and connects to MariaDB through `127.0.0.1:3307`; it does not read `src/jt-config.php`. The equivalent in-container command is `docker compose exec web php /opt/jaithai/bin/migrate.php --force`.
+
+The command is intentionally destructive: it drops every table or view in the configured local `jaithai` database before applying the schema. It refuses to run without `--force`, outside the `development` application environment, or against a database with a name other than `jaithai`.
+
+The original production dump is not required to run or reset the local environment and must remain outside this Git repository.
+
 ## Common Commands
 
 ```sh
 docker compose logs -f web mariadb
 docker compose exec web php -v
 docker compose exec mariadb mariadb -ujaithai -pjaithai-local-only jaithai
+php bin/migrate.php --force
 docker compose down
 ```
 
@@ -50,6 +65,6 @@ MariaDB data, CodeIgniter cache/log output, and generated PDFs are stored in nam
 
 ## Current Limitation
 
-The MariaDB server and empty `jaithai` database exist, but no application schema or development dataset has been imported. The public home page can render, while database-backed menus, ordering, administration, and related flows may be empty or fail until M2.2 supplies the sanitized schema and data bootstrap.
+The MariaDB server and complete empty schema exist, but no development records are loaded. The public home page can render, while data-dependent menus, ordering, administration, and related flows may be empty or unavailable until safe synthetic fixtures are added.
 
 The health check verifies Apache independently of the application database. Container health therefore means the runtime is ready, not that every CodeIgniter route has the required tables or data.

@@ -52,8 +52,8 @@ The old Git history was deliberately excluded because it contains secrets. The s
 ## Known Unknowns and Dependencies
 
 - Production currently uses MariaDB 10.11.18; local Docker follows the MariaDB 10.11 line.
-- A safe database schema and development dataset have not yet been supplied.
-- The application home page runs under PHP 7.4 and Apache locally; database-backed behavior still awaits schema and data.
+- A safe production-derived database schema is tracked without production rows or production auto-increment positions; synthetic development fixtures have not yet been created.
+- The application home page runs under PHP 7.4 and Apache against the empty local schema; meaningful database-backed behaviour still awaits safe fixture data.
 - The desired catering-menu changes and acceptance criteria have not yet been defined.
 - The eventual production hosting and deployment path has not been established.
 

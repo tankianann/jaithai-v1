@@ -12,6 +12,8 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./docker/jt-config.local.php:/var/www/html/jt-config.php:ro
+      - ./bin:/opt/jaithai/bin:ro
+      - ./database:/opt/jaithai/database:ro
       - application-cache:/var/www/html/application/cache
       - application-logs:/var/www/html/application/logs
       - generated-pdfs:/var/www/html/assets/pdf

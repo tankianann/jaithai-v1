@@ -2,7 +2,7 @@
 
 This repository contains the legacy Jai Thai catering website and the project material needed to recover, run, maintain, and update it safely.
 
-The application is a CodeIgniter 2.2.2 PHP application. The secret-free source baseline is established; the immediate goal is now to reproduce the legacy runtime locally with Docker before making controlled catering-menu updates. The current project keeps CodeIgniter 2.2.2 and PHP 7.4 as explicit compatibility constraints.
+The application is a CodeIgniter 2.2.2 PHP application. The secret-free source baseline and local Docker runtime are established; the immediate goal is now to create safe development fixtures and characterize existing behaviour before making controlled catering-menu updates. The current project keeps CodeIgniter 2.2.2 and PHP 7.4 as explicit compatibility constraints.
 
 ## Current State
 
@@ -10,7 +10,8 @@ The application is a CodeIgniter 2.2.2 PHP application. The secret-free source b
 - Known embedded credentials use the private configuration boundary, and the historical credentials were confirmed rotated on 2026-09-30.
 - The old repository history was not imported; this repository has a clean, reviewed source history.
 - Previously supplied `assets/menupdf/` and `assets/voucher-templates/` directories were removed because they are no longer used.
-- A verified Docker runtime now provides PHP 7.4, Apache, and MariaDB 10.11; the database schema and sanitized development dataset remain pending.
+- A verified Docker runtime provides PHP 7.4, Apache, and MariaDB 10.11, with a production-derived schema that contains no production rows.
+- No production database dump or customer data is stored in this repository; safe development fixtures remain pending.
 
 See [`docs/roadmap/current-status.md`](docs/roadmap/current-status.md) for the immediate next step and [`docs/roadmap/roadmap.md`](docs/roadmap/roadmap.md) for the anticipated delivery sequence.
 
@@ -27,6 +28,8 @@ PHP 7.4 and CodeIgniter 2.2.2 are legacy, unsupported technologies. They are ret
 ## Repository Structure
 
 - `src/` — legacy application source and web root
+- `bin/` — local development commands
+- `database/` — tracked schema and future safe development fixtures
 - `docs/overview/` — project purpose, scope, constraints, and known unknowns
 - `docs/roadmap/` — current status and the master delivery roadmap
 - `docs/milestones/` — detailed active and completed milestone definitions
@@ -50,4 +53,6 @@ Never commit `src/jt-config.php` or copy its values into tracked files. Keep out
 
 Run `docker compose up --build -d --wait`, then open [http://localhost:8080](http://localhost:8080). MariaDB is available to TablePlus at `127.0.0.1:3307` using the documented local-only credentials.
 
-The next runtime step is M2.2: add a sanitized schema and repeatable development-data bootstrap for the running MariaDB service.
+Reset the local database and recreate its empty schema with `php bin/migrate.php --force`. This command permanently deletes all data in the local `jaithai` database and requires the Docker services to be running.
+
+The next runtime step is M2.3: create synthetic development fixtures without copying production data.
