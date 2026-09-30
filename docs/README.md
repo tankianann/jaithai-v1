@@ -8,12 +8,13 @@ This directory contains the durable project documentation for recovering and mai
 - **`roadmap/`** — the anticipated delivery sequence and current project status.
 - **`milestones/`** — detailed, commit-sized delivery milestones with acceptance and verification criteria.
 - **`security/`** — project-specific rules for secrets, local configuration, scanning, and incident response.
+- **`development/`** — reproducible local setup and developer operating instructions.
 - **`decisions/`** — material technical decisions and their consequences.
 - **`reviews/`** — reviews of work in progress or completed milestones.
 - **`retrospectives/`** — historical learning from completed work.
 - **`archive/`** — superseded project documentation retained for provenance.
 
-Add documentation only when it supports a real project need. Local setup instructions will be added when the Docker environment exists, and menu-maintenance guidance will be added after the current menu implementation has been characterized.
+Add documentation only when it supports a real project need. Follow [`development/local-docker.md`](development/local-docker.md) for the local runtime; menu-maintenance guidance will be added after the current menu implementation has been characterized.
 
 ## Start Here
 

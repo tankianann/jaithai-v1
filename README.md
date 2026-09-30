@@ -7,10 +7,10 @@ The application is a CodeIgniter 2.2.2 PHP application. The secret-free source b
 ## Current State
 
 - The sanitized legacy application source is committed under `src/` and pushed to the new GitHub repository.
-- Known embedded credentials use environment-backed configuration, and the historical credentials were confirmed rotated on 2026-09-30.
+- Known embedded credentials use the private configuration boundary, and the historical credentials were confirmed rotated on 2026-09-30.
 - The old repository history was not imported; this repository has a clean, reviewed source history.
 - Previously supplied `assets/menupdf/` and `assets/voucher-templates/` directories were removed because they are no longer used.
-- Docker configuration and a local database bootstrap do not yet exist.
+- A verified Docker runtime now provides PHP 7.4, Apache, and MariaDB 10.11; the database schema and sanitized development dataset remain pending.
 
 See [`docs/roadmap/current-status.md`](docs/roadmap/current-status.md) for the immediate next step and [`docs/roadmap/roadmap.md`](docs/roadmap/roadmap.md) for the anticipated delivery sequence.
 
@@ -34,7 +34,7 @@ PHP 7.4 and CodeIgniter 2.2.2 are legacy, unsupported technologies. They are ret
 - `docs/decisions/` — durable records of material technical decisions
 - `inbox/` — unprocessed project source material
 
-Project-level Docker and orchestration files will be added beside `src/` when the local-runtime milestone begins.
+Project-level Docker and Compose files live beside `src/`. See [`docs/development/local-docker.md`](docs/development/local-docker.md) for setup, TablePlus credentials, common commands, and current limitations.
 
 ## Configuration
 
@@ -46,6 +46,8 @@ For production, set `JAITHAI_ENVIRONMENT` to `production`, use current productio
 
 Never commit `src/jt-config.php` or copy its values into tracked files. Keep outbound email, SMS, OneMap, and payment integrations disabled unless a deliberate configuration enables them with current credentials.
 
-## Current Next Step
+## Local Development
 
-Complete [M2.1 — Build the Docker PHP and Apache runtime](docs/milestones/M2.1-docker-php-apache-runtime.md).
+Run `docker compose up --build -d --wait`, then open [http://localhost:8080](http://localhost:8080). MariaDB is available to TablePlus at `127.0.0.1:3307` using the documented local-only credentials.
+
+The next runtime step is M2.2: add a sanitized schema and repeatable development-data bootstrap for the running MariaDB service.

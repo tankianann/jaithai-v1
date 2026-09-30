@@ -1,0 +1,47 @@
+name: jaithai
+
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/jt-config.local.php:/var/www/html/jt-config.php:ro
+      - application-cache:/var/www/html/application/cache
+      - application-logs:/var/www/html/application/logs
+      - generated-pdfs:/var/www/html/assets/pdf
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "--show-error", "http://127.0.0.1/__health"]
+      interval: 10s
+      timeout: 3s
+      start_period: 10s
+      retries: 5
+
+  mariadb:
+    image: mariadb:10.11.19@sha256:7f22313fc130a377a44999965bcb0a08dd5b21e8502824c1b864f792f9bc66ab
+    ports:
+      - "127.0.0.1:3307:3306"
+    environment:
+      MARIADB_DATABASE: jaithai
+      MARIADB_USER: jaithai
+      MARIADB_PASSWORD: jaithai-local-only
+      MARIADB_ROOT_PASSWORD: jaithai-root-local-only
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping --host=127.0.0.1 --user=$${MARIADB_USER} --password=$${MARIADB_PASSWORD} --silent"]
+      interval: 10s
+      timeout: 5s
+      start_period: 20s
+      retries: 10
+
+volumes:
+  application-cache:
+  application-logs:
+  generated-pdfs:
+  mariadb-data:

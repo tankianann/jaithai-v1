@@ -1,10 +1,10 @@
 # Current Status
 
-**Last updated:** 2026-09-30
+**Last updated:** 2026-10-01
 
 **Stage:** Phase 2 — Reproducible local runtime
 
-**Active milestone:** [M2.1 — Build the Docker PHP and Apache runtime](../milestones/M2.1-docker-php-apache-runtime.md)
+**Active milestone:** [M2.1 — Build the Docker PHP, Apache, and MariaDB runtime](../milestones/M2.1-docker-php-apache-runtime.md)
 
 Phase 1 is complete. The sanitized CodeIgniter 2.2.2 application source is committed under `src/` and pushed to the new GitHub repository without the historical secret-bearing Git history. The user confirmed rotation of the historical credentials on 2026-09-30.
 
@@ -18,12 +18,13 @@ The five production-synced application changes were reviewed, passed secret and 
 
 ## Current Runtime State
 
-- PHP 7.4 and CodeIgniter 2.2.2 remain fixed compatibility constraints.
-- No Dockerfile, Compose configuration, or project Docker directory exists yet.
-- No safe local database schema or development dataset exists yet.
+- PHP 7.4.33, Apache 2.4, and MariaDB 10.11 run as healthy Docker services.
+- Apache serves the application at `http://localhost:8080`, applies `.htaccess`, and denies direct access to `jt-config.php`.
+- MariaDB is reachable by the web container and from TablePlus at `127.0.0.1:3307`.
+- The safe local database exists, but no application schema or development dataset exists yet.
 - Email, SMS, OneMap, and PayPal integrations remain disabled by default.
-- The exact PHP extension set and legacy runtime compatibility issues have not yet been characterized in a running web container.
+- All 908 PHP source files pass PHP 7.4 syntax checks; known legacy deprecation warnings remain in CodeIgniter and bundled Dompdf code.
 
 ## Immediate Next Step
 
-Begin [M2.1](../milestones/M2.1-docker-php-apache-runtime.md) by inventorying required PHP extensions and Apache modules, then implement the minimal PHP 7.4/Apache container without adding the database service yet.
+Complete independent review and commit of [M2.1](../milestones/M2.1-docker-php-apache-runtime.md), then begin M2.2 with the sanitized schema and development-data bootstrap.

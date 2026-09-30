@@ -1,6 +1,6 @@
 # Project Overview
 
-**Last updated:** 2026-09-30
+**Last updated:** 2026-10-01
 
 ## Project
 
@@ -28,7 +28,7 @@ The old Git history was deliberately excluded because it contains secrets. The s
 ## Current Scope
 
 - Maintain the established secret-safe configuration and clean source history.
-- Add a PHP 7.4 and Apache Docker environment with a compatible MySQL service.
+- Maintain the verified PHP 7.4, Apache, and MariaDB 10.11 Docker environment.
 - Establish a repeatable local setup and smoke-test process.
 - Define and implement the requested catering-menu changes.
 - Apply contained security and maintainability improvements compatible with PHP 7.4 and CodeIgniter 2.2.2.
@@ -51,9 +51,9 @@ The old Git history was deliberately excluded because it contains secrets. The s
 
 ## Known Unknowns and Dependencies
 
-- The exact legacy MySQL server version is not yet confirmed.
+- Production currently uses MariaDB 10.11.18; local Docker follows the MariaDB 10.11 line.
 - A safe database schema and development dataset have not yet been supplied.
-- The application has not yet been run under the proposed PHP 7.4 container.
+- The application home page runs under PHP 7.4 and Apache locally; database-backed behavior still awaits schema and data.
 - The desired catering-menu changes and acceptance criteria have not yet been defined.
 - The eventual production hosting and deployment path has not been established.
 
