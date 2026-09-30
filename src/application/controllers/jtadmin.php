@@ -282,7 +282,7 @@ class Jtadmin extends KA_Controller {
 
             case 'foodtag':
                 $thepdfhtml = $this->load->view('emails/foodtag_pdf_view', $emaildata, true);
-                $thepdf = dompdf_createpdf300dpi($thepdfhtml, '', true);
+                $thepdf = dompdf_createpdf300dpi($thepdfhtml, '', false);
                 file_put_contents(KA_PDF_DIRECTORY . $pdffilename . "-foodtag.pdf", $thepdf);
                 redirect('/assets/pdf/' . $pdffilename . "-foodtag.pdf");
 

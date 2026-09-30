@@ -254,28 +254,28 @@
 											<td>
 												<div class="pdf-documents">
 <!--                                                    <a class="pdf-icon" href="--><?php //_e ( base_url ( 'jtadmin/getpdf/invoice/' . $order['id'] . "/" ) ); ?><!--">Invoice</a>-->
-													<a class="pdf-icon" href="<?php _e ( base_url ( 'assets/pdf/' . formatOrderNum ( $order, false ) . '.pdf' ) ); ?>">Invoice</a>
+													<a class="pdf-icon" target="_blank" href="<?php _e ( base_url ( 'assets/pdf/' . formatOrderNum ( $order, false ) . '.pdf' ) ); ?>">Invoice</a>
 												</div>
 											</td>
 										</tr>
                                         <tr>
                                             <td>
                                                 <div class="pdf-documents">
-                                                    <a class="pdf-icon" href="<?php _e ( base_url ( 'jtadmin/getpdf/timestamp/' . $order['id'] . "/" ) ); ?>">Time Stamp</a>
+                                                    <a class="pdf-icon" target="_blank" href="<?php _e ( base_url ( 'jtadmin/getpdf/timestamp/' . $order['id'] . "/" ) ); ?>">Time Stamp</a>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <div class="pdf-documents">
-                                                    <a class="pdf-icon" href="<?php _e ( base_url ( 'jtadmin/getpdf/dishlabels/' . $order['id'] . "/" ) ); ?>">Dish Labels</a>
+                                                    <a class="pdf-icon" target="_blank" href="<?php _e ( base_url ( 'jtadmin/getpdf/dishlabels/' . $order['id'] . "/" ) ); ?>">Dish Labels</a>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <div class="pdf-documents">
-                                                    <a class="pdf-icon" href="<?php _e ( base_url ( 'jtadmin/getpdf/foodtag/' . $order['id'] . "/" ) ); ?>">Food Tag <br/><span style="font-size: 0.8em;">(6cm x 3cm)</span></a>
+                                                    <a class="pdf-icon" target="_blank" href="<?php _e ( base_url ( 'jtadmin/getpdf/foodtag/' . $order['id'] . "/" ) ); ?>">Food Tag <br/><span style="font-size: 0.8em;">(6cm x 3cm)</span></a>
                                                 </div>
                                             </td>
                                         </tr>

@@ -24,7 +24,7 @@ $this->load->helper('dishlabels');
             color: #4F250D;
             height: calc(122px * 3);
             width: calc(122px * 6);
-            border: 1px dashed #c3c3c3;
+            border: 1px dashed #666;
             font-size: 1.1em;
             letter-spacing: -0.02em;
 			background-size: cover;

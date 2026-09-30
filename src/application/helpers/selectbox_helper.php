@@ -248,6 +248,7 @@ function selectBoxHelper($type, $id, $name, $class, $selected, $args = "") {
             "Foodline" => "Foodline",
             "Foodline - Foodline" => "Foodline - Foodline",
             "Foodline - PayNow" => "Foodline - PayNow",
+            "WhyQ" => "WhyQ",
         );
     }
 

@@ -77,7 +77,7 @@ class Cart_model extends KA_Model {
 	    //use the items to find out the rest;
 	    $allowpickup = true;
 	    $chargeforcontainers = true;
-	    $pickuplocations = array(JT_PV, JT_CK);
+	    $pickuplocations = array(JT_CW, JT_PV, JT_CK);
 	    $foodprice = 0;
 	    $containerprice = 0;
 	    $deliveryprice = 0;
