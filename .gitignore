@@ -1,7 +1,7 @@
-# Local environment and secrets
+# Local configuration and secrets
+src/jt-config.php
 .env
 .env.*
-!.env.example
 
 # Editor and operating-system state
 .DS_Store

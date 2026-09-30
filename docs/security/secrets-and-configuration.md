@@ -9,9 +9,9 @@ The legacy application came from a repository whose history contains secrets. Th
 ## Rules
 
 - Never commit real database, email, SMS, mapping, payment, API, session, encryption, or deployment credentials.
-- Keep safe application configuration in tracked source and supply secret values from the environment or an explicitly ignored local override.
-- Commit an example environment file containing variable names and non-secret placeholders only.
-- Ignore real environment files, local overrides, database volumes, logs, cache output, generated documents, and other runtime state.
+- Keep safe application configuration in tracked source and supply secret values through the explicitly ignored `src/jt-config.php` file.
+- Commit `src/jt-config.example.php` with variable names and non-secret placeholders only.
+- Ignore the real private configuration file, database volumes, logs, cache output, generated documents, and other runtime state.
 - Do not store production database exports or personal customer data in this repository.
 - Review staged content and run a secret scan before every source-import or configuration commit.
 - Do not print secret values in documentation, issues, logs, review notes, or command output.
@@ -32,16 +32,18 @@ Authentication, payment, integration, administration, and deployment code must a
 
 The tracked repository should contain:
 
-- sanitized CodeIgniter configuration that reads secret values from the environment;
-- an `.env.example` or equivalent inventory of required variable names;
+- sanitized CodeIgniter configuration that reads values through `jaithai_env()`;
+- a `src/jt-config.example.php` inventory of required configuration names;
 - non-secret defaults that are safe for local development; and
 - validation that fails clearly when a required value is absent.
 
-The developer's machine should contain an ignored environment file or local override with development-only values. Production secrets must be supplied by the eventual hosting environment rather than copied from a developer file.
+Each installation should contain a private `src/jt-config.php` copied from the tracked example and populated with values for that installation. The file defines `jaithai_env()` and keeps its configuration in the function's private static array. There is no `.env` parser and no Composer dependency.
 
-`src/index.php` loads a dependency-free environment helper before CodeIgniter starts. The application reads process environment variables directly; it does not parse `.env` files itself. Docker Compose or the invoking runtime will supply the ignored local `.env` file in a later milestone.
+`src/index.php` loads `src/application/config/environment.php` before CodeIgniter starts. That helper requires the private configuration file, verifies that `jaithai_env()` exists, and then defines the shared boolean and outbound-safety helpers. Startup stops with a value-free message if the private file is missing or invalid.
 
-## Environment Contract
+The private file is inside the deployed web root to match the requested WordPress-style deployment model. Apache is configured to deny direct requests for it. It must nevertheless be treated as sensitive: never commit it, never expose its contents in logs or support output, and verify that production serves PHP rather than source text.
+
+## Private Configuration Contract
 
 | Variable | Purpose | Required when |
 | --- | --- | --- |
@@ -69,7 +71,7 @@ The developer's machine should contain an ignored environment file or local over
 | `JAITHAI_PAYPAL_ENABLED` | Additional payment-specific safety switch. | PayPal redirection is enabled. |
 | `JAITHAI_PAYPAL_MERCHANT_ID` | PayPal merchant identifier. | PayPal redirection is enabled. |
 
-Real values belong in an ignored `.env` file or the deployment environment. `.env.example` is the tracked inventory and must remain value-free.
+Real values belong only in the ignored `src/jt-config.php`. `src/jt-config.example.php` is the tracked inventory and must remain value-free.
 
 ## Rotation Record
 

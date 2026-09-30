@@ -1,16 +1,16 @@
 <?php
 
+$jaithai_config_file = dirname(__DIR__, 2).'/jt-config.php';
+
+if ( ! is_file($jaithai_config_file)) {
+	exit('Application configuration is missing. Copy jt-config.example.php to jt-config.php and populate it.');
+}
+
+require_once $jaithai_config_file;
+unset($jaithai_config_file);
+
 if ( ! function_exists('jaithai_env')) {
-	function jaithai_env($name, $default = NULL)
-	{
-		$value = getenv($name);
-
-		if ($value === FALSE || $value === '') {
-			return $default;
-		}
-
-		return $value;
-	}
+	exit('Application configuration is invalid: jaithai_env() is not defined.');
 }
 
 if ( ! function_exists('jaithai_env_bool')) {

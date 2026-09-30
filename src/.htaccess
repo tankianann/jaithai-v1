@@ -1,6 +1,11 @@
 
 RewriteOptions inherit
 RewriteEngine On
+
+<Files "jt-config.php">
+  Require all denied
+</Files>
+
 RewriteCond %{HTTP_HOST} ^jai-thai.com
 RewriteRule (.*) https://www.jai-thai.com/$1 [R=301,L]
 

@@ -55,7 +55,7 @@ $db['default']['database'] = jaithai_env('JAITHAI_DB_NAME', '');
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
-$db['default']['db_debug'] = TRUE;
+$db['default']['db_debug'] = (defined('ENVIRONMENT') && ENVIRONMENT !== 'production');
 $db['default']['cache_on'] = FALSE;
 $db['default']['cachedir'] = '';
 $db['default']['char_set'] = 'utf8';

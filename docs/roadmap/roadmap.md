@@ -38,7 +38,7 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 ## Dependencies and Decision Points
 
 - **Credential rotation:** resolved on 2026-09-30; the user confirmed the historical credentials were rotated.
-- **Configuration loading:** resolved in M1.1 through a dependency-free process-environment loader and tracked value-free contract.
+- **Configuration loading:** resolved in M1.1 through an ignored WordPress-style PHP configuration file and a tracked value-free example.
 - **Database compatibility:** the legacy MySQL version, schema, and safe development data source must be identified before M2.2.
 - **External side effects:** email, SMS, mapping, payment, cron, and similar integrations must be disabled, stubbed, or redirected safely before local smoke testing.
 - **Legacy runtime risk:** PHP 7.4 and CodeIgniter 2.2.2 remain fixed constraints for this project. Any proposal to relax either constraint requires an explicit decision record.

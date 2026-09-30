@@ -36,9 +36,15 @@ PHP 7.4 and CodeIgniter 2.2.2 are legacy, unsupported technologies. They are ret
 
 Project-level Docker and orchestration files will be added beside `src/` when the local-runtime milestone begins.
 
+## Configuration
+
+The application uses a WordPress-style private configuration file; Composer and an environment-file parser are not required. Copy `src/jt-config.example.php` to `src/jt-config.php`, then populate the values inside `jaithai_env()`. The real `jt-config.php` is ignored by Git.
+
+For production, set `JAITHAI_ENVIRONMENT` to `production`, use current production credentials, and keep outbound integrations disabled until each is deliberately verified. Apache denies direct requests for `jt-config.php`; the file must still be transferred and stored as sensitive deployment configuration.
+
 ## Security Rule
 
-Never commit real credentials or a populated `.env` file. Keep outbound email, SMS, OneMap, and payment integrations disabled unless a deliberate environment enables them with current credentials.
+Never commit `src/jt-config.php` or copy its values into tracked files. Keep outbound email, SMS, OneMap, and payment integrations disabled unless a deliberate configuration enables them with current credentials.
 
 ## Current Next Step
 
