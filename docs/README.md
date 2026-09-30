@@ -1,14 +1,22 @@
-# App Docs
+# Jai Thai Project Documentation
 
-Project documentation for the active project in `/app`. This structure is intentionally neutral — it doesn't assume the project is software, marketing, or any other specific discipline.
+This directory contains the durable project documentation for recovering and maintaining the legacy Jai Thai catering website.
 
 ## Structure
 
-- **`overview/`** — what the project is, who it's for, what outcome it should produce (the output of project discovery).
-- **`copy/`** — created when copy is supplied; contains a README with source provenance and durable Markdown records of all provided copy. It is not part of the empty baseline and is added by the inbox-ingestion workflow.
-- **`roadmap/`** — where the project is headed; `current-status.md` is read at the start of every conversation (Level 1), while `roadmap.md` becomes the flexible master delivery plan during project discovery.
-- **`decisions/`** — ADRs and other material decision records describing what was decided, why, alternatives considered, and affected roadmap milestones.
-- **`milestones/`** — defined milestones and their completion state.
-- **`reviews/`** — reviews of work in progress or completed.
-- **`retrospectives/`** — looking back on completed milestones; the source of most promotions into `/kaisys/playbook` and `/kaisys/learning`.
-- **`archive/`** — superseded or obsolete documents, kept for provenance.
+- **`overview/`** — project purpose, existing system, scope, constraints, success conditions, and known unknowns.
+- **`roadmap/`** — the anticipated delivery sequence and current project status.
+- **`milestones/`** — detailed, commit-sized delivery milestones with acceptance and verification criteria.
+- **`security/`** — project-specific rules for secrets, local configuration, scanning, and incident response.
+- **`decisions/`** — material technical decisions and their consequences.
+- **`reviews/`** — reviews of work in progress or completed milestones.
+- **`retrospectives/`** — historical learning from completed work.
+- **`archive/`** — superseded project documentation retained for provenance.
+
+Add documentation only when it supports a real project need. Local setup instructions will be added when the Docker environment exists, and menu-maintenance guidance will be added after the current menu implementation has been characterized.
+
+## Start Here
+
+1. Read [`overview/project-overview.md`](overview/project-overview.md).
+2. Check [`roadmap/current-status.md`](roadmap/current-status.md).
+3. Follow the active milestone linked from the current-status document.
