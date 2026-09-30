@@ -7,7 +7,7 @@ The application is a CodeIgniter 2.2.2 PHP application. The immediate goal is to
 ## Current State
 
 - The legacy application source is present under `src/` but has not yet been committed to this repository.
-- The source contains historical credentials and configuration that must be externalized before the first source commit.
+- Known embedded credentials have been replaced with environment-backed configuration, but historical credentials still require rotation or revocation before the first source commit.
 - The old repository history will not be imported; this repository will begin with a clean, reviewed source history.
 - Previously supplied `assets/menupdf/` and `assets/voucher-templates/` directories were removed because they are no longer used.
 - Docker configuration and a local database bootstrap do not yet exist.
@@ -38,7 +38,7 @@ Project-level Docker and orchestration files will be added beside `src/` when th
 
 ## Immediate Rule
 
-Do not stage, commit, or push the legacy source until the active secure-import milestone has externalized credentials and the candidate commit passes a secret scan. Historical credentials must be rotated or revoked even though the old Git history is not being imported.
+Do not stage, commit, or push the legacy source as a whole until the active secure-import milestone has completed credential rotation and the final staged snapshot passes a secret scan. Historical credentials must be rotated or revoked even though the old Git history is not being imported.
 
 ## Current Next Step
 

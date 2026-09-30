@@ -39,7 +39,59 @@ The tracked repository should contain:
 
 The developer's machine should contain an ignored environment file or local override with development-only values. Production secrets must be supplied by the eventual hosting environment rather than copied from a developer file.
 
-Exact environment-variable names and the loading mechanism will be defined during M1.1 after all first-party credential use has been inventoried.
+`src/index.php` loads a dependency-free environment helper before CodeIgniter starts. The application reads process environment variables directly; it does not parse `.env` files itself. Docker Compose or the invoking runtime will supply the ignored local `.env` file in a later milestone.
+
+## Environment Contract
+
+| Variable | Purpose | Required when |
+| --- | --- | --- |
+| `JAITHAI_ENVIRONMENT` | CodeIgniter environment name. | Optional; defaults to `development`. |
+| `JAITHAI_BASE_URL` | Application base URL. | Optional for local work; defaults to `http://localhost:8080/`. |
+| `JAITHAI_DB_HOST` | Database host. | Database access is required. |
+| `JAITHAI_DB_USERNAME` | Database username. | Database access is required. |
+| `JAITHAI_DB_PASSWORD` | Database password. | Database access is required. |
+| `JAITHAI_DB_NAME` | Database name. | Database access is required. |
+| `JAITHAI_ENCRYPTION_KEY` | CodeIgniter session and encryption key. | Sessions or encryption are enabled. |
+| `JAITHAI_OUTBOUND_ENABLED` | Master switch for external calls. | Must be explicitly `true` before email, SMS, OneMap, or payment integration use. |
+| `JAITHAI_ONEMAP_API_TOKEN` | OneMap API token. | OneMap lookup is enabled. |
+| `JAITHAI_ELASTIC_EMAIL_API_KEY` | Legacy Elastic Email API credential. | The legacy Elastic Email transport is used. |
+| `JAITHAI_SMTP_HOST` | SMTP server hostname. | SMTP mail is used. |
+| `JAITHAI_SMTP_PORT` | SMTP server port. | SMTP mail is used; defaults to `587`. |
+| `JAITHAI_SMTP_USERNAME` | SMTP username. | SMTP mail is used. |
+| `JAITHAI_SMTP_PASSWORD` | SMTP password. | SMTP mail is used. |
+| `JAITHAI_BREVO_API_KEY` | Brevo email API credential. | The active Brevo transport is used. |
+| `JAITHAI_CLICKATELL_USERNAME` | Clickatell username. | SMS is enabled. |
+| `JAITHAI_CLICKATELL_PASSWORD` | Clickatell password. | SMS is enabled. |
+| `JAITHAI_CLICKATELL_API_ID` | Clickatell API identifier. | SMS is enabled. |
+| `JAITHAI_SMS_DEFAULT_FROM` | Default SMS sender identity. | The default SMS helper is used. |
+| `JAITHAI_SMS_DEFAULT_TO` | Default SMS recipient. | The default SMS helper is used. |
+| `JAITHAI_SMS_BANNED_NUMBERS` | Comma-separated SMS suppression list. | Optional. |
+| `JAITHAI_PAYPAL_ENABLED` | Additional payment-specific safety switch. | PayPal redirection is enabled. |
+| `JAITHAI_PAYPAL_MERCHANT_ID` | PayPal merchant identifier. | PayPal redirection is enabled. |
+
+Real values belong in an ignored `.env` file or the deployment environment. `.env.example` is the tracked inventory and must remain value-free.
+
+## Rotation Checklist
+
+The following historical credential categories remain pending user confirmation of rotation, revocation, or permanent disablement:
+
+- database credentials;
+- CodeIgniter encryption/session key;
+- OneMap token;
+- Elastic Email API key;
+- SMTP credentials;
+- Brevo API key; and
+- Clickatell credentials.
+
+The PayPal merchant identifier has been externalized and the flow is disabled by default. It is not treated as a secret, but its ownership and intended continued use should be confirmed before payments are enabled.
+
+## Known Legacy Risks Deferred from M1.1
+
+- The Clickatell integration sends credentials through a legacy HTTP query-string API.
+- The Elastic Email integration disables TLS peer verification.
+- PHP 7.4 and CodeIgniter 2.2.2 no longer receive normal security support.
+
+These behaviours remain disabled by default. Remediation belongs in the later security-hardening phase unless it becomes necessary for safe local verification.
 
 ## Import Gate
 

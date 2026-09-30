@@ -1,0 +1,110 @@
+/* Shopping Cart / View Order */
+.shoppingcart {
+	width: 100%;
+	border-collapse: collapse;
+
+	thead {
+		border-bottom: 1px solid #888;
+
+		th {
+			padding: 10px;
+			vertical-align: top;
+			font-weight: bold;
+		}
+	}
+
+	tbody {
+		tr:nth-child(2n) {
+			background-color: #eee;
+		}
+		tr:nth-child(2n+1) {
+			background-color: #fafafa;
+		}
+		td {
+			padding: 10px;
+			vertical-align: top;
+		}
+	}
+
+	tfoot {
+		border-top: 1px solid #888;
+		th {
+			padding: 10px;
+			vertical-align: top;
+			font-weight: bold;
+		}
+		td {
+			padding: 10px;
+			vertical-align: top;
+		}
+	}
+	.emptycart {
+		padding: 50px;
+		text-align: center;
+	}
+	.upsell {
+		padding: 50px;
+		text-align: center;
+		font-size: 1.5em;
+	}
+	label {
+		font-size: 80%;
+		color: #555;
+	}
+}
+
+.itemcontrol {
+	font-size: 80%;
+	color: #555;
+	font-weight: normal;
+
+	a:link,
+	a:visited,
+	a:hover {
+		color: #555;
+	}
+}
+
+#choosedeliveryorpickup {
+	border-top: 1px solid #ddd;
+	padding: 15px 0;
+	background-color: #eee;
+
+	label {
+		font-weight: normal;
+		margin-right: 15px;
+	}
+}
+
+.orderform {
+	padding: 15px 0;
+	background-color: #eee;
+
+	fieldset {
+		border: 1px solid #ccc;
+		padding: 15px;
+	}
+
+	legend {
+		font-weight: bold;
+	}
+
+	label {
+		width: 220px;
+		display: inline-block;
+		vertical-align: top;
+		padding-top: 5px;
+	}
+}
+
+.checkboxlabel {
+	width: auto;
+	display: inline-block;
+	margin-left: 10px;
+	padding-top: 2px;
+	margin-bottom: 4px;
+}
+
+#billingdetails {
+	display: none;
+}

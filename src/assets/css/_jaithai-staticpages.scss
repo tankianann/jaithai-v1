@@ -1,0 +1,490 @@
+/* home page */
+#hero {
+	border-bottom: 2px solid #f36d21;
+}
+#intropara h1 {
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+	color: #f36d21;
+}
+#intropara p.lead {
+	color: #666;
+}
+#jaithaihearts {
+	margin-top: -30px;
+	margin-bottom: 30px;
+}
+#homemenus {
+	background-image: url('../i/homemenus-bkg.jpg');
+	background-color: #e2e2e2;
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding-bottom: 30px;
+}
+#homemenus h2 {
+	background-image: url('../i/homemenus-header-bkg.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 35px;
+}
+.homemenus-img {
+	border: 5px solid #d43f3a;
+}
+.homemenus-img:hover {
+	border: 5px solid #ac2925;
+}
+a:link .fa-facebook-official,
+a:visited .fa-facebook-official,
+a:hover .fa-facebook-official {
+	color: #3b5998;
+	text-decoration: none;
+}
+ul.outlets {
+	margin-left: 0;
+	padding-left: 0;
+	li {
+		margin-bottom: 10px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+img.jaisiam {
+	max-width: 150px;
+}
+
+/* catering-menu.php */
+.cateringmenus-header img {
+	margin-right: -15px;
+}
+.cateringmenus-nav {
+	margin-top: 30px;
+}
+.cateringmenus-nav ul {
+	margin: 0;
+	padding: 0;
+}
+.cateringmenus-nav li {
+	margin-left: 0;
+	margin-right: 2px;
+	display: inline-block;
+}
+.cateringmenus-nav li a {
+	display: block;
+	background-color: #b4b4b4;
+	padding: 10px;
+}
+.cateringmenus-nav li a.active {
+	background-color: #ededed;
+}
+.cateringmenus-nav li a:link,
+.cateringmenus-nav li a:visited,
+.cateringmenus-nav li a:hover {
+	color: #000;
+}
+.cateringmenus {
+	background-color: #ededed;
+	background-image: url('../i/cateringmenus-bkg.png');
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding-bottom: 30px;
+}
+.cateringmenu .row {
+	margin-bottom: 15px;
+}
+.cateringmenu img {
+	border: 5px solid #d43f3a;
+}
+.cateringmenu img:hover {
+	border: 5px solid #ac2925;
+}
+
+
+/* individual catering menus */
+.menudescription {
+	font-size: 140%;
+	padding-bottom: 10px;
+	color: #c00;
+}
+.menudishes {
+	background-image: url("../i/menudishes-bkg.jpg");
+	background-position: right top;
+	background-repeat: no-repeat;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.menudishes ol {
+	padding-left: 45px;
+}
+.menudishes ol>li {
+	margin-bottom: 20px;
+	list-style-position: outside;
+	font-weight: bold;
+}
+.menudishes ol>li>ul {
+	list-style: none;
+	padding-top: 10px;
+	padding-left: 30px;
+}
+.menudishes ol>li>ul input {
+	margin-left: -25px;
+	margin-right: 10px;
+}
+.menudishes .vegecontrol input {
+	margin-right: 0;
+}
+.menudishes .vegecontrol {
+	font-weight: normal;
+}
+.menudishes .vegecontrol label {
+	margin-right: 5px;
+}
+.menudishes .vegecontrol label:last-child {
+	margin-right: 0;
+}
+
+.menudishes label {
+	font-weight: normal;
+}
+.menudishes .imgcol {
+	margin-top: -10px;
+}
+.menudishes .imgcol img {
+	border: 5px solid #d43f3a;
+	transform: rotate(-3deg);
+	margin-bottom: -15px;
+	transition-property: all;
+	transition-duration: 0.2s;
+}
+.menudishes .imgcol img:hover {
+	border: 5px solid #ac2925;
+}
+.menudishes .imgcol img:nth-of-type(2n) {
+	transform: rotate(3deg);
+}
+.menudishes .imgcol img:last-child {
+	margin-bottom: 15px;
+}
+
+.menudishes-alacarte table {
+	width: 100%;
+}
+.menudishes-alacarte table tr.headerrow td {
+	padding: 10px 5px;
+	border-top: none;
+	font-weight: bold;
+}
+.menudishes-alacarte table td {
+	padding: 4px 5px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.menudishes-alacarte table th {
+	padding: 10px 5px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #eee;
+	font-size: 130%;
+}
+.menuorderform {
+	border: 1px solid #ddd;
+	padding: 10px 0 30px 0;
+	background-color: #eee;
+}
+
+.menudishes-alacarte table tr.group_special {
+	border-top: 4px solid #d00;
+	border-right: 4px solid #d00;
+	border-left: 4px solid #d00;
+}
+.menudishes-alacarte table tr.group_special th {
+	text-align: center;
+	padding: 15px 15px;
+	background-color: #d00;
+	color: #FFF;
+}
+.menudishes-alacarte {
+	tr.special1,
+	tr.special2,
+	tr.special3,
+	tr.special4
+	{
+		border-bottom: 4px solid #d00;
+		border-right: 4px solid #d00;
+		border-left: 4px solid #d00;
+
+		td {
+			padding: 15px 5px;
+			font-weight: bold;
+		}
+	}
+
+}
+
+
+
+/* restaurant-menu.php */
+.restaurantmenus-header img {
+	margin-right: -15px;
+}
+.restaurantmenus {
+	background-color: #ededed;
+	background-image: url('../i/restaurantmenus-bkg.png');
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding-bottom: 30px;
+
+	div {
+		text-align: center;
+
+		img {
+			border: 5px solid #d43f3a;
+			margin: 0 auto;
+			margin-bottom: 10px;
+
+			&:hover {
+				border: 5px solid #ac2925;
+			}
+		}
+
+		a:link,
+		a:visited,
+		a:hover {
+			text-decoration: none;
+			color: #000;
+		}
+	}
+}
+
+
+/* menu-jaithai.php */
+.foodmenu-legend {
+	margin-top: 10px;
+}
+.foodmenu {
+	margin-bottom: 30px;
+
+	th {
+		padding: 10px 0 0 0;
+		color: #fb0606;
+		font-size: 18px;
+		text-decoration: underline;
+	}
+
+	td {
+		padding: 0 10px 0 0;
+		vertical-align: top;
+	}
+
+	td+td+td+td+td {
+		color: #fb0606;
+		padding: 0 15px 0 0;
+	}
+
+	span {
+		white-space: nowrap;
+		display: inline-block;
+		margin-right: 16px;
+	}
+}
+
+/* menu-individual-set.php */
+.indivset {
+	text-align: center;
+	img {
+		margin: 0 auto;
+	}
+	.settitle {
+		font-size: 18px;
+		font-weight: bold;
+		color: #127024;
+		margin-bottom: 2px;
+		line-height: 110%;
+	}
+	.setprice {
+		font-size: 18px;
+		font-weight: bold;
+		color: #e7051b;
+		margin-bottom: 2px;
+		line-height: 110%;
+	}
+}
+
+/* menu-family-set.php */
+.familyset {
+	text-align:  center;
+
+	.settitle {
+		padding: 10px 0 0 0;
+		color: #fb0606;
+		font-size: 18px;
+		text-decoration: underline;
+		font-weight: bold;
+	}
+
+	.forpax {
+		font-size: 12px;
+		font-weight: bold;
+		background-color: #eee;
+		display: inline-block;
+		padding: 3px 5px;
+		border-radius: 5px;
+	}
+
+	.submenu {
+		color: #fb0606;
+	}
+}
+.changerice {
+	margin-top: 30px;
+	margin-bottom: 60px;
+	text-align: center;
+	background-color: #d81817;
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+
+	img {
+		position: absolute;
+		right: 10px;
+		top: -32px;
+	}
+}
+
+
+/* menu-vegetarian.php */
+.vegemenu {
+	margin-bottom: 30px;
+
+	th {
+		padding: 10px 0 0 0;
+		color: #fb0606;
+		font-size: 18px;
+		text-decoration: underline;
+	}
+	td {
+		padding: 0 10px 0 0;
+		vertical-align: top;
+	}
+	th+th {
+		color: #fb0606;
+		padding: 10px 20px 0 20px;
+		text-decoration: none;
+	}
+	td+td+td {
+		color: #fb0606;
+		padding: 0 20px 0 20px;
+	}
+}
+
+/* about-outlets.php */
+.outletinfo {
+	background-color: #f4f4f4;
+	margin-bottom: 30px;
+
+	label {
+		display: block;
+		font-weight: bold;
+		font-size: 0.8em;
+		text-transform: uppercase;
+		color: #888;
+		margin-bottom: 5px;
+		margin-top: 20px;
+	}
+}
+.contactemail {
+	margin-bottom: 30px;
+}
+
+
+
+
+@media only screen and (min-width: 768px) {
+	/* Small Grid */
+
+	.logo img {
+		height: 70px;
+	}
+	#nav {
+		background-image: url("../i/menu-bkg.png");
+		height: 52px;
+	}
+	#navbar {
+		position: relative;
+		left: -50%;
+		float: right;
+		text-align: left;
+	}
+	#navbar ul {
+		position: relative;
+		left: 50%;
+	}
+	#nav li {
+		margin-left: 12px;
+		margin-right: 12px;
+	}
+	.cateringmenus-nav li a {
+		padding: 10px 18px;
+	}
+	.cateringmenu h3 {
+		margin-top: 0;
+	}
+
+	#mc-embedded-subscribe {
+		margin-top: 25px;
+	}
+
+}
+
+@media (min-width: 992px) {
+	/* Medium Grid */
+
+	.logo img {
+		height: 90px;
+	}
+	#nav a:link,
+	#nav a:visited,
+	#nav a:hover {
+		font-size: 1.9em;
+	}
+	#nav li {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	.cateringmenu h3 {
+		margin-top: 20px;
+	}
+
+	.changerice img {
+		top: -40px;
+	}
+	#mc_embed_signup {
+		background-image: url("../i/optin-bkg.png");
+		background-position: left center;
+		background-repeat: no-repeat;
+	}
+
+	#mc_embed_signup h3 {
+		margin-top: 4px;
+		margin-left: 55px;
+	}
+
+}
+
+@media (min-width: 1200px) {
+	/* Large Grid */
+	#mc_embed_signup h3 {
+		margin-top: 25px;
+	}
+
+}
+
+
+.free-coconut-jelly {
+	padding: 15px;
+	background-color: #c00;
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 15px;
+
+}

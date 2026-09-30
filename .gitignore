@@ -1,0 +1,21 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editor and operating-system state
+.DS_Store
+.idea/
+
+# Local container data
+docker/data/
+
+# CodeIgniter runtime output
+src/application/cache/*
+!src/application/cache/.htaccess
+!src/application/cache/index.html
+src/application/logs/*
+!src/application/logs/index.html
+
+# Generated documents
+src/assets/pdf/*

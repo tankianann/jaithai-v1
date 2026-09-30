@@ -19,8 +19,8 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 | Delivery phase | Milestone | Status | Intended outcome | Remaining work or dependency |
 | --- | --- | --- | --- | --- |
-| Discovery and planning | Documentation baseline | Implemented | Define the project, safety rules, anticipated delivery sequence, and first milestone. | User review and commit. |
-| Phase 1 — Clean source recovery | [M1.1 — Secret-safe configuration boundary](../milestones/M1.1-secure-configuration-boundary.md) | Planned | Rotate historical credentials, externalize secrets, and establish safe tracked and local configuration boundaries. | Confirm credential owners and select the environment-loading approach. |
+| Discovery and planning | Documentation baseline | Complete | Define the project, safety rules, anticipated delivery sequence, and first milestone. | None. |
+| Phase 1 — Clean source recovery | [M1.1 — Secret-safe configuration boundary](../milestones/M1.1-secure-configuration-boundary.md) | In progress | Rotate historical credentials, externalize secrets, and establish safe tracked and local configuration boundaries. | Confirm credential rotation and complete staged-snapshot review. |
 | Phase 1 — Clean source recovery | M1.2 — Sanitized legacy source import | Planned | Commit and push the complete necessary legacy application without secrets, obsolete assets, local state, or old Git history. | M1.1 complete; candidate tree passes secret and staged-diff review. |
 | Phase 2 — Reproducible local runtime | M2.1 — Docker PHP and Apache runtime | Planned | Build and document a PHP 7.4/Apache container capable of serving the application source. | Confirm required PHP extensions and resolve initial compatibility failures. |
 | Phase 2 — Reproducible local runtime | M2.2 — Local database bootstrap | Planned | Add a compatible MySQL service and a safe, repeatable schema/development-data initialization path. | Confirm legacy MySQL version and obtain or create a sanitized schema and dataset. |
@@ -55,4 +55,4 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Immediate Next Step
 
-Review and commit the documentation baseline, then inventory and externalize every first-party credential use under M1.1 before staging any legacy source.
+Confirm historical credential rotation or revocation, then stage only the M1.1 files for final diff and secret-scan review.

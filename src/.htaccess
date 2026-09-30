@@ -1,0 +1,121 @@
+
+RewriteOptions inherit
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^jai-thai.com
+RewriteRule (.*) https://www.jai-thai.com/$1 [R=301,L]
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule . /index.php [L]
+</IfModule>
+
+Redirect 301 /restaurant-menu.php https://www.jai-thai.com/jtpages/restaurantmenu
+Redirect 301 /menu-family-set.php https://www.jai-thai.com/jtpages/menufamilyset
+Redirect 301 /menu-individual-set.php https://www.jai-thai.com/jtpages/menuindividualset
+Redirect 301 /menu-jaithai.php https://www.jai-thai.com/jtpages/menujaithai
+Redirect 301 /menu-vegetarian.php https://www.jai-thai.com/jtpages/menuvegetarian
+
+Redirect 301 /catering-menu.php https://www.jai-thai.com/jtpages/cateringmenu
+Redirect 301 /catering-menu-a.php https://www.jai-thai.com/jtmenu/cateringmenua
+Redirect 301 /catering-menu-b.php https://www.jai-thai.com/jtmenu/cateringmenub
+Redirect 301 /catering-menu-c.php https://www.jai-thai.com/jtmenu/cateringmenuc
+Redirect 301 /catering-menu-d.php https://www.jai-thai.com/jtmenu/cateringmenud
+Redirect 301 /catering-diy-a.php https://www.jai-thai.com/jtmenu/cateringdiya
+Redirect 301 /catering-diy-b.php https://www.jai-thai.com/jtmenu/cateringdiyb
+Redirect 301 /catering-diy-c.php https://www.jai-thai.com/jtmenu/cateringdiyc
+Redirect 301 /catering-diy-d.php https://www.jai-thai.com/jtmenu/cateringdiyd
+Redirect 301 /vegetarian-menu-a.php https://www.jai-thai.com/jtmenu/vegetarianmenua
+Redirect 301 /vegetarian-menu-b.php https://www.jai-thai.com/jtmenu/vegetarianmenub
+Redirect 301 /vegetarian-menu-c.php https://www.jai-thai.com/jtmenu/vegetarianmenuc
+Redirect 301 /mini-parties-package.php https://www.jai-thai.com/jtmenu/minipartyset
+Redirect 301 /mini-parties.php https://www.jai-thai.com/jtmenu/minipartyalacarte
+Redirect 301 /catering-bento-set.php https://www.jai-thai.com/jtmenu/bento
+Redirect 301 /catering-sanook-set.php https://www.jai-thai.com/jtmenu/sanook
+
+Redirect 301 /about-achievements.php https://www.jai-thai.com/jtpages/aboutachievements
+Redirect 301 /about-employment.php https://www.jai-thai.com/
+Redirect 301 /about-history.php https://www.jai-thai.com/jtpages/abouthistory
+Redirect 301 /about-outlets.php https://www.jai-thai.com/jtpages/aboutoutlets
+Redirect 301 /cart.php https://www.jai-thai.com/cart
+Redirect 301 /orderplaced.php https://www.jai-thai.com/cart/orderplaced
+Redirect 301 /acknowledgeorder.php https://www.jai-thai.com/cart/acknowledgeorder
+Redirect 301 /leavefeedback.php https://www.jai-thai.com/cart/leavefeedback
+
+# Redirect Rules to Redirect to JaiSiam.sg
+
+# Redirect 301 /jtpages/restaurantmenu https://www.jaisiam.sg/restaurant-menu.php
+# Redirect 301 /jtpages/menufamilyset https://www.jaisiam.sg/menu-family-set.php
+# Redirect 301 /jtpages/menuindividualset https://www.jaisiam.sg/menu-individual-set.php
+# Redirect 301 /jtpages/menujaithai https://www.jaisiam.sg/menu-jaithai.php
+# Redirect 301 /jtpages/menuvegetarian https://www.jaisiam.sg/restaurant-menu.php
+
+# Redirect 301 /jtpages/cateringmenu https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/cateringmenua https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/cateringmenub https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/cateringmenuc https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/cateringmenud https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/cateringdiya https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/cateringdiyb https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/cateringdiyc https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/cateringdiyd https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/vegetarianmenua https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/vegetarianmenub https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/vegetarianmenuc https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /jtmenu/minipartyset https://www.jaisiam.sg/mini-parties-package.php
+# Redirect 301 /jtmenu/minipartyalacarte https://www.jaisiam.sg/mini-parties.php
+# Redirect 301 /jtmenu/bento https://www.jaisiam.sg/catering-bento-set.php
+# Redirect 301 /jtmenu/sanook https://www.jaisiam.sg/catering-sanook-set.php
+
+# Redirect 301 /jtpages/aboutachievements https://www.jaisiam.sg/
+# Redirect 301 /jtpages/aboutemployment https://www.jaisiam.sg/
+# Redirect 301 /jtpages/abouthistory https://www.jaisiam.sg/
+# Redirect 301 /jtpages/aboutoutlets https://www.jaisiam.sg/about-outlets.php
+# Redirect 301 /cart https://www.jaisiam.sg/cart.php
+# Redirect 301 /cart/orderplaced https://www.jaisiam.sg/orderplaced.php
+# Redirect 301 /cart/acknowledgeorder https://www.jaisiam.sg/acknowledgeorder.php
+# Redirect 301 /cart/leavefeedback https://www.jaisiam.sg/leavefeedback.php
+
+# Redirect 301 /restaurant-menu.php https://www.jaisiam.sg/restaurant-menu.php
+# Redirect 301 /menu-family-set.php https://www.jaisiam.sg/menu-family-set.php
+# Redirect 301 /menu-individual-set.php https://www.jaisiam.sg/menu-individual-set.php
+# Redirect 301 /menu-jaithai.php https://www.jaisiam.sg/menu-jaithai.php
+# Redirect 301 /menu-vegetarian.php https://www.jaisiam.sg/restaurant-menu.php
+
+# Redirect 301 /catering-menu.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /catering-menu-a.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /catering-menu-b.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /catering-menu-c.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /catering-menu-d.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /catering-diy-a.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /catering-diy-b.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /catering-diy-c.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /catering-diy-d.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /vegetarian-menu-a.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /vegetarian-menu-b.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /vegetarian-menu-c.php https://www.jaisiam.sg/catering-menu.php
+# Redirect 301 /mini-parties-package.php https://www.jaisiam.sg/mini-parties-package.php
+# Redirect 301 /mini-parties.php https://www.jaisiam.sg/mini-parties.php
+# Redirect 301 /catering-bento-set.php https://www.jaisiam.sg/catering-bento-set.php
+# Redirect 301 /catering-sanook-set.php https://www.jaisiam.sg/catering-sanook-set.php
+
+# Redirect 301 /about-achievements.php https://www.jaisiam.sg/
+# Redirect 301 /about-employment.php https://www.jaisiam.sg/
+# Redirect 301 /about-history.php https://www.jaisiam.sg/
+# Redirect 301 /about-outlets.php https://www.jaisiam.sg/about-outlets.php
+# Redirect 301 /cart.php https://www.jaisiam.sg/cart.php
+# Redirect 301 /orderplaced.php https://www.jaisiam.sg/orderplaced.php
+# Redirect 301 /acknowledgeorder.php https://www.jaisiam.sg/acknowledgeorder.php
+# Redirect 301 /leavefeedback.php https://www.jaisiam.sg/leavefeedback.php
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

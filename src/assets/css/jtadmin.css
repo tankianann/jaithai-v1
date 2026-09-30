@@ -1,0 +1,409 @@
+/* Reset Across Browsers */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, 
+em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, 
+var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0; padding: 0; border: 0;
+	outline: 0; font-size: 100%; vertical-align: baseline;
+	background: transparent;
+}
+html { line-height: 1; font-size: 62.5%; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+:focus { outline: 0; }
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+table { border-collapse: collapse; border-spacing: 0; vertical-align: middle; }
+caption, th, td { text-align: left; font-weight: normal; }
+td, th { vertical-align: middle; } 
+a img { border: none; }
+em { font-style: italic; }
+header, nav, section, article, aside, footer { display: block; }
+
+/* Standard Definitions - Note: Not to be used for page layout elements, only for formatting content elements */
+.alignright { float: right; }
+.alignleft { float: left; }
+.aligncenter { text-align: center; }
+img.alignright { float: right; margin-left: 10px; }
+img.alignleft { float: left; margin-right: 10px; } 
+img.aligncenter { margin-left: auto; margin-right: auto; display: block; }
+.padall { padding: 10px; }
+.padtop { padding-top: 10px; }
+.padleft { padding-left: 10px; }
+.padright { padding-right: 10px; }
+.padbottom { padding-bottom: 10px; }
+.marginall { margin: 10px; }
+.margintop { margin-top: 10px; }
+.marginleft { margin-left: 10px; }
+.marginright { margin-right: 10px; }
+.marginbottom { margin-bottom: 10px; }
+.roundedall { border-radius: 5px; } 
+.roundedtopleft { border-top-left-radius: 5px; } 
+.roundedtopright { border-top-right-radius: 5px; } 
+.roundedbottomleft { border-bottom-left-radius: 5px; } 
+.roundedbottomright { border-bottom-right-radius: 5px; } 
+.boxshadow { box-shadow: 2px 2px 5px #888; }
+.highlight { background-color: #ff0 }
+.clear { clear: both; }
+.imgbdr { border: 4px solid #ccc; }
+.hidetext { text-indent: 100%; white-space: nowrap; overflow: hidden;}
+blockquote { padding: 20px; background-color: #f4f4f4; }
+
+/* Default Text Styles */
+a:focus { outline: 1px dotted; }
+hr { border:0 #ccc solid; border-top-width:1px; clear:both; height:0; }
+h1 { font-size: 25px; }
+h2 { font-size: 23px; }
+h3 { font-size: 16px; }
+h4 { font-size: 19px; }
+h5 { font-size: 17px; }
+h6 { font-size: 15px; }
+ol { list-style-type: decimal; }
+ul { list-style-type: disc; }
+li { margin-left: 30px; }
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset, blockquote { margin-bottom: 12px; }
+
+body { 
+	font-size: 1.4em; /* 14px / 10px */
+	font-family: Arial, Verdana, Helvetica, sans-serif; 
+	background-color: #f37126;
+}
+
+#container {
+	width: 1140px;
+	padding: 0;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+
+@media screen and (max-width : 960px) {
+
+	#container {
+		width: 100%;
+	}
+}
+
+header { 
+	
+	clear: both; 
+	display: block;
+	float: none;
+	padding: 20px;
+	height: 80px; 
+	
+}
+
+	#logo { float: left; }
+	#topcontact { float: right; }
+		#topcontact div { float: right; margin-left: 15px; font-size: 90%; }
+
+#mainmenu { 
+	clear: both; 
+	display: block;
+	float: none;
+	padding: 0;
+	height: 40px; 
+	margin: 0; 
+	background-color: #794a1e;
+}
+
+	#mainmenu ul { padding: 0; margin: 0; }
+	#mainmenu ul li { padding: 15px 20px; margin: 0; display: block; float: left; position: relative; }
+	#mainmenu ul li#fblike { float: right; padding: 5px 20px; } 
+	#mainmenu ul li ul { display: none; position: absolute; top: 40px; left: 10px; background-color: #c1752e; width: 160px; }
+	#mainmenu ul li:hover ul { display: block; }
+	#mainmenu ul li ul li { display: block; float: none; padding: 5px 10px; font-size: 90%;  }
+	#mainmenu ul li ul li:hover { background-color: #e49952;  }
+	#mainmenu a:link, #mainmenu a:visited, #mainmenu a:hover { color: #fff; text-decoration: none; }
+	#mainmenu ul li ul li:hover a { color: #794a1e; }
+	
+#content {
+	
+	clear: both; 
+	display: block; 
+	float: none;
+	padding: 20px;
+	
+}
+
+.menudescription { font-size: 130%; padding-bottom: 10px; color: #c00;  }
+.menudishes.CATERA, .menudishes.DIYA, .menudishes.DIYB, .menudishes.DIYC, .menudishes.DIYD { width: 50%; float: left; }
+.menudishes.CATERB, .menudishes.CATERC, .menudishes.CATERD, .menudishes.VEGEA, .menudishes.VEGEB, .menudishes.VEGEC, .menudishes.MPSET, .menudishes.CNY15SET { width: 62%; float: left; }
+.menudishes ol li { margin: 5px 10px 10px 0; background-color: #eee; padding: 8px; border: 1px solid #ddd; list-style-position: inside; }
+.menudishes ol li ul { margin-bottom: 0;  }
+.menudishes ol li ul li { list-style: none; margin-left: 20px; padding: 0; margin-bottom: 0; border: none; }
+.menudishes table { width: 80%; }
+.menudishes table tr.headerrow td { padding: 10px 5px; border-top: none; font-weight: bold; }
+.menudishes table td { padding: 4px 5px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;   }
+.menudishes table th { padding: 10px 5px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; background-color: #eee; font-size: 130%; }
+
+/* Shopping Cart / View Order */
+table.shoppingcart { width: 100%; border-collapse: collapse; }
+table.shoppingcart thead { border-bottom: 1px solid #888; }
+table.shoppingcart thead th { padding: 10px; vertical-align: top; font-weight: bold;   }
+table.shoppingcart tbody tr:nth-child(2n) { background-color: #eee; }
+table.shoppingcart tbody tr:nth-child(2n+1) { background-color: #fafafa; }
+table.shoppingcart tbody td { padding: 10px; vertical-align: top; }
+table.shoppingcart tfoot { border-top: 1px solid #888;  }
+table.shoppingcart tfoot th { padding: 10px; vertical-align: top; font-weight: bold;  }
+table.shoppingcart tfoot td { padding: 10px; vertical-align: top; }
+table.shoppingcart .emptycart { padding: 50px; text-align: center;  }
+table.shoppingcart label { font-size: 80%; color: #555; }
+.itemcontrol { font-size: 80%; color: #555; font-weight: normal;  }
+.itemcontrol a:link { color: #555; }
+.itemcontrol a:visited { color: #555; }
+.itemcontrol a:hover { color: #555; }
+
+
+/* Admin Dashbord */
+table.adminorderlist { width: 100%; line-height: 120%; }
+table.adminorderlist th { border: 1px solid #aaa; padding: 5px; vertical-align: top; font-weight: bold; background-color: #eee; }
+table.adminorderlist td { border: 1px solid #aaa; padding: 5px; vertical-align: top; }
+.controlpanel { border: 1px solid #ccc; padding: 15px; margin-bottom: 10px;   }
+.controlpanel .showhide { float: left; margin-right: 20px; }
+.controlpanel .orderby { float: left; margin-right: 20px; }
+.controlpanel .submitbuttons { float: left; }
+.controlpanel .upcomingfunctions { float: right; margin-right: 20px; padding-left: 20px; border-left: 1px solid #ccc; line-height: 1.3em; }
+.controlpanel .filterby { float: left; margin-right: 30px; }
+.controlpanel .logout { width: 100px; float: right; text-align: right;  }
+.controlpanel label { display: inline-block;  }
+.dbview { padding: 10px 0; display: inline-block; }
+.detailstable { width: 100%; margin-bottom: 5px; background-color: #fff;   }
+.detailstable .sectionhead { color: #000; background-color: #eee; }
+.detailstable .sectionhead.dark { color: #fff; background-color: #333; }
+.sep { height: 20px; }
+.ordertotalprice { font-weight: bold; font-size: 150%; margin-top: 5px; } 
+.status-no, 
+.status-no a:link,  
+.status-no a:visited,  
+.status-no a:hover { color: #900; font-weight: bold; }
+.status-yes, 
+.status-yes a:link,  
+.status-yes a:visited,  
+.status-yes a:hover { color: #090; font-weight: bold; }
+.outlet-JS { background-color: #ffd5d5; }
+.outlet-7C { background-color: #ffd5d5; }
+.outlet-CW { background-color: #d7ffdf; }
+.outlet-PV { background-color: #e2e0ff; }
+.outlet-CK { background-color: #fdebc3; }
+.outlet-EC { background-color: #fcffd7; }
+.outlet-SP { background-color: #f7ffbc; }
+#jtadmmenu { background-color: #eee; border-bottom: 5px solid #f37126; }
+#jtadmmenu ul { margin: 0; padding: 0 }
+#jtadmmenu ul li { font-weight: bold; list-style: none; margin: 0; float: left;  }
+#jtadmmenu ul li a { padding: 12px 20px; display: block; }
+#jtadmmenu ul li a:link { color: #333; text-decoration: none; }
+#jtadmmenu ul li a:visited { color: #333; text-decoration: none; }
+#jtadmmenu ul li:hover a { color: #FFF; text-decoration: underline; }
+#jtadmmenu ul li:hover { background-color: #333; }
+table.pdf-documents { margin: 10px 0; border: none; }
+table.pdf-documents td { padding: 5px 0 0 0; border: none; }
+
+a.pdf-icon { padding: 3px 2px 3px 23px; display: inline-block; background-image: url("../images/pdf-icon.png"); background-repeat: no-repeat; }
+.ordercancelled { padding: 10px; color: #fff; background-color: #c00; font-weight: bold; margin-bottom: 5px; }
+
+.successMessage { padding: 10px; margin-bottom: 15px; border: 1px solid #090; background-color: #efe; color: #090; }
+.errorMessage { padding: 10px; margin-bottom: 15px; border: 1px solid #900; background-color: #fee; color: #900;}
+.errorMessage ul { margin-bottom: 0; }
+
+footer {
+	
+	clear: both; 
+	display: block;
+	float: none; 
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	
+}
+
+/* widths, heights, margins */
+.w50 { width: 50px; }
+.w75 { width: 75px; }
+.w100 { width: 100px; }
+.w150 { width: 150px; }
+.w200 { width: 200px; }
+.w250 { width: 250px; }
+.w300 { width: 300px; }
+.w350 { width: 350px; }
+.w400 { width: 400px; }
+.w450 { width: 450px; }
+.w500 { width: 500px; }
+.h50 { height: 50px; }
+.h100 { height: 100px; }
+.h150 { height: 150px; }
+.h200 { height: 200px; }
+.h250 { height: 250px; }
+.h300 { height: 300px; }
+.mleft50 { margin-left: 50px; }
+.mleft100 { margin-left: 100px; }
+.mleft150 { margin-left: 150px; }
+.mleft200 { margin-left: 200px; }
+.mleft250 { margin-left: 250px; }
+.mleft300 { margin-left: 300px; }
+
+/* tnc / order form */
+.tnc { clear: both; }
+.addondrink { clear: both; margin-bottom: 40px; }
+.addondrink label { width: 100px; display: inline-block; vertical-align: top; padding-top: 5px;}
+.menuorderform { clear:both; padding: 10px; border: 1px solid #ddd; margin: 10px 0; background-color: #eee; }
+.menuorderform label { width: 150px; display: inline-block; vertical-align: top; padding-top: 5px;}
+.orderform { padding: 10px; border: 1px solid #ddd; margin: 10px 0; background-color: #eee; }
+.orderform fieldset { border: 1px solid #ccc; padding: 15px;  }
+.orderform legend { font-weight: bold; }
+.orderform label { width: 150px; display: inline-block; vertical-align: top; padding-top: 5px;}
+.checkboxlabel { width: auto; display: inline-block; margin-left: 10px; padding-top: 2px; margin-bottom: 4px; }
+#billingdetails { display: none; }
+
+.orderdetailswrap { border: 2px solid #444; margin-bottom: 20px; }
+.orderdetails { width: 100%; margin-bottom: 0; }
+.orderdetails th { padding: 5px 5px 5px 5px; vertical-align: top; font-weight: bold; border: 1px solid #333; background-color: #ccc;  }
+.orderdetails td { padding: 5px 10px 5px 5px; vertical-align: top; border: 1px solid #333; }
+.orderdetails td.sectionhead { background-color: #444; color: #fff; }
+.orderdetails td.spacer { border-left: 0; border-right: 0; }
+.orderdetails label { font-size: 80%; color: #555;  }
+
+/* view feedback from admin */
+.feedbackquestions { border: 1px solid #ccc; padding: 15px; margin-bottom: 10px; }
+.feedbackdetailsswrap { border: 2px solid #444; margin-bottom: 20px; }
+.feedbackdetails { width: 100%; margin-bottom: 0; }
+.feedbackdetails th { padding: 5px 5px 5px 5px; vertical-align: top; font-weight: bold; border: 1px solid #333; background-color: #ccc;  }
+.feedbackdetails td { padding: 5px 10px 5px 5px; vertical-align: top; border: 1px solid #333; }
+.feedbackdetails label { font-size: 80%; color: #555;  }
+
+/* view voucher details from admin */
+.voucherdetailsswrap { border: 2px solid #444; margin-bottom: 20px; }
+.voucherdetails { width: 100%; margin-bottom: 0; }
+.voucherdetails th { padding: 5px 5px 5px 5px; vertical-align: top; font-weight: bold; border: 1px solid #333; background-color: #ccc;  }
+.voucherdetails td { padding: 5px 10px 5px 5px; vertical-align: top; border: 1px solid #333; }
+.voucherdetails label { font-size: 80%; color: #555;  }
+
+
+/* loginform */
+.loginform { width: 400px; margin: 0 auto; background: #eee; border-radius: 10px; padding: 20px;  }
+.loginform label { width: 100px; display: inline-block; vertical-align: top; padding-top: 5px;}
+
+/* form controls */
+select.textbox { /* height: 26px;  */ }
+.textbox { padding: 8px; border: 1px solid #999; margin-left: 0; margin-bottom: 4px; }
+.button { 
+	background-color: #c9c9c9; 
+	color: #000; 
+	border: 1px solid #888; 
+	padding: 10px 20px; 
+	border-radius: 25px; 
+	cursor: pointer; 
+	font-weight: bold;
+	font-size: 11px;
+}
+a.button:link { text-decoration: none; }
+a.button:visited { text-decoration: none; }
+a.button:hover { text-decoration: none; }
+
+/* Home Page */
+.mainpage-intro { width: 850px; margin:0 auto; }
+.mainpage-intro h1 { margin: 0; padding: 0; }
+.mainpage-intro h1 img { display: block; }
+.mainpage-intro .menulinks { width: 425px; height: 506px; text-indent: -99999px; float:left; }
+.mainpage-intro .menulinks a { display: block; width: 425px; height: 506px; }
+.mainpage-intro .restaurantmenu { background-image: url(../images/restaurant-menu-bkg1.jpg); } 
+.mainpage-intro .restaurantmenu:hover { background-image: url(../images/restaurant-menu-bkg2.jpg); } 
+.mainpage-intro .cateringmenu { background-image: url(../images/catering-menu-bkg1.jpg); } 
+.mainpage-intro .cateringmenu:hover { background-image: url(../images/catering-menu-bkg2.jpg); } 
+.mainpage-smallbox { width: 240px; height: 200px; background: url(../images/mainpage-smallbox-bkg.jpg) #EEEEEE top repeat-x; border-top: 2px solid #333333; float: left; margin-right: 10px; padding: 10px; }
+.mainpage-smallbox.last { margin-right: 0; }
+
+/* Restaurant Menu Page */
+.restaurantmenuhead { width: 790px; padding: 9px; border: 1px solid #ddd; background-color: #eee; clear: both; }
+.restaurantmenubox { width: 175px; padding: 30px 9px; text-align: center; margin: 10px 10px 0 0; border: 1px solid #ddd; background-color: #eee; float: left; font-size: 20px; font-weight: bold; }
+.restaurantmenubox a:link { text-decoration: none; color: #333; }
+.restaurantmenubox a:visited { text-decoration: none; color: #333; }
+.restaurantmenubox a:hover { text-decoration: none; color: #000; }
+
+/* Catering Menu Page */ 
+.cateringmenuhead { width: 790px; padding: 9px; border: 1px solid #ddd; background-color: #eee; clear: both; }
+.cateringmenubox { width: 380px; height: 150px; padding: 9px; border: 1px solid #ddd; margin: 10px 10px 0 0; background-color: #eee; float: left; } 
+.cateringmenubox.lastcol { margin-right: 0; } 
+
+/* Jai Thai Menu */
+.jaithaimenuhead { width: 850px; padding: 9px; border: 1px solid #ddd; background-color: #eee; clear: both; }
+.foodimg { z-index: 10; position: absolute; font-weight: bold; font-size: 11px; color: #fb0606; text-align:  center;  width: 190px;  }
+.foodimg div { position: absolute; left: 680px; top: 40px; }
+.foodimg div p { margin-bottom: 30px; }
+.foodmenu th { padding: 10px 0 0 0; color: #fb0606; font-size: 18px; text-decoration: underline; font-family: Arial, Verdana; }
+.foodmenu td { padding: 0 10px 0 0; vertical-align: top; }
+.foodmenu td img { padding: 0; margin-top: 3px; margin-bottom: -3px; }
+.foodmenu td+td+td+td+td { color: #fb0606; padding: 0 15px 0 0; }
+
+/* Individual Set Menu */
+.indivset { float: left; text-align:  center; width: 210px; margin-bottom: 20px; }
+.indivset .settitle { font-size: 18px; font-family: "Arial Black"; color: #127024; margin-bottom: 2px; line-height: 110%; }
+.indivset .setprice { font-size: 18px; font-family: "Arial Black"; color: #e7051b; margin-bottom: 2px; line-height: 110%;}
+.indivset .ricenoodle { font-size: 12px; font-family: "Arial", "Verdana"; margin-bottom: 2px; line-height: 110%; }
+
+/* Family Set Menu */
+.familyset { width: 300px; float: left; text-align:  center;}
+.familyset .settitle { font-family: Arial, Verdana; padding: 10px 0 0 0; color: #fb0606; font-size: 18px; text-decoration: underline; margin-bottom: 2px }
+.familyset .forpax { font-size: 12px; margin-bottom: 2px; text-decoration: underline; }
+.familyset .submenu { color: #fb0606; }
+.familyset .cookingstyle { font-size: 11px; }
+.changerice { margin: 0 0 0 40px; color: #FFFFFF; height: 68px; width: 450px; padding-top: 32px; padding-left: 100px; background: url(../images/changerice-bkg.jpg); font-weight: bold;  }
+
+/* Vegetarian Menu */
+.vegemenu th { padding: 10px 0 0 0; color: #fb0606; font-size: 18px; text-decoration: underline; font-family: Arial, Verdana; }
+.vegemenu td { padding: 0 10px 0 0; vertical-align: top; }
+.vegemenu td img { padding: 0; margin-top: 3px; margin-bottom: -3px; }
+.vegemenu th+th { color: #fb0606; padding: 10px 20px 0 20px; text-decoration: none; }
+.vegemenu td+td+td { color: #fb0606; padding: 0 20px 0 20px; }
+
+/* Outlets */
+.outletinfo { width: 195px; margin-right: 10px; padding: 10px; float: left; background-color: #f4f4f4; height: 360px; margin-bottom: 10px;  }
+.outletinfo h2 { font-size: 18px; }
+.outletinfo label { display: block; font-weight: bold; font-size: 0.8em; text-transform: uppercase; color: #888; margin-bottom: 5px; margin-top: 20px;  }
+
+/* Lightbox */
+#lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; }
+#lightbox .lb-apiurl { display: none; }
+#lightbox .lb-bkg { width: 100%; height: 100%; background-color: #000; opacity: 0.8; position: absolute; z-index: 100; }
+#lightbox .lb-content { width: 600px; height: auto; margin: 10% auto 0 auto; padding: 20px; background-color: #fff; z-index: 200; position: relative; border: 5px solid #f37126; box-shadow: 5px 5px 5px #333; }
+#lightbox .lb-close.btn { width: 24px; height: 24px; position: absolute; top: -15px; right: -15px; cursor: pointer; background-image: url("../images/close-icon.png"); }
+#lightbox .lb-form {  }
+#lightbox .lb-form label { width: 150px; display: inline-block; vertical-align: top; padding-top: 5px;}
+#lightbox .driverlist { display: inline-block; position: relative; cursor: pointer; }
+#lightbox .driverlist ul { display: none; position: absolute; border: 1px solid #000; background-color: #fff; padding: 10px 15px; width: 120px; }
+#lightbox .driverlist ul li { list-style: none; padding: 0; margin: 10px 0; font-size: 0.9em;  }
+
+/* AJAX buttons */
+.assignoutletbuttons a { display: inline-block; border: 1px solid #888; background-color: #fff; padding: 20px; }
+.assignoutletbuttons a:hover { background-color: #eee; }
+
+/* Edit Order Page */
+.foodprice, .totalserves, .totalprice { padding-top: 8px; }
+
+/* Feedback Page */
+.feedbackform li { font-weight: bold; margin-bottom: 40px;  }
+.feedbackform .control { margin: 10px 0 0 0; font-weight: normal; }
+.feedbackrating tr { border-bottom: 1px solid #aaa; }
+.feedbackrating td { padding: 5px; text-align: center; }
+
+/* CNY Surcharge */
+.cnysurcharge { padding: 20px 20px 20px 240px; height: 160px; color: #fff; background-image: url('../images/cnysurcharge-bkg.jpg'); margin-bottom: 10px; }
+.cnysurcharge h3 { color: #ffc50a;  }
+
+.webonly {
+	display: none;
+}
+.mobileonly {
+	display: block;
+}
+@media (min-device-width: 800px) {
+	.webonly {
+		display: block;
+	}
+	.mobileonly {
+		display: none;
+	}
+}
