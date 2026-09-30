@@ -71,9 +71,9 @@ The developer's machine should contain an ignored environment file or local over
 
 Real values belong in an ignored `.env` file or the deployment environment. `.env.example` is the tracked inventory and must remain value-free.
 
-## Rotation Checklist
+## Rotation Record
 
-The following historical credential categories remain pending user confirmation of rotation, revocation, or permanent disablement:
+On 2026-09-30, the user confirmed that the historical credentials had been rotated. The confirmed categories were:
 
 - database credentials;
 - CodeIgniter encryption/session key;
@@ -83,7 +83,7 @@ The following historical credential categories remain pending user confirmation 
 - Brevo API key; and
 - Clickatell credentials.
 
-The PayPal merchant identifier has been externalized and the flow is disabled by default. It is not treated as a secret, but its ownership and intended continued use should be confirmed before payments are enabled.
+The PayPal merchant identifier has been externalized and the flow is disabled by default. It is not treated as a secret; the current value and intended account must still be verified before payments are enabled in any environment.
 
 ## Known Legacy Risks Deferred from M1.1
 

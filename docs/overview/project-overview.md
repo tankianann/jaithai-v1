@@ -23,13 +23,11 @@ The project should produce:
 
 The imported source is a single CodeIgniter 2.2.2 application rooted at `src/`. It uses the CodeIgniter `mysqli` database driver and includes public pages, menu helpers and views, a cart and order flow, administrative screens, email generation, feedback, vouchers, and scheduled or integration-oriented controllers.
 
-The old Git history is deliberately excluded because it contains secrets. The new repository currently contains only the neutral workspace baseline; the legacy source remains untracked until it can be sanitized and reviewed.
+The old Git history was deliberately excluded because it contains secrets. The sanitized legacy source was reviewed, committed, and pushed to the new repository on 2026-09-30, after its embedded credentials were externalized and the historical credentials were rotated.
 
 ## Current Scope
 
-- Rotate or revoke historical credentials.
-- Externalize secrets while keeping safe application configuration tracked.
-- Import and push a clean legacy source baseline.
+- Maintain the established secret-safe configuration and clean source history.
 - Add a PHP 7.4 and Apache Docker environment with a compatible MySQL service.
 - Establish a repeatable local setup and smoke-test process.
 - Define and implement the requested catering-menu changes.
@@ -55,7 +53,6 @@ The old Git history is deliberately excluded because it contains secrets. The ne
 
 - The exact legacy MySQL server version is not yet confirmed.
 - A safe database schema and development dataset have not yet been supplied.
-- The complete set of credentials requiring rotation still needs to be verified.
 - The application has not yet been run under the proposed PHP 7.4 container.
 - The desired catering-menu changes and acceptance criteria have not yet been defined.
 - The eventual production hosting and deployment path has not been established.

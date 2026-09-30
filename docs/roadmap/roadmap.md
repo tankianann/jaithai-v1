@@ -20,9 +20,9 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 | Delivery phase | Milestone | Status | Intended outcome | Remaining work or dependency |
 | --- | --- | --- | --- | --- |
 | Discovery and planning | Documentation baseline | Complete | Define the project, safety rules, anticipated delivery sequence, and first milestone. | None. |
-| Phase 1 — Clean source recovery | [M1.1 — Secret-safe configuration boundary](../milestones/M1.1-secure-configuration-boundary.md) | In progress | Rotate historical credentials, externalize secrets, and establish safe tracked and local configuration boundaries. | Confirm credential rotation and complete staged-snapshot review. |
-| Phase 1 — Clean source recovery | M1.2 — Sanitized legacy source import | Planned | Commit and push the complete necessary legacy application without secrets, obsolete assets, local state, or old Git history. | M1.1 complete; candidate tree passes secret and staged-diff review. |
-| Phase 2 — Reproducible local runtime | M2.1 — Docker PHP and Apache runtime | Planned | Build and document a PHP 7.4/Apache container capable of serving the application source. | Confirm required PHP extensions and resolve initial compatibility failures. |
+| Phase 1 — Clean source recovery | [M1.1 — Secret-safe configuration boundary](../milestones/M1.1-secure-configuration-boundary.md) | Complete | Rotate historical credentials, externalize secrets, and establish safe tracked and local configuration boundaries. | None. |
+| Phase 1 — Clean source recovery | [M1.2 — Sanitized legacy source import](../milestones/M1.2-sanitized-legacy-source-import.md) | Complete | Commit and push the complete necessary legacy application without secrets, obsolete assets, local state, or old Git history. | None. |
+| Phase 2 — Reproducible local runtime | [M2.1 — Docker PHP and Apache runtime](../milestones/M2.1-docker-php-apache-runtime.md) | Planned | Build and document a PHP 7.4/Apache container capable of serving the application source. | Confirm required PHP extensions and resolve initial compatibility failures. |
 | Phase 2 — Reproducible local runtime | M2.2 — Local database bootstrap | Planned | Add a compatible MySQL service and a safe, repeatable schema/development-data initialization path. | Confirm legacy MySQL version and obtain or create a sanitized schema and dataset. |
 | Phase 2 — Reproducible local runtime | M2.3 — Baseline smoke tests | Planned | Record a reproducible behavioural baseline for public pages, menus, ordering, administration, and integrations that can be tested safely. | M2.1 and M2.2 complete; external side effects disabled or replaced locally. |
 | Phase 3 — Catering-menu update | M3.1 — Menu requirements and content inventory | Planned | Define the requested menu changes, source of truth, affected helpers/views/assets, and acceptance criteria. | User supplies or approves the new menu content and intended presentation. |
@@ -33,12 +33,12 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Active Milestone
 
-[M1.1 — Establish a secret-safe configuration boundary](../milestones/M1.1-secure-configuration-boundary.md) is the first delivery milestone. It prevents compromised historical configuration from entering the new repository and defines the safe configuration model required by Docker and later development.
+[M2.1 — Build the Docker PHP and Apache runtime](../milestones/M2.1-docker-php-apache-runtime.md) is the next delivery milestone. It establishes the reproducible web runtime and characterizes PHP and Apache requirements before database bootstrap begins.
 
 ## Dependencies and Decision Points
 
-- **Credential rotation:** owners and replacement values must be available before any historical integration is re-enabled. This blocks M1.1 completion.
-- **Configuration loading:** M1.1 must choose a minimal environment-loading mechanism compatible with CodeIgniter 2.2.2 and PHP 7.4.
+- **Credential rotation:** resolved on 2026-09-30; the user confirmed the historical credentials were rotated.
+- **Configuration loading:** resolved in M1.1 through a dependency-free process-environment loader and tracked value-free contract.
 - **Database compatibility:** the legacy MySQL version, schema, and safe development data source must be identified before M2.2.
 - **External side effects:** email, SMS, mapping, payment, cron, and similar integrations must be disabled, stubbed, or redirected safely before local smoke testing.
 - **Legacy runtime risk:** PHP 7.4 and CodeIgniter 2.2.2 remain fixed constraints for this project. Any proposal to relax either constraint requires an explicit decision record.
@@ -55,4 +55,4 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Immediate Next Step
 
-Confirm historical credential rotation or revocation, then stage only the M1.1 files for final diff and secret-scan review.
+Begin M2.1 by inventorying required PHP extensions and Apache modules, then build the minimal PHP 7.4/Apache development container with all external side effects disabled.

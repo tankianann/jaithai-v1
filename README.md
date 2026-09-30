@@ -2,13 +2,13 @@
 
 This repository contains the legacy Jai Thai catering website and the project material needed to recover, run, maintain, and update it safely.
 
-The application is a CodeIgniter 2.2.2 PHP application. The immediate goal is to establish a secret-free source baseline, reproduce the legacy runtime locally with Docker, and then make controlled catering-menu updates without changing the CodeIgniter version or moving beyond PHP 7.4 during the current project.
+The application is a CodeIgniter 2.2.2 PHP application. The secret-free source baseline is established; the immediate goal is now to reproduce the legacy runtime locally with Docker before making controlled catering-menu updates. The current project keeps CodeIgniter 2.2.2 and PHP 7.4 as explicit compatibility constraints.
 
 ## Current State
 
-- The legacy application source is present under `src/` but has not yet been committed to this repository.
-- Known embedded credentials have been replaced with environment-backed configuration, but historical credentials still require rotation or revocation before the first source commit.
-- The old repository history will not be imported; this repository will begin with a clean, reviewed source history.
+- The sanitized legacy application source is committed under `src/` and pushed to the new GitHub repository.
+- Known embedded credentials use environment-backed configuration, and the historical credentials were confirmed rotated on 2026-09-30.
+- The old repository history was not imported; this repository has a clean, reviewed source history.
 - Previously supplied `assets/menupdf/` and `assets/voucher-templates/` directories were removed because they are no longer used.
 - Docker configuration and a local database bootstrap do not yet exist.
 
@@ -36,10 +36,10 @@ PHP 7.4 and CodeIgniter 2.2.2 are legacy, unsupported technologies. They are ret
 
 Project-level Docker and orchestration files will be added beside `src/` when the local-runtime milestone begins.
 
-## Immediate Rule
+## Security Rule
 
-Do not stage, commit, or push the legacy source as a whole until the active secure-import milestone has completed credential rotation and the final staged snapshot passes a secret scan. Historical credentials must be rotated or revoked even though the old Git history is not being imported.
+Never commit real credentials or a populated `.env` file. Keep outbound email, SMS, OneMap, and payment integrations disabled unless a deliberate environment enables them with current credentials.
 
 ## Current Next Step
 
-Complete [M1.1 — Establish a secret-safe configuration boundary](docs/milestones/M1.1-secure-configuration-boundary.md).
+Complete [M2.1 — Build the Docker PHP and Apache runtime](docs/milestones/M2.1-docker-php-apache-runtime.md).
