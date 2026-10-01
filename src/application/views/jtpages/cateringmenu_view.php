@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/thaicelebration')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/thaicelebration.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Thai Celebration Set Menu" title="Thai Celebration Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -248,7 +248,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chaiyo')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/chaiyo.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Chaiyo Set Menu" title="Chaiyo Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -266,7 +266,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/sawasdee')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/sawasdee.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Sawasdee Set Menu" title="Sawasdee Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -284,7 +284,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chokdee')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/chokdee.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Chokdee Set Menu" title="Chokdee Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -305,7 +305,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/cateringmenua')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/setcateringmenu-a.jpg')) ?>" alt="Thai Prawn Cake" title="Prawn Cake" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+								<img src="<?php _e(base_url('assets/i/catering-menu/set-catering-menu-a.jpg')) ?>" alt="Set Catering Menu A" title="Set Catering Menu A" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
 							</a>
 						</div>
 						<div class="col-sm-8">
@@ -317,7 +317,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/cateringmenub')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/setcateringmenu-b.jpg')) ?>" alt="Thai Fried Mixed Vegetables" title="Fried Mixed Vegetables" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+								<img src="<?php _e(base_url('assets/i/catering-menu/set-catering-menu-b.jpg')) ?>" alt="Set Catering Menu B" title="Set Catering Menu B" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
 							</a>
 						</div>
 						<div class="col-sm-8">
@@ -329,7 +329,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/cateringmenuc')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/setcateringmenu-c.jpg')) ?>" alt="Catering Fried Chicken with Cashew Nuts" title="Fried Chicken with Cashew Nuts" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+								<img src="<?php _e(base_url('assets/i/catering-menu/set-catering-menu-c.jpg')) ?>" alt="Set Catering Menu C" title="Set Catering Menu C" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
 							</a>
 						</div>
 						<div class="col-sm-8">
@@ -341,7 +341,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/cateringmenud')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/setcateringmenu-d.jpg')) ?>" alt="Thai Catering with Phad Thai" title="Phad Thai" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+								<img src="<?php _e(base_url('assets/i/catering-menu/set-catering-menu-d.jpg')) ?>" alt="Set Catering Menu D" title="Set Catering Menu D" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
 							</a>
 						</div>
 						<div class="col-sm-8">
@@ -356,7 +356,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/cateringdiya')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/diycateringmenu-a.jpg')) ?>" alt="Thai Green Curry" title="Green Curry (Chicken / Beef / Vegan)" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
+								<img src="<?php _e(base_url('assets/i/catering-menu/diy-catering-menu-a.jpg')) ?>" alt="DIY Catering Menu A" title="DIY Catering Menu A" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
 							</a>
 						</div>						
 						<div class="col-sm-8">
@@ -368,7 +368,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/cateringdiyb')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/diycateringmenu-b.jpg')) ?>" alt="Thai Olive Rice" title="Olive Rice" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
+								<img src="<?php _e(base_url('assets/i/catering-menu/diy-catering-menu-b.jpg')) ?>" alt="DIY Catering Menu B" title="DIY Catering Menu B" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
 							</a>
 						</div>						
 						<div class="col-sm-8">
@@ -380,7 +380,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/cateringdiyc')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/diycateringmenu-c.jpg')) ?>" alt="Lemon Leaf Chicken" title="Lemon Leaf Chicken" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
+								<img src="<?php _e(base_url('assets/i/catering-menu/diy-catering-menu-c.jpg')) ?>" alt="DIY Catering Menu C" title="DIY Catering Menu C" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
 							</a>
 						</div>						
 						<div class="col-sm-8">
@@ -392,7 +392,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/cateringdiyd')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/diycateringmenu-d.jpg')) ?>" alt="Catering with Tom Yum Soup" title="Tom Yum Soup" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
+								<img src="<?php _e(base_url('assets/i/catering-menu/diy-catering-menu-d.jpg')) ?>" alt="DIY Catering Menu D" title="DIY Catering Menu D" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
 							</a>
 						</div>						
 						<div class="col-sm-8">
@@ -407,7 +407,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/vegetarianmenua')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/vegetariancateringmenu-a.jpg')) ?>" alt="Pineapple Rice Thai Caterer" title="Pineapple Rice" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
+								<img src="<?php _e(base_url('assets/i/catering-menu/vegan-catering-menu-a.jpg')) ?>" alt="Vegan Catering Menu A" title="Vegan Catering Menu A" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
 							</a>
 						</div>						
 						<div class="col-sm-8">
@@ -419,7 +419,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/vegetarianmenub')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/vegetariancateringmenu-b.jpg')) ?>" alt="Thai Mango Salad" title="Mango Salad" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
+								<img src="<?php _e(base_url('assets/i/catering-menu/vegan-catering-menu-b.jpg')) ?>" alt="Vegan Catering Menu B" title="Vegan Catering Menu B" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
 							</a>
 						</div>						
 						<div class="col-sm-8">
@@ -431,7 +431,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/vegetarianmenuc')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/vegetariancateringmenu-c.jpg')) ?>" alt="Fried Mixed Vegetables" title="Fried Mixed Vegetables" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
+								<img src="<?php _e(base_url('assets/i/catering-menu/vegan-catering-menu-c.jpg')) ?>" alt="Vegan Catering Menu C" title="Vegan Catering Menu C" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
 							</a>
 						</div>						
 						<div class="col-sm-8">
@@ -444,7 +444,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chaiyovegan')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/chaiyo.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Chaiyo Vegan Set Menu" title="Chaiyo Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -462,7 +462,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/sawasdeevegan')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/sawasdee.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Sawasdee Vegan Set Menu" title="Sawasdee Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -480,7 +480,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chokdeevegan')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/chokdee.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Chokdee Vegan Set Menu" title="Chokdee Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -513,7 +513,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chaiyo')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/chaiyo.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Chaiyo Set Menu" title="Chaiyo Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -531,7 +531,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/sawasdee')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/sawasdee.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Sawasdee Set Menu" title="Sawasdee Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -549,7 +549,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chokdee')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/chokdee.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Chokdee Set Menu" title="Chokdee Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -566,7 +566,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chaiyovegan')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/chaiyo.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Chaiyo Vegan Set Menu" title="Chaiyo Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -584,7 +584,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/sawasdeevegan')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/sawasdee.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Sawasdee Vegan Set Menu" title="Sawasdee Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -602,7 +602,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chokdeevegan')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/chokdee.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Chokdee Vegan Set Menu" title="Chokdee Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -619,7 +619,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/thaicelebration')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/thaicelebration.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Thai Celebration Set Menu" title="Thai Celebration Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
                         <div class="col-sm-8">
@@ -638,7 +638,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/minipartyalacarte')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/miniparty-alacarte.jpg')) ?>" alt="Fried Prawn in Tamarind" title="Fried Prawn in Tamarind" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+								<img src="<?php _e(base_url('assets/i/catering-menu/mini-party-diy.jpg')) ?>" alt="Mini Party DIY Menu" title="Mini Party DIY Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
 							</a>
 						</div>
 						<div class="col-sm-8">
@@ -653,7 +653,7 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<a href="<?php _e(site_url('/jtmenu/bento')); ?>">
-								<img src="<?php _e(base_url('assets/i/catering-menu/bentoset.jpg')) ?>" alt="Thai Bento Set Catering" title="Thai Bento Set Catering" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
+								<img src="<?php _e(base_url('assets/i/catering-menu/bento.jpg')) ?>" alt="Bento Set Menu" title="Bento Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
 							</a>
 						</div>						
 						<div class="col-sm-8">
