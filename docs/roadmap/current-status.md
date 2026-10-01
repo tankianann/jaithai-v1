@@ -4,11 +4,11 @@
 
 **Stage:** Phase 3 — Catering-menu update
 
-**Active milestone:** [M3.2C — Vegan Catering menu replacements](../milestones/M3.2C-vegan-catering-menu-replacements.md)
+**Active milestone:** [M3.3 — Menu regression verification](../milestones/M3.3-menu-regression-verification.md)
 
 Phase 1 is complete. The sanitized CodeIgniter 2.2.2 application source is committed under `src/` and pushed to the new GitHub repository without the historical secret-bearing Git history. The user confirmed rotation of the historical credentials on 2026-09-30.
 
-The safe development fixtures and expanded 59-check smoke suite were committed as `7c66c0e`. Phase 2 is complete, and the project has moved into menu-update definition.
+The safe development fixtures and expanded 59-check smoke suite were committed as `7c66c0e`. Phase 2 is complete, and the Set, DIY, and Vegan Catering replacements have been committed as `a75a1e4`, `eb658f3`, and `6d9ab7a` respectively.
 
 ## Completed Milestones
 
@@ -22,6 +22,13 @@ The safe development fixtures and expanded 59-check smoke suite were committed a
 - [M3.1 — Menu requirements and content inventory](../milestones/M3.1-menu-requirements-and-content-inventory.md) — approved menu mappings, supplied copy, image destinations, and implementation boundaries committed as `faf3d5f`.
 - [M3.1A — Existing menu image replacements](../milestones/M3.1A-existing-menu-image-replacements.md) — approved replacement images for existing catering cards committed as `08f577d`.
 - [M3.1B — Catering menu tab organization](../milestones/M3.1B-catering-menu-tab-organization.md) — requested menu-family tabs, default Set Catering tab, and retired Promotions tab committed as `09d643a` and `5be9858`.
+- [M3.2A — Set Catering menu replacements](../milestones/M3.2A-set-catering-menu-replacements.md) — approved Essential, Classic, Signature, and Supreme content committed as `a75a1e4`.
+- [M3.2B — DIY Catering menu replacements](../milestones/M3.2B-diy-catering-menu-replacements.md) — approved DIY collection content committed as `eb658f3`.
+- [M3.2C — Vegan Catering menu replacements](../milestones/M3.2C-vegan-catering-menu-replacements.md) — approved Vegan collection content and new Menu D committed as `6d9ab7a`.
+
+## Implemented Milestone Awaiting Commit
+
+- [M3.3 — Menu regression verification](../milestones/M3.3-menu-regression-verification.md) — 173 PHP 7.4 menu regression checks and 106 live smoke checks pass; the user confirmed the manual browser review.
 
 ## Current Runtime State
 
@@ -30,10 +37,10 @@ The safe development fixtures and expanded 59-check smoke suite were committed a
 - MariaDB is reachable by the web container and from TablePlus at `127.0.0.1:3307`.
 - The local database contains the verified five-table production-derived schema and no production rows.
 - A guarded reset command recreates the empty schema, and a separate guarded seed command loads six deterministic synthetic records.
-- A local-only smoke suite passes 59 checks under host PHP and container PHP 7.4, including fixture integrity, authenticated administration, and generated PDF coverage.
+- A local-only smoke suite passes 106 checks under container PHP 7.4, including all twelve menu forms, representative carts, fixture integrity, authenticated administration, and generated PDF coverage.
 - Email, SMS, OneMap, and PayPal integrations remain disabled by default.
 - The complete application and local command set pass PHP 7.4 syntax checks; known legacy deprecation warnings remain in CodeIgniter and bundled Dompdf code.
 
 ## Immediate Next Step
 
-Complete live visual and smoke verification for [M3.2A](../milestones/M3.2A-set-catering-menu-replacements.md), [M3.2B](../milestones/M3.2B-diy-catering-menu-replacements.md), and [M3.2C](../milestones/M3.2C-vegan-catering-menu-replacements.md), then review and commit them. Set, DIY, and Vegan Catering A–D now use the approved collection content and prices; Vegan Menu D is registered as `VEGED` on its native route with the supplied image.
+Commit the completed M3.3 verification changes, then define the M4.1 security-hardening scope and acceptance criteria before modifying application behavior.

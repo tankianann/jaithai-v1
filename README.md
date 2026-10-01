@@ -11,7 +11,8 @@ The application is a CodeIgniter 2.2.2 PHP application. The secret-free source b
 - The old repository history was not imported; this repository has a clean, reviewed source history.
 - Previously supplied `assets/menupdf/` and `assets/voucher-templates/` directories were removed because they are no longer used.
 - A verified Docker runtime provides PHP 7.4, Apache, and MariaDB 10.11, with a production-derived schema that contains no production rows.
-- A local-only smoke suite verifies the runtime, public pages, menu form, session-backed cart, authenticated administration, generated PDF, access controls, and database structure without placing an order.
+- A local-only smoke suite verifies the runtime, public pages, menu forms, session-backed cart, authenticated administration, generated PDF, access controls, and database structure without placing an order.
+- A host-side menu regression suite verifies the tracked Set, DIY, and Vegan Catering A–D definitions and application wiring without requiring Docker, a database, or network access.
 - No production database dump or customer data is stored in this repository; the tracked development records are wholly synthetic.
 
 See [`docs/roadmap/current-status.md`](docs/roadmap/current-status.md) for the immediate next step and [`docs/roadmap/roadmap.md`](docs/roadmap/roadmap.md) for the anticipated delivery sequence.
@@ -58,4 +59,6 @@ Reset the local database and recreate its empty schema with `php bin/migrate.php
 
 Run the safe local baseline with `php bin/smoke-test.php`. The command expects the synthetic fixture set and refuses production targets and enabled outbound integrations.
 
-The active delivery step is M3.1 review and commit. Supplied menu copy and all 20 images are documented and archived; application image work remains deferred.
+Run `php bin/menu-regression.php` for the Docker-independent catering-menu checks. This command reads tracked PHP definitions and source files only; it does not connect to a database or make network requests.
+
+Phase 3 menu delivery and regression verification have passed their automated and manual checks. The active delivery step is committing M3.3; the next planned milestone is M4.1 security hardening priorities within the fixed PHP 7.4 and CodeIgniter 2.2.2 constraints.

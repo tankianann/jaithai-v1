@@ -1,5 +1,17 @@
 # Local Smoke Tests
 
+## Run the Menu Regression Checks
+
+Run the Docker-independent checks from the repository root:
+
+```sh
+php bin/menu-regression.php
+```
+
+This command reads tracked menu definitions and source files only. It requires no database, Docker service, or network access, and exits nonzero if any assertion fails.
+
+The checks cover all twelve Set, DIY, and Vegan Catering menus: stable IDs and customer-facing names, approved prices and minimums, declared and defined course counts, supported renderer controls, nonempty labels, removal of menu-specific halal wording, dessert pricing, controller defaults and submitted-field capture, curry and Tom Yum radio behavior, and Vegan Menu D registration, route, administration selector, image, and lack of a legacy redirect.
+
 ## Run the Baseline
 
 Start the Docker services, reset the local schema, load fixtures, then run from the repository root:
@@ -36,7 +48,8 @@ The baseline verifies:
 - compiled CSS availability and content type;
 - CodeIgniter 404 handling;
 - HTTP denial of `jt-config.php`, application cache, and application logs;
-- a valid Catering Menu A submission stored in the CodeIgniter session with the expected legacy cart redirect; and
+- all Set, DIY, and Vegan Catering A–D menu forms;
+- representative Set Menu A, DIY Menu A, and Vegan Menu D submissions stored in the CodeIgniter session with the expected legacy cart redirect;
 - rendering of the populated cart with the selected menu choices;
 - exact fixture counts and use of the reserved `.invalid` email domain;
 - synthetic administrator authentication and fixture-backed dashboard, order, feedback, and voucher screens; and
