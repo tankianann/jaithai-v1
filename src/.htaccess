@@ -20,37 +20,37 @@ RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ 
 RewriteRule . /index.php [L]
 </IfModule>
 
-Redirect 301 /restaurant-menu.php https://www.jai-thai.com/jtpages/restaurantmenu
-Redirect 301 /menu-family-set.php https://www.jai-thai.com/jtpages/menufamilyset
-Redirect 301 /menu-individual-set.php https://www.jai-thai.com/jtpages/menuindividualset
-Redirect 301 /menu-jaithai.php https://www.jai-thai.com/jtpages/menujaithai
-Redirect 301 /menu-vegetarian.php https://www.jai-thai.com/jtpages/menuvegetarian
+Redirect 301 /restaurant-menu.php /jtpages/restaurantmenu
+Redirect 301 /menu-family-set.php /jtpages/menufamilyset
+Redirect 301 /menu-individual-set.php /jtpages/menuindividualset
+Redirect 301 /menu-jaithai.php /jtpages/menujaithai
+Redirect 301 /menu-vegetarian.php /jtpages/menuvegetarian
 
-Redirect 301 /catering-menu.php https://www.jai-thai.com/jtpages/cateringmenu
-Redirect 301 /catering-menu-a.php https://www.jai-thai.com/jtmenu/cateringmenua
-Redirect 301 /catering-menu-b.php https://www.jai-thai.com/jtmenu/cateringmenub
-Redirect 301 /catering-menu-c.php https://www.jai-thai.com/jtmenu/cateringmenuc
-Redirect 301 /catering-menu-d.php https://www.jai-thai.com/jtmenu/cateringmenud
-Redirect 301 /catering-diy-a.php https://www.jai-thai.com/jtmenu/cateringdiya
-Redirect 301 /catering-diy-b.php https://www.jai-thai.com/jtmenu/cateringdiyb
-Redirect 301 /catering-diy-c.php https://www.jai-thai.com/jtmenu/cateringdiyc
-Redirect 301 /catering-diy-d.php https://www.jai-thai.com/jtmenu/cateringdiyd
-Redirect 301 /vegetarian-menu-a.php https://www.jai-thai.com/jtmenu/vegetarianmenua
-Redirect 301 /vegetarian-menu-b.php https://www.jai-thai.com/jtmenu/vegetarianmenub
-Redirect 301 /vegetarian-menu-c.php https://www.jai-thai.com/jtmenu/vegetarianmenuc
-Redirect 301 /mini-parties-package.php https://www.jai-thai.com/jtmenu/minipartyset
-Redirect 301 /mini-parties.php https://www.jai-thai.com/jtmenu/minipartyalacarte
-Redirect 301 /catering-bento-set.php https://www.jai-thai.com/jtmenu/bento
-Redirect 301 /catering-sanook-set.php https://www.jai-thai.com/jtmenu/sanook
+Redirect 301 /catering-menu.php /jtpages/cateringmenu
+Redirect 301 /catering-menu-a.php /jtmenu/cateringmenua
+Redirect 301 /catering-menu-b.php /jtmenu/cateringmenub
+Redirect 301 /catering-menu-c.php /jtmenu/cateringmenuc
+Redirect 301 /catering-menu-d.php /jtmenu/cateringmenud
+Redirect 301 /catering-diy-a.php /jtmenu/cateringdiya
+Redirect 301 /catering-diy-b.php /jtmenu/cateringdiyb
+Redirect 301 /catering-diy-c.php /jtmenu/cateringdiyc
+Redirect 301 /catering-diy-d.php /jtmenu/cateringdiyd
+Redirect 301 /vegetarian-menu-a.php /jtmenu/vegetarianmenua
+Redirect 301 /vegetarian-menu-b.php /jtmenu/vegetarianmenub
+Redirect 301 /vegetarian-menu-c.php /jtmenu/vegetarianmenuc
+Redirect 301 /mini-parties-package.php /jtmenu/minipartyset
+Redirect 301 /mini-parties.php /jtmenu/minipartyalacarte
+Redirect 301 /catering-bento-set.php /jtmenu/bento
+Redirect 301 /catering-sanook-set.php /jtmenu/sanook
 
-Redirect 301 /about-achievements.php https://www.jai-thai.com/jtpages/aboutachievements
-Redirect 301 /about-employment.php https://www.jai-thai.com/
-Redirect 301 /about-history.php https://www.jai-thai.com/jtpages/abouthistory
-Redirect 301 /about-outlets.php https://www.jai-thai.com/jtpages/aboutoutlets
-Redirect 301 /cart.php https://www.jai-thai.com/cart
-Redirect 301 /orderplaced.php https://www.jai-thai.com/cart/orderplaced
-Redirect 301 /acknowledgeorder.php https://www.jai-thai.com/cart/acknowledgeorder
-Redirect 301 /leavefeedback.php https://www.jai-thai.com/cart/leavefeedback
+Redirect 301 /about-achievements.php /jtpages/aboutachievements
+Redirect 301 /about-employment.php /
+Redirect 301 /about-history.php /jtpages/abouthistory
+Redirect 301 /about-outlets.php /jtpages/aboutoutlets
+Redirect 301 /cart.php /cart
+Redirect 301 /orderplaced.php /cart/orderplaced
+Redirect 301 /acknowledgeorder.php /cart/acknowledgeorder
+Redirect 301 /leavefeedback.php /cart/leavefeedback
 
 # Redirect Rules to Redirect to JaiSiam.sg
 
