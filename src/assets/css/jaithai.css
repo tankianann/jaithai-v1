@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,700);
 body {
-  background-image: url("../i/bkg.jpg");
   background-repeat: no-repeat;
-  background-color: #4f250d;
+  background-color: #441c06;
   background-position: center top;
   font-family: Roboto, Arial, sans-serif;
 }
@@ -674,8 +673,8 @@ img.jaisiam {
     height: 90px;
   }
   #nav a:link,
-#nav a:visited,
-#nav a:hover {
+  #nav a:visited,
+  #nav a:hover {
     font-size: 1.9em;
   }
   #nav li {
