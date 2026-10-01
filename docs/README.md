@@ -5,6 +5,8 @@ This directory contains the durable project documentation for recovering and mai
 ## Structure
 
 - **`overview/`** — project purpose, existing system, scope, constraints, success conditions, and known unknowns.
+- **`copy/`** — durable supplied and approved customer-facing copy with provenance and coverage records.
+- **`content/`** — content and asset inventories that define later implementation work.
 - **`roadmap/`** — the anticipated delivery sequence and current project status.
 - **`milestones/`** — detailed, commit-sized delivery milestones with acceptance and verification criteria.
 - **`security/`** — project-specific rules for secrets, local configuration, scanning, and incident response.

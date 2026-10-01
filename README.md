@@ -58,4 +58,4 @@ Reset the local database and recreate its empty schema with `php bin/migrate.php
 
 Run the safe local baseline with `php bin/smoke-test.php`. The command expects the synthetic fixture set and refuses production targets and enabled outbound integrations.
 
-The next delivery step is M3.1: define the menu-update requirements, source material, and acceptance criteria after M2.4 review and commit.
+The active delivery step is M3.1 review and commit. Supplied menu copy and all 20 images are documented and archived; application image work remains deferred.

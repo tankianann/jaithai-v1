@@ -25,8 +25,8 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 | Phase 2 — Reproducible local runtime | [M2.1 — Docker PHP, Apache, and MariaDB runtime](../milestones/M2.1-docker-php-apache-runtime.md) | Complete | Build and document PHP 7.4/Apache and MariaDB 10.11 services capable of serving the application and accepting local database connections. | None. |
 | Phase 2 — Reproducible local runtime | [M2.2 — Local database schema bootstrap](../milestones/M2.2-local-database-schema-bootstrap.md) | Complete | Track the production-derived schema without production data and provide a guarded, repeatable local reset command. | None. |
 | Phase 2 — Reproducible local runtime | [M2.3 — Baseline smoke tests](../milestones/M2.3-baseline-smoke-tests.md) | Complete | Provide a repeatable local-only runtime, route, menu, session-cart, database, and access-control baseline without external side effects. | None. |
-| Phase 2 — Reproducible local runtime | [M2.4 — Safe development fixtures](../milestones/M2.4-safe-development-fixtures.md) | Implemented | Create minimal synthetic records needed for authenticated administration, persistence, PDF, and deeper workflow tests without copying production data. | Independent review, any resulting fixes, and milestone commit. |
-| Phase 3 — Catering-menu update | M3.1 — Menu requirements and content inventory | Planned | Define the requested menu changes, source of truth, affected helpers/views/assets, and acceptance criteria. | User supplies or approves the new menu content and intended presentation. |
+| Phase 2 — Reproducible local runtime | [M2.4 — Safe development fixtures](../milestones/M2.4-safe-development-fixtures.md) | Complete | Create minimal synthetic records needed for authenticated administration, persistence, PDF, and deeper workflow tests without copying production data. | None. |
+| Phase 3 — Catering-menu update | [M3.1 — Menu requirements and content inventory](../milestones/M3.1-menu-requirements-and-content-inventory.md) | Implemented | Define the requested menu changes, source of truth, affected helpers/views/assets, and acceptance criteria. | Independent review and milestone commit; image implementation remains deferred. |
 | Phase 3 — Catering-menu update | M3.2 — Menu implementation | Planned | Implement the approved menu changes without unrelated behaviour changes. | M3.1 complete and baseline checks available. |
 | Phase 3 — Catering-menu update | M3.3 — Menu regression verification | Planned | Verify the updated customer-facing menus and affected cart/order behaviour across the agreed local test surface. | M3.2 implemented. |
 | Phase 4 — Constrained modernization | M4.1 — Security hardening priorities | Planned | Address the highest-value application risks that can be improved without changing PHP or CodeIgniter versions. | Baseline running; risk review and scope approval. |
@@ -34,7 +34,7 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Active Milestone
 
-[M2.4 — Safe development fixtures](../milestones/M2.4-safe-development-fixtures.md) is implemented and verified. It is awaiting independent review and commit before menu requirements work begins.
+[M3.1 — Menu requirements and content inventory](../milestones/M3.1-menu-requirements-and-content-inventory.md) is implemented. All supplied copy and images are accounted for in durable documentation, the source materials are archived for provenance, and application image work remains deferred. Independent review and commit remain.
 
 ## Dependencies and Decision Points
 
@@ -46,7 +46,7 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 - **External side effects:** email, SMS, mapping, payment, cron, and similar integrations must be disabled, stubbed, or redirected safely before local smoke testing.
 - **Legacy runtime risk:** PHP 7.4 and CodeIgniter 2.2.2 remain fixed constraints for this project. Any proposal to relax either constraint requires an explicit decision record.
 - **Production readiness:** successful local execution does not authorize public deployment. A separate security and deployment decision is required before production use.
-- **Menu scope:** new menu content, pricing, availability rules, and affected ordering behaviour must be approved before M3.1 can close.
+- **Menu scope:** resolved for M3.1; mappings, names, prices, minimum quantities, source copy, dietary wording, halal-language boundary, and image destinations or KIV status are documented and approved.
 
 ## Deferred and Post-Project Work
 
@@ -58,4 +58,4 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Immediate Next Step
 
-Review and commit M2.4, then begin M3.1 menu requirements and content inventory.
+Review and commit M3.1 before M3.2 implementation. Keep image work deferred to a later explicit step.
