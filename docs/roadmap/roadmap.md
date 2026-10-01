@@ -36,7 +36,7 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Active Milestone
 
-[M3.1B — Catering menu tab organization](../milestones/M3.1B-catering-menu-tab-organization.md) is implemented in source. The requested tab order and menu-family groupings are in place while the known JavaScript tab behavior remains unchanged. Live visual and smoke verification, independent review, and commit remain before M3.2 begins.
+[M3.1B — Catering menu tab organization](../milestones/M3.1B-catering-menu-tab-organization.md) is implemented in source. The requested seven-tab order and menu-family groupings are in place, with Set Catering as the default, while the known JavaScript tab behavior remains otherwise unchanged. Live visual and smoke verification, independent review, and commit remain before M3.2 begins.
 
 ## Dependencies and Decision Points
 

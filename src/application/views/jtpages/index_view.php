@@ -68,7 +68,6 @@
 		</p>
 		<p>Check out our variety of catering menus.</p>
 		<ul class="arrbullet">
-			<li><a href="<?php _e(site_url('catering-menu.php#promotion')); ?>">Promotion Menus Catering</a></li>
 			<li><a href="<?php _e(site_url('catering-menu.php#set')); ?>">Set Catering</a></li>
 			<li><a href="<?php _e(site_url('catering-menu.php#diy')); ?>">DIY Catering</a></li>
 			<li><a href="<?php _e(site_url('catering-menu.php#vegetarian')); ?>">Vegetarian Catering</a></li>
@@ -98,4 +97,3 @@
 		</ul>
 	</div>
 </div><!-- /#homemenus -->
-

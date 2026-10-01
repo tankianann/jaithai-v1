@@ -35,4 +35,4 @@ The safe development fixtures and expanded 59-check smoke suite were committed a
 
 ## Immediate Next Step
 
-Complete live visual and smoke verification for [M3.1B](../milestones/M3.1B-catering-menu-tab-organization.md), then review and commit it. The requested eight-tab order and menu-family groupings are implemented in source, while the known JavaScript tab behavior remains intentionally unchanged. The Vegan Catering Menu D image remains reserved for M3.2, and the four KIV images remain inactive.
+Complete live visual and smoke verification for [M3.1B](../milestones/M3.1B-catering-menu-tab-organization.md), then review and commit it. The requested seven-tab order and menu-family groupings are implemented in source, Set Catering is the default, and the known JavaScript tab behavior remains otherwise unchanged. The Vegan Catering Menu D image remains reserved for M3.2, and the four KIV images remain inactive.

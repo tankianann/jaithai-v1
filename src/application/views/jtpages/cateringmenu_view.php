@@ -20,7 +20,6 @@
 			<div class="col-sm-12">
 				<ul>
 <!--                    <li><a href="#menu-cny2026" class="cny2026">CNY 2026</a></li>-->
-					<li><a href="#menu-promotion" class="promotion">Promotions</a></li>
 					<li><a href="#menu-set" class="set">Set Catering</a></li>
 					<li><a href="#menu-diy" class="diy">DIY Catering</a></li>
 					<li><a href="#menu-vegan" class="vegan">Vegan Catering</a></li>
@@ -35,26 +34,7 @@
 		<div class="row cateringmenus">
 			<div class="col-sm-12">
 
-                <div id="menu-promotion" class="cateringmenu">
-					<h2>Promotions</h2>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('jtmenu/thaicelebration')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Thai Celebration Set Menu" title="Thai Celebration Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3>Thai Celebration Set (Serves 10 Pax)</h3>
-                            <p>8 Dishes (No Drink) @ $37.50 / pax
-                                <br />Food served in disposable trays / containers
-                                <br />Delivery and self collection available
-                                <br />Minimum 10 pax for delivery orders
-                            <p><a href="<?php _e(site_url('/jtmenu/thaicelebration')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
-                        </div>
-                    </div>
-
-                    <?php /*
+					<?php /*
                 <div id="menu-cny2026" class="cateringmenu">
                     <h2>CNY 2026</h2>
                     <div class="row">
@@ -246,7 +226,6 @@
                         </div>
                     </div>
                     */ ?>
-                </div>
 				<div id="menu-set" class="cateringmenu">
 					<h2>Set Catering Menus</h2>
 
@@ -391,6 +370,22 @@
 				</div>
 				<div id="menu-miniparty-set" class="cateringmenu">
 					<h2>Mini Party Sets</h2>
+					<div class="row">
+						<div class="col-sm-4">
+							<a href="<?php _e(site_url('jtmenu/thaicelebration')); ?>">
+								<img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Thai Celebration Set Menu" title="Thai Celebration Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
+							</a>
+						</div>
+						<div class="col-sm-8">
+							<h3>Thai Celebration Set (Serves 10 Pax)</h3>
+							<p>8 Dishes (No Drink) @ $37.50 / pax
+								<br />Food served in disposable trays / containers
+								<br />Delivery and self collection available
+								<br />Minimum 10 pax for delivery orders
+							<p><a href="<?php _e(site_url('/jtmenu/thaicelebration')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
+						</div>
+					</div>
+
 					<div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chaiyo')); ?>">
