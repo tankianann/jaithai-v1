@@ -2,10 +2,12 @@
 
 ## Run the Baseline
 
-Start the Docker services and ensure the local schema exists, then run from the repository root:
+Start the Docker services, reset the local schema, load fixtures, then run from the repository root:
 
 ```sh
 docker compose up -d --wait
+php bin/migrate.php --force
+php bin/seed.php --force
 php bin/smoke-test.php
 ```
 
@@ -19,9 +21,9 @@ The command exits zero only when every check passes. An alternate loopback endpo
 
 ## Safety Boundary
 
-The command refuses to run unless the tracked Docker-local configuration reports `development`, outbound integrations disabled, and PayPal disabled. It also refuses non-HTTP or non-loopback targets, never follows redirects, never submits the order form, and never authenticates to administration.
+The command refuses to run unless the tracked Docker-local configuration reports `development`, outbound integrations disabled, and PayPal disabled. It also refuses non-HTTP or non-loopback targets, never follows redirects, and never submits the order form.
 
-The suite sends requests only to the selected loopback endpoint. It does not load browser subresources, contact third-party services, generate PDFs, or insert, update, or delete database rows.
+The suite sends requests only to the selected loopback endpoint. It authenticates only with the tracked local-only administrator, generates one synthetic timestamp PDF in the ignored runtime volume, and verifies that application-table row counts do not change. It does not contact third-party services or insert, update, or delete database rows.
 
 ## Coverage
 
@@ -35,16 +37,18 @@ The baseline verifies:
 - CodeIgniter 404 handling;
 - HTTP denial of `jt-config.php`, application cache, and application logs;
 - a valid Catering Menu A submission stored in the CodeIgniter session with the expected legacy cart redirect; and
-- rendering of the populated cart with the selected menu choices.
+- rendering of the populated cart with the selected menu choices;
+- exact fixture counts and use of the reserved `.invalid` email domain;
+- synthetic administrator authentication and fixture-backed dashboard, order, feedback, and voucher screens; and
+- generation and delivery of a fixture-backed PDF with the expected content type and signature.
 
 The add-to-cart controller redirects to the legacy `cart.php` alias, which Apache maps to the live canonical domain. The suite deliberately does not follow that redirect and instead requests the clean local `/cart` route with the same session cookie.
 
 ## Exclusions
 
-- Final order submission and database persistence.
+- Final order submission and mutating administrator workflows.
 - Email, SMS, OneMap, PayPal, Mailchimp, or other external calls.
-- Authenticated administrator workflows.
-- Existing or generated PDF verification.
+- Historical production PDF verification.
 - Production availability or production end-to-end testing.
 - Browser rendering, JavaScript behaviour, and responsive-layout checks.
 

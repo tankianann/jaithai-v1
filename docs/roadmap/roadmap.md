@@ -24,8 +24,8 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 | Phase 1 — Clean source recovery | [M1.2 — Sanitized legacy source import](../milestones/M1.2-sanitized-legacy-source-import.md) | Complete | Commit and push the complete necessary legacy application without secrets, obsolete assets, local state, or old Git history. | None. |
 | Phase 2 — Reproducible local runtime | [M2.1 — Docker PHP, Apache, and MariaDB runtime](../milestones/M2.1-docker-php-apache-runtime.md) | Complete | Build and document PHP 7.4/Apache and MariaDB 10.11 services capable of serving the application and accepting local database connections. | None. |
 | Phase 2 — Reproducible local runtime | [M2.2 — Local database schema bootstrap](../milestones/M2.2-local-database-schema-bootstrap.md) | Complete | Track the production-derived schema without production data and provide a guarded, repeatable local reset command. | None. |
-| Phase 2 — Reproducible local runtime | [M2.3 — Baseline smoke tests](../milestones/M2.3-baseline-smoke-tests.md) | Implemented | Provide a repeatable local-only runtime, route, menu, session-cart, database, and access-control baseline without external side effects. | Independent review, any resulting fixes, and milestone commit. |
-| Phase 2 — Reproducible local runtime | M2.4 — Safe development fixtures | Planned | Create minimal synthetic records needed for authenticated administration, persistence, PDF, and deeper workflow tests without copying production data. | Use the M2.3 exclusions to identify the smallest useful fixture set. |
+| Phase 2 — Reproducible local runtime | [M2.3 — Baseline smoke tests](../milestones/M2.3-baseline-smoke-tests.md) | Complete | Provide a repeatable local-only runtime, route, menu, session-cart, database, and access-control baseline without external side effects. | None. |
+| Phase 2 — Reproducible local runtime | [M2.4 — Safe development fixtures](../milestones/M2.4-safe-development-fixtures.md) | Implemented | Create minimal synthetic records needed for authenticated administration, persistence, PDF, and deeper workflow tests without copying production data. | Independent review, any resulting fixes, and milestone commit. |
 | Phase 3 — Catering-menu update | M3.1 — Menu requirements and content inventory | Planned | Define the requested menu changes, source of truth, affected helpers/views/assets, and acceptance criteria. | User supplies or approves the new menu content and intended presentation. |
 | Phase 3 — Catering-menu update | M3.2 — Menu implementation | Planned | Implement the approved menu changes without unrelated behaviour changes. | M3.1 complete and baseline checks available. |
 | Phase 3 — Catering-menu update | M3.3 — Menu regression verification | Planned | Verify the updated customer-facing menus and affected cart/order behaviour across the agreed local test surface. | M3.2 implemented. |
@@ -34,14 +34,14 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Active Milestone
 
-[M2.3 — Establish baseline smoke tests](../milestones/M2.3-baseline-smoke-tests.md) is implemented and awaiting independent review and commit. M2.4 remains available for fixture-dependent coverage before or alongside menu work.
+[M2.4 — Safe development fixtures](../milestones/M2.4-safe-development-fixtures.md) is implemented and verified. It is awaiting independent review and commit before menu requirements work begins.
 
 ## Dependencies and Decision Points
 
 - **Credential rotation:** resolved on 2026-09-30; the user confirmed the historical credentials were rotated.
 - **Configuration loading:** resolved in M1.1 through an ignored WordPress-style PHP configuration file and a tracked value-free example.
 - **Database compatibility:** production uses MariaDB 10.11.18 and local Docker uses the MariaDB 10.11 line; the production-derived structure is tracked without data.
-- **Database privacy:** resolved for schema bootstrap in [ADR-002](../decisions/ADR-002-production-derived-schema.md); production rows remain outside Git and synthetic fixtures are deferred to M2.4.
+- **Database privacy:** resolved for schema bootstrap in [ADR-002](../decisions/ADR-002-production-derived-schema.md); production rows remain outside Git and M2.4 fixtures are wholly synthetic.
 - **Local runtime architecture:** resolved in [ADR-001](../decisions/ADR-001-local-docker-runtime.md) as direct Apache/PHP with MariaDB, without the production NGINX frontend.
 - **External side effects:** email, SMS, mapping, payment, cron, and similar integrations must be disabled, stubbed, or redirected safely before local smoke testing.
 - **Legacy runtime risk:** PHP 7.4 and CodeIgniter 2.2.2 remain fixed constraints for this project. Any proposal to relax either constraint requires an explicit decision record.
@@ -58,4 +58,4 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Immediate Next Step
 
-Complete M2.3 review and commit, then decide whether fixture-dependent coverage in M2.4 is required before beginning M3.1 menu requirements and content inventory.
+Review and commit M2.4, then begin M3.1 menu requirements and content inventory.

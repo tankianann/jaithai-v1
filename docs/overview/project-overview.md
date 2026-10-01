@@ -52,9 +52,9 @@ The old Git history was deliberately excluded because it contains secrets. The s
 ## Known Unknowns and Dependencies
 
 - Production currently uses MariaDB 10.11.18; local Docker follows the MariaDB 10.11 line.
-- A safe production-derived database schema is tracked without production rows or production auto-increment positions; synthetic development fixtures have not yet been created.
-- A repeatable local-only smoke suite covers the runtime, public pages, menu rendering, a session-backed cart round trip, administrator login page, database structure, and sensitive-path access controls.
-- Authenticated administration, order persistence, generated PDFs, and integration behaviour still await safe fixtures or controlled test substitutes.
+- A safe production-derived database schema is tracked without production rows or production auto-increment positions; a separate deterministic fixture set contains only invented local records.
+- A repeatable local-only smoke suite covers the runtime, public pages, menu rendering, a session-backed cart round trip, authenticated administration, database structure, generated PDF output, and sensitive-path access controls.
+- Final order submission, mutating administrator workflows, browser behaviour, and external integrations remain outside the automated baseline.
 - The desired catering-menu changes and acceptance criteria have not yet been defined.
 - The eventual production hosting and deployment path has not been established.
 

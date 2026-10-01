@@ -88,6 +88,13 @@ if (
 
 $passed = 0;
 $failed = 0;
+$fixture_counts = array(
+	'jt_feedback' => 1,
+	'jt_options' => 2,
+	'jt_orders' => 1,
+	'jt_users' => 1,
+	'jt_vouchers' => 1,
+);
 
 function smoke_result($condition, $label, $detail = '')
 {
@@ -206,6 +213,34 @@ if ( ! $database->connect_errno) {
 	sort($expected_tables);
 	sort($actual_tables);
 	smoke_result($actual_tables === $expected_tables, 'the five expected application tables exist');
+
+	foreach ($fixture_counts as $table => $expected_count) {
+		$count_result = $database->query('SELECT COUNT(*) FROM `'.$table.'`');
+		$actual_count = -1;
+
+		if ($count_result !== FALSE) {
+			$row = $count_result->fetch_row();
+			$actual_count = (int) $row[0];
+			$count_result->free();
+		}
+
+		smoke_result(
+			$actual_count === $expected_count,
+			$table.' contains the expected synthetic fixtures',
+			'expected '.$expected_count.', found '.$actual_count
+		);
+	}
+
+	$fixture_result = $database->query("SELECT COUNT(*) FROM jt_orders WHERE id = 1 AND email LIKE '%@example.invalid'");
+	$fixture_order_count = -1;
+
+	if ($fixture_result !== FALSE) {
+		$row = $fixture_result->fetch_row();
+		$fixture_order_count = (int) $row[0];
+		$fixture_result->free();
+	}
+
+	smoke_result($fixture_order_count === 1, 'the fixture order uses a reserved non-deliverable email domain');
 	$database->close();
 }
 
@@ -272,7 +307,85 @@ foreach (array('Catering Menu A', 'Green Curry Chicken', 'Red Ruby') as $cart_ma
 
 smoke_result(response_has_no_php_error($populated_cart), 'populated cart contains no rendered PHP error');
 
+$admin_login = smoke_request($curl, $base_url, '/jtadmin/login', array(
+	'formSubmitted' => '1',
+	'username' => 'local-admin',
+	'password' => 'local-admin-only',
+));
+
+smoke_result($admin_login['status'] === 302, 'synthetic administrator login redirects', 'HTTP '.$admin_login['status']);
+$admin_location = smoke_get_location($admin_login);
+$admin_location_parts = $admin_location === '' ? FALSE : parse_url($admin_location);
+smoke_result(
+	$admin_location_parts !== FALSE && isset($admin_location_parts['path']) && $admin_location_parts['path'] === '/jtadmin/dashboard',
+	'synthetic administrator login targets the dashboard',
+	$admin_location
+);
+
+$admin_checks = array(
+	array('/jtadmin/dashboard', 'Synthetic Local Customer', 'authenticated administrator dashboard'),
+	array('/jtadmin/vieworder/1', 'Synthetic Catering Menu', 'synthetic order detail'),
+	array('/jtadmin/feedback', 'Synthetic fixture feedback.', 'synthetic feedback listing'),
+	array('/jtadmin/vouchers', 'LOCAL000001', 'synthetic voucher listing'),
+);
+
+foreach ($admin_checks as $check) {
+	$response = smoke_request($curl, $base_url, $check[0]);
+	smoke_result($response['status'] === 200, $check[2].' returns 200', 'HTTP '.$response['status']);
+	smoke_result(response_contains($response, $check[1]), $check[2].' contains its fixture marker');
+	smoke_result(response_has_no_php_error($response), $check[2].' contains no rendered PHP error');
+}
+
+$pdf_generation = smoke_request($curl, $base_url, '/jtadmin/getpdf/timestamp/1');
+smoke_result($pdf_generation['status'] === 302, 'authenticated timestamp PDF generation redirects', 'HTTP '.$pdf_generation['status']);
+$pdf_location = smoke_get_location($pdf_generation);
+$pdf_location_parts = $pdf_location === '' ? FALSE : parse_url($pdf_location);
+smoke_result(
+	$pdf_location_parts !== FALSE && isset($pdf_location_parts['path']) && $pdf_location_parts['path'] === '/assets/pdf/JT300001-ts.pdf',
+	'timestamp PDF generation targets the synthetic order document',
+	$pdf_location
+);
+
+$generated_pdf = smoke_request($curl, $base_url, '/assets/pdf/JT300001-ts.pdf');
+smoke_result($generated_pdf['status'] === 200, 'generated synthetic timestamp PDF is reachable', 'HTTP '.$generated_pdf['status']);
+smoke_result(strpos($generated_pdf['content_type'], 'application/pdf') === 0, 'generated document has a PDF content type', $generated_pdf['content_type']);
+smoke_result(strpos($generated_pdf['body'], '%PDF-') === 0, 'generated document has a PDF signature');
+
 curl_close($curl);
+
+$verification_database = new mysqli(
+	$database_host === NULL ? jaithai_env('JAITHAI_DB_HOST') : $database_host,
+	jaithai_env('JAITHAI_DB_USERNAME'),
+	jaithai_env('JAITHAI_DB_PASSWORD'),
+	jaithai_env('JAITHAI_DB_NAME'),
+	$database_port
+);
+
+if ($verification_database->connect_errno) {
+	smoke_result(FALSE, 'fixture rows remain unchanged after smoke testing', $verification_database->connect_error);
+} else {
+	$fixtures_unchanged = TRUE;
+
+	foreach ($fixture_counts as $table => $expected_count) {
+		$count_result = $verification_database->query('SELECT COUNT(*) FROM `'.$table.'`');
+
+		if ($count_result === FALSE) {
+			$fixtures_unchanged = FALSE;
+			break;
+		}
+
+		$row = $count_result->fetch_row();
+		$count_result->free();
+
+		if ((int) $row[0] !== $expected_count) {
+			$fixtures_unchanged = FALSE;
+			break;
+		}
+	}
+
+	$verification_database->close();
+	smoke_result($fixtures_unchanged, 'fixture row counts remain unchanged after smoke testing');
+}
 
 fwrite(STDOUT, "\n{$passed} passed, {$failed} failed.\n");
 

@@ -51,6 +51,18 @@ The command is intentionally destructive: it drops every table or view in the co
 
 The original production dump is not required to run or reset the local environment and must remain outside this Git repository.
 
+## Load Synthetic Fixtures
+
+After recreating the schema, replace all local application rows with the tracked synthetic fixture set:
+
+```sh
+php bin/seed.php --force
+```
+
+The equivalent in-container command is `docker compose exec web php /opt/jaithai/bin/seed.php --force`. The seeder has the same development-environment and database-name guards as the schema reset, additionally verifies the exact expected table set, and is safe to rerun. It deliberately clears existing local rows first.
+
+The local administrator login is `local-admin` / `local-admin-only`. This intentionally public credential is only for the loopback-bound Docker environment and must never be deployed. All fixture identities and contact details are fictional; fixture emails use the reserved `.invalid` domain.
+
 ## Common Commands
 
 ```sh
@@ -58,6 +70,7 @@ docker compose logs -f web mariadb
 docker compose exec web php -v
 docker compose exec mariadb mariadb -ujaithai -pjaithai-local-only jaithai
 php bin/migrate.php --force
+php bin/seed.php --force
 php bin/smoke-test.php
 docker compose down
 ```
@@ -66,7 +79,7 @@ MariaDB data, CodeIgniter cache/log output, and generated PDFs are stored in nam
 
 ## Current Limitation
 
-The MariaDB server and complete empty schema exist, but no development records are loaded. The public home page can render, while data-dependent menus, ordering, administration, and related flows may be empty or unavailable until safe synthetic fixtures are added.
+The fixture set supports local administration, order display, feedback, vouchers, and PDF smoke coverage. It does not exercise final order submission, mutating administrator actions, external integrations, or the range of historical production data shapes.
 
 The health check verifies Apache independently of the application database. Container health therefore means the runtime is ready, not that every CodeIgniter route has the required tables or data.
 
