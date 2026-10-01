@@ -4,7 +4,7 @@
 
 **Date:** 2026-10-01
 
-**Affected milestones:** M2.2, M2.3
+**Affected milestones:** M2.2, M2.4
 
 ## Context
 
@@ -18,7 +18,7 @@ Import the production dump only into an isolated MariaDB 10.11 container with ne
 
 Provide a single destructive `bin/migrate.php` reset command rather than forward and rollback migrations. The command uses the Docker-local application configuration, requires `--force`, requires the `development` environment and expected `jaithai` database name, drops existing local objects, and recreates the tracked schema.
 
-Do not copy the source production dump, production rows, or derived production fixtures into this repository. Create synthetic development fixtures separately in M2.3.
+Do not copy the source production dump, production rows, or derived production fixtures into this repository. Create synthetic development fixtures separately in M2.4 if the smoke-test exclusions justify them.
 
 ## Consequences
 

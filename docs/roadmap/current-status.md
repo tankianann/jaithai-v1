@@ -4,7 +4,7 @@
 
 **Stage:** Phase 2 — Reproducible local runtime
 
-**Active milestone:** [M2.2 — Add the local database schema bootstrap](../milestones/M2.2-local-database-schema-bootstrap.md)
+**Active milestone:** [M2.3 — Establish baseline smoke tests](../milestones/M2.3-baseline-smoke-tests.md)
 
 Phase 1 is complete. The sanitized CodeIgniter 2.2.2 application source is committed under `src/` and pushed to the new GitHub repository without the historical secret-bearing Git history. The user confirmed rotation of the historical credentials on 2026-09-30.
 
@@ -16,6 +16,7 @@ The five production-synced application changes were reviewed, passed secret and 
 - [M1.1 — Secret-safe configuration boundary](../milestones/M1.1-secure-configuration-boundary.md) — historical credentials externalized, integrations disabled by default, and credential rotation confirmed.
 - [M1.2 — Sanitized legacy source import](../milestones/M1.2-sanitized-legacy-source-import.md) — clean source baseline imported and pushed without old Git history or obsolete assets.
 - [M2.1 — Docker PHP, Apache, and MariaDB runtime](../milestones/M2.1-docker-php-apache-runtime.md) — verified local services and documentation committed as `da93e47`.
+- [M2.2 — Local database schema bootstrap](../milestones/M2.2-local-database-schema-bootstrap.md) — production-derived structure and guarded reset command committed as `2201125`.
 
 ## Current Runtime State
 
@@ -24,9 +25,10 @@ The five production-synced application changes were reviewed, passed secret and 
 - MariaDB is reachable by the web container and from TablePlus at `127.0.0.1:3307`.
 - The local database contains the verified five-table production-derived schema and no production rows.
 - A guarded reset command recreates the empty schema repeatably; safe synthetic development fixtures do not exist yet.
+- A local-only smoke suite passes 33 checks under host PHP and container PHP 7.4 without creating database rows or following redirects.
 - Email, SMS, OneMap, and PayPal integrations remain disabled by default.
 - All 908 PHP source files pass PHP 7.4 syntax checks; known legacy deprecation warnings remain in CodeIgniter and bundled Dompdf code.
 
 ## Immediate Next Step
 
-Complete independent review and commit of [M2.2](../milestones/M2.2-local-database-schema-bootstrap.md), then create safe synthetic development fixtures in M2.3.
+Complete independent review and commit of [M2.3](../milestones/M2.3-baseline-smoke-tests.md), then decide whether M2.4 fixtures are needed before menu requirements work begins.

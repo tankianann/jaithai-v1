@@ -2,7 +2,7 @@
 
 This repository contains the legacy Jai Thai catering website and the project material needed to recover, run, maintain, and update it safely.
 
-The application is a CodeIgniter 2.2.2 PHP application. The secret-free source baseline and local Docker runtime are established; the immediate goal is now to create safe development fixtures and characterize existing behaviour before making controlled catering-menu updates. The current project keeps CodeIgniter 2.2.2 and PHP 7.4 as explicit compatibility constraints.
+The application is a CodeIgniter 2.2.2 PHP application. The secret-free source baseline, local Docker runtime, database schema, and local smoke-test baseline are established. The current project keeps CodeIgniter 2.2.2 and PHP 7.4 as explicit compatibility constraints.
 
 ## Current State
 
@@ -11,6 +11,7 @@ The application is a CodeIgniter 2.2.2 PHP application. The secret-free source b
 - The old repository history was not imported; this repository has a clean, reviewed source history.
 - Previously supplied `assets/menupdf/` and `assets/voucher-templates/` directories were removed because they are no longer used.
 - A verified Docker runtime provides PHP 7.4, Apache, and MariaDB 10.11, with a production-derived schema that contains no production rows.
+- A local-only smoke suite verifies the runtime, public pages, menu form, session-backed cart, administrator login page, access controls, and database structure without placing an order.
 - No production database dump or customer data is stored in this repository; safe development fixtures remain pending.
 
 See [`docs/roadmap/current-status.md`](docs/roadmap/current-status.md) for the immediate next step and [`docs/roadmap/roadmap.md`](docs/roadmap/roadmap.md) for the anticipated delivery sequence.
@@ -55,4 +56,6 @@ Run `docker compose up --build -d --wait`, then open [http://localhost:8080](htt
 
 Reset the local database and recreate its empty schema with `php bin/migrate.php --force`. This command permanently deletes all data in the local `jaithai` database and requires the Docker services to be running.
 
-The next runtime step is M2.3: create synthetic development fixtures without copying production data.
+Run the safe local baseline with `php bin/smoke-test.php`. The command refuses production targets and enabled outbound integrations.
+
+The next runtime step is M2.4: create synthetic development fixtures without copying production data.

@@ -58,6 +58,7 @@ docker compose logs -f web mariadb
 docker compose exec web php -v
 docker compose exec mariadb mariadb -ujaithai -pjaithai-local-only jaithai
 php bin/migrate.php --force
+php bin/smoke-test.php
 docker compose down
 ```
 
@@ -68,3 +69,5 @@ MariaDB data, CodeIgniter cache/log output, and generated PDFs are stored in nam
 The MariaDB server and complete empty schema exist, but no development records are loaded. The public home page can render, while data-dependent menus, ordering, administration, and related flows may be empty or unavailable until safe synthetic fixtures are added.
 
 The health check verifies Apache independently of the application database. Container health therefore means the runtime is ready, not that every CodeIgniter route has the required tables or data.
+
+See [`../testing/smoke-tests.md`](../testing/smoke-tests.md) for the repeatable behavioural baseline and its safety exclusions.

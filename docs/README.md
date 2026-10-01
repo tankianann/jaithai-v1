@@ -9,6 +9,7 @@ This directory contains the durable project documentation for recovering and mai
 - **`milestones/`** — detailed, commit-sized delivery milestones with acceptance and verification criteria.
 - **`security/`** — project-specific rules for secrets, local configuration, scanning, and incident response.
 - **`development/`** — reproducible local setup and developer operating instructions.
+- **`testing/`** — repeatable local verification commands and documented safety boundaries.
 - **`decisions/`** — material technical decisions and their consequences.
 - **`reviews/`** — reviews of work in progress or completed milestones.
 - **`retrospectives/`** — historical learning from completed work.

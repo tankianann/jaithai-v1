@@ -53,7 +53,8 @@ The old Git history was deliberately excluded because it contains secrets. The s
 
 - Production currently uses MariaDB 10.11.18; local Docker follows the MariaDB 10.11 line.
 - A safe production-derived database schema is tracked without production rows or production auto-increment positions; synthetic development fixtures have not yet been created.
-- The application home page runs under PHP 7.4 and Apache against the empty local schema; meaningful database-backed behaviour still awaits safe fixture data.
+- A repeatable local-only smoke suite covers the runtime, public pages, menu rendering, a session-backed cart round trip, administrator login page, database structure, and sensitive-path access controls.
+- Authenticated administration, order persistence, generated PDFs, and integration behaviour still await safe fixtures or controlled test substitutes.
 - The desired catering-menu changes and acceptance criteria have not yet been defined.
 - The eventual production hosting and deployment path has not been established.
 
