@@ -10,7 +10,7 @@ This directory contains the durable project documentation for recovering and mai
 - **`roadmap/`** — the anticipated delivery sequence and current project status.
 - **`milestones/`** — detailed, commit-sized delivery milestones with acceptance and verification criteria.
 - **`security/`** — project-specific rules for secrets, local configuration, scanning, and incident response.
-- **`development/`** — reproducible local setup and developer operating instructions.
+- **`development/`** — reproducible local setup, URL routing inventory, and developer operating instructions.
 - **`testing/`** — repeatable local verification commands and documented safety boundaries.
 - **`decisions/`** — material technical decisions and their consequences.
 - **`reviews/`** — reviews of work in progress or completed milestones.
@@ -24,3 +24,5 @@ Add documentation only when it supports a real project need. Follow [`developmen
 1. Read [`overview/project-overview.md`](overview/project-overview.md).
 2. Check [`roadmap/current-status.md`](roadmap/current-status.md).
 3. Follow the active milestone linked from the current-status document.
+
+For the current native routes, legacy `.php` aliases, and redirect behavior, see [`development/url-routing.md`](development/url-routing.md).
