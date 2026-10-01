@@ -25,10 +25,9 @@ class JTMenu extends KA_Controller {
 
 		$formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
 		$formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
-		$formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
 
-		$formdatadefaults['greencurrychoice'] = "Green Curry Chicken";
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
+		$formdatadefaults['greencurrychoice'] = "Thai Green Curry Chicken";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
 		$formdatadefaults['addondrink'] = "No Drink";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 		
@@ -39,9 +38,8 @@ class JTMenu extends KA_Controller {
 			//retrieve from POST
 			$formdata = array();
 
-            $formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
-            $formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
-            $formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
+			$formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
+			$formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
 
 			$formdata['greencurrychoice'] = $this->input->post('greencurrychoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
@@ -120,15 +118,11 @@ class JTMenu extends KA_Controller {
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
 
-        $formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
 
-		$formdatadefaults['fishchoice'] = "Deep Fried Fish Fillet with Chilli Sauce (Spicy)";
-		$formdatadefaults['greencurrychoice'] = "Green Curry Chicken";
-		$formdatadefaults['ricechoice'] = "Olive Rice";
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
+		$formdatadefaults['greencurrychoice'] = "Thai Green Curry Chicken";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
 		$formdatadefaults['addondrink'] = "No Drink";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 		
@@ -139,14 +133,10 @@ class JTMenu extends KA_Controller {
 			//retrieve from POST
 			$formdata = array();
 
-            $formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
-            $formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
-            $formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
-            $formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
+			$formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
+			$formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
 
-			$formdata['fishchoice'] = $this->input->post('fishchoice');
 			$formdata['greencurrychoice'] = $this->input->post('greencurrychoice');
-			$formdata['ricechoice'] = $this->input->post('ricechoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['addondrink'] = $this->input->post('addondrink');
 			$formdata['numpax'] = $this->input->post('numpax');
@@ -224,17 +214,14 @@ class JTMenu extends KA_Controller {
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
 
-        $formdatadefaults['mangosalad' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
 
-		$formdatadefaults['fishchoice'] = "Deep Fried Fish Fillet with Chilli Sauce (Spicy)";
-		$formdatadefaults['tomyumchoice'] = "Tom Yum Clear Soup (Aromatic with Herbal and Spices Taste)";
-		$formdatadefaults['greencurrychoice'] = "Green Curry Chicken";
-		$formdatadefaults['ricechoice'] = "Olive Rice";
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
+		$formdatadefaults['currysoupchoice'] = "Thai Green Curry Chicken";
+		$formdatadefaults['ricechoice'] = "Pineapple Rice";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
 		$formdatadefaults['addondrink'] = "No Drink";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 		
@@ -245,15 +232,12 @@ class JTMenu extends KA_Controller {
 			//retrieve from POST
 			$formdata = array();
 
-            $formdata['mangosalad' . JT_VEGCTRL] = $this->input->post('mangosalad' . JT_VEGCTRL);
-            $formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
-            $formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
-            $formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
-            $formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
+			$formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
+			$formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
+			$formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
+			$formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
 
-			$formdata['fishchoice'] = $this->input->post('fishchoice');
-			$formdata['tomyumchoice'] = $this->input->post('tomyumchoice');
-			$formdata['greencurrychoice'] = $this->input->post('greencurrychoice');
+			$formdata['currysoupchoice'] = $this->input->post('currysoupchoice');
 			$formdata['ricechoice'] = $this->input->post('ricechoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['addondrink'] = $this->input->post('addondrink');
@@ -331,16 +315,14 @@ class JTMenu extends KA_Controller {
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
 
-        $formdatadefaults['broccolichimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['tomyumchoice'] = "Tom Yum Seafood Clear Soup (Aromatic with Herbal and Spices Taste)";
+		$formdatadefaults['broccolichimush' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
 
-        $formdatadefaults['fishchoice'] = "Deep Fried Fish Fillet with Chilli Sauce (Spicy)";
-		$formdatadefaults['tomyumchoice'] = "Tom Yum Clear Soup (Aromatic with Herbal and Spices Taste)";
-		$formdatadefaults['greencurrychoice'] = "Green Curry Chicken";
-		$formdatadefaults['ricechoice'] = "Olive Rice";
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
+		$formdatadefaults['ricechoice'] = "Pineapple Rice";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
 		$formdatadefaults['addondrink'] = "No Drink";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 
@@ -351,14 +333,12 @@ class JTMenu extends KA_Controller {
 			//retrieve from POST
 			$formdata = array();
 
-            $formdata['broccolichimush' . JT_VEGCTRL] = $this->input->post('broccolichimush' . JT_VEGCTRL);
-            $formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
-            $formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
-            $formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
+			$formdata['broccolichimush' . JT_VEGCTRL] = $this->input->post('broccolichimush' . JT_VEGCTRL);
+			$formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
+			$formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
+			$formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
 
-            $formdata['fishchoice'] = $this->input->post('fishchoice');
 			$formdata['tomyumchoice'] = $this->input->post('tomyumchoice');
-			$formdata['greencurrychoice'] = $this->input->post('greencurrychoice');
 			$formdata['ricechoice'] = $this->input->post('ricechoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['addondrink'] = $this->input->post('addondrink');

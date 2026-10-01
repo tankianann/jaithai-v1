@@ -237,7 +237,7 @@
 						</div>
 						<div class="col-sm-8">
 							<h3>Set Catering Menu A</h3>
-							<p>7 Dishes (No Drink) @ $14.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 40 pax</p>
+							<p>8 Dishes (No Drink) @ $15.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 40 pax</p>
 							<p><a href="<?php _e(site_url('/jtmenu/cateringmenua')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>
 					</div>
@@ -249,7 +249,7 @@
 						</div>
 						<div class="col-sm-8">
 							<h3>Set Catering Menu B</h3>
-							<p>9 Dishes (No Drink) @ $17.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 30 pax</p>
+							<p>9 Dishes (No Drink) @ $18.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 30 pax</p>
 							<p><a href="<?php _e(site_url('/jtmenu/cateringmenub')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>
 					</div>
@@ -261,7 +261,7 @@
 						</div>
 						<div class="col-sm-8">
 							<h3>Set Catering Menu C</h3>
-							<p>10 Dishes (No Drink) @ $20.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 30 pax</p>
+							<p>10 Dishes (No Drink) @ $21.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 30 pax</p>
 							<p><a href="<?php _e(site_url('/jtmenu/cateringmenuc')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>
 					</div>

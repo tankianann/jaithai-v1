@@ -4,7 +4,7 @@
 
 **Stage:** Phase 3 — Catering-menu update
 
-**Active milestone:** [M3.1B — Catering menu tab organization](../milestones/M3.1B-catering-menu-tab-organization.md)
+**Active milestone:** [M3.2A — Set Catering menu replacements](../milestones/M3.2A-set-catering-menu-replacements.md)
 
 Phase 1 is complete. The sanitized CodeIgniter 2.2.2 application source is committed under `src/` and pushed to the new GitHub repository without the historical secret-bearing Git history. The user confirmed rotation of the historical credentials on 2026-09-30.
 
@@ -21,6 +21,7 @@ The safe development fixtures and expanded 59-check smoke suite were committed a
 - [M2.4 — Safe development fixtures](../milestones/M2.4-safe-development-fixtures.md) — synthetic administration, order, feedback, voucher, and PDF coverage committed as `7c66c0e`.
 - [M3.1 — Menu requirements and content inventory](../milestones/M3.1-menu-requirements-and-content-inventory.md) — approved menu mappings, supplied copy, image destinations, and implementation boundaries committed as `faf3d5f`.
 - [M3.1A — Existing menu image replacements](../milestones/M3.1A-existing-menu-image-replacements.md) — approved replacement images for existing catering cards committed as `08f577d`.
+- [M3.1B — Catering menu tab organization](../milestones/M3.1B-catering-menu-tab-organization.md) — requested menu-family tabs, default Set Catering tab, and retired Promotions tab committed as `09d643a` and `5be9858`.
 
 ## Current Runtime State
 
@@ -35,4 +36,4 @@ The safe development fixtures and expanded 59-check smoke suite were committed a
 
 ## Immediate Next Step
 
-Complete live visual and smoke verification for [M3.1B](../milestones/M3.1B-catering-menu-tab-organization.md), then review and commit it. The requested seven-tab order and menu-family groupings are implemented in source, Set Catering is the default, and the known JavaScript tab behavior remains otherwise unchanged. The Vegan Catering Menu D image remains reserved for M3.2, and the four KIV images remain inactive.
+Complete live visual and smoke verification for [M3.2A](../milestones/M3.2A-set-catering-menu-replacements.md), then review and commit it. Set Catering A–D now use the approved Essential, Classic, Signature, and Supreme content and prices through the existing ordering controls. DIY and Vegan menu replacements remain pending.

@@ -280,11 +280,10 @@ foreach ($blocked_paths as $path) {
 
 $add_to_cart = smoke_request($curl, $base_url, '/jtmenu/cateringmenua', array(
 	'formSubmitted' => '1',
+	'greencurrychoice' => 'Thai Green Curry Chicken',
 	'mixedveg-vege' => 'REG',
 	'phadthai-vege' => 'REG',
-	'pineapplerice-vege' => 'REG',
-	'greencurrychoice' => 'Green Curry Chicken',
-	'dessertchoice' => 'Red Ruby',
+	'dessertchoice' => 'Thai Red Ruby',
 	'addondrink' => 'No Drink',
 	'numpax' => '40',
 ));
@@ -301,7 +300,7 @@ smoke_result(
 $populated_cart = smoke_request($curl, $base_url, '/cart');
 smoke_result($populated_cart['status'] === 200, 'session-backed populated cart is reachable', 'HTTP '.$populated_cart['status']);
 
-foreach (array('Catering Menu A', 'Green Curry Chicken', 'Red Ruby') as $cart_marker) {
+foreach (array('Catering Menu A', 'Thai Green Curry Chicken', 'Thai Red Ruby') as $cart_marker) {
 	smoke_result(response_contains($populated_cart, $cart_marker), 'populated cart contains '.$cart_marker);
 }
 
