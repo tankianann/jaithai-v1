@@ -4,7 +4,7 @@
 
 **Stage:** Phase 3 — Catering-menu update
 
-**Active milestone:** [M3.1A — Existing menu image replacements](../milestones/M3.1A-existing-menu-image-replacements.md)
+**Active milestone:** [M3.1B — Catering menu tab organization](../milestones/M3.1B-catering-menu-tab-organization.md)
 
 Phase 1 is complete. The sanitized CodeIgniter 2.2.2 application source is committed under `src/` and pushed to the new GitHub repository without the historical secret-bearing Git history. The user confirmed rotation of the historical credentials on 2026-09-30.
 
@@ -20,6 +20,7 @@ The safe development fixtures and expanded 59-check smoke suite were committed a
 - [M2.3 — Baseline smoke tests](../milestones/M2.3-baseline-smoke-tests.md) — local-only public runtime and session-cart baseline committed as `fa60b56`.
 - [M2.4 — Safe development fixtures](../milestones/M2.4-safe-development-fixtures.md) — synthetic administration, order, feedback, voucher, and PDF coverage committed as `7c66c0e`.
 - [M3.1 — Menu requirements and content inventory](../milestones/M3.1-menu-requirements-and-content-inventory.md) — approved menu mappings, supplied copy, image destinations, and implementation boundaries committed as `faf3d5f`.
+- [M3.1A — Existing menu image replacements](../milestones/M3.1A-existing-menu-image-replacements.md) — approved replacement images for existing catering cards committed as `08f577d`.
 
 ## Current Runtime State
 
@@ -34,4 +35,4 @@ The safe development fixtures and expanded 59-check smoke suite were committed a
 
 ## Immediate Next Step
 
-Review and commit [M3.1A](../milestones/M3.1A-existing-menu-image-replacements.md). Fifteen supplied source images now serve 20 existing menus across all 27 corresponding card occurrences, and the complete 59-check local suite passes. Mini Party Set and Sanook remain unchanged, the Vegan Catering Menu D image remains reserved for M3.2, and the four KIV images remain inactive.
+Complete live visual and smoke verification for [M3.1B](../milestones/M3.1B-catering-menu-tab-organization.md), then review and commit it. The requested eight-tab order and menu-family groupings are implemented in source, while the known JavaScript tab behavior remains intentionally unchanged. The Vegan Catering Menu D image remains reserved for M3.2, and the four KIV images remain inactive.

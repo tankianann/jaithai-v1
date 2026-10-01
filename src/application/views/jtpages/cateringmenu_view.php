@@ -20,13 +20,14 @@
 			<div class="col-sm-12">
 				<ul>
 <!--                    <li><a href="#menu-cny2026" class="cny2026">CNY 2026</a></li>-->
-                    <li><a href="#menu-promotion" class="promotion">Promotions</a></li>
-					<li><a href="#menu-set" class="set">Set <span class="hidden-xs">Catering</a></span></li>
-					<li><a href="#menu-diy" class="diy">DIY <span class="hidden-xs">Catering</span></a></li>
-					<li><a href="#menu-vegan" class="vegan">Vegan <span class="hidden-xs">Catering</span></a></li>
-<!--					<li><a href="#menu-miniparty-set" class="miniparty-set">Mini Party Sets</a></li>-->
+					<li><a href="#menu-promotion" class="promotion">Promotions</a></li>
+					<li><a href="#menu-set" class="set">Set Catering</a></li>
+					<li><a href="#menu-diy" class="diy">DIY Catering</a></li>
+					<li><a href="#menu-vegan" class="vegan">Vegan Catering</a></li>
+					<li><a href="#menu-miniparty-set" class="miniparty-set">Mini Party Sets</a></li>
+					<li><a href="#menu-vegan-miniparty-set" class="vegan-miniparty-set">Vegan Mini Party Sets</a></li>
 					<li><a href="#menu-miniparty-diy" class="miniparty-diy">Mini Party DIY</a></li>
-					<li><a href="#menu-bento" class="bento">Bento <span class="hidden-xs">Catering</span></a></li>
+					<li><a href="#menu-bento" class="bento">Bento</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -245,59 +246,6 @@
                         </div>
                     </div>
                     */ ?>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('jtmenu/chaiyo')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Chaiyo Set Menu" title="Chaiyo Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3>Chaiyo Set Menu</h3>
-                            <p>6 Dishes (No Drink) @ $19.90 / pax
-                                <br />Food served in disposable trays / containers
-                                <br />Delivery and self collection available
-                                <br />Minimum 10 pax for delivery orders
-                                <br /><span style="color: #c00; font-weight: bold;">FREE 10 pcs of Thai Coconut Jelly!</span>
-                            </p>
-                            <p><a href="<?php _e(site_url('/jtmenu/chaiyo')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('jtmenu/sawasdee')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Sawasdee Set Menu" title="Sawasdee Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3>Sawasdee Set Menu</h3>
-                            <p>8 Dishes (No Drink) @ $23.90 / pax
-                                <br />Food served in disposable trays / containers
-                                <br />Delivery and self collection available
-                                <br />Minimum 10 pax for delivery orders
-                                <br /><span style="color: #c00; font-weight: bold;">FREE 10 pcs of Thai Coconut Jelly!</span>
-                            </p>
-                            <p><a href="<?php _e(site_url('/jtmenu/sawasdee')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('jtmenu/chokdee')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Chokdee Set Menu" title="Chokdee Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3>Chokdee Set Menu</h3>
-                            <p>8 Dishes (No Drink) @ $26.90 / pax
-                                <br />Food served in disposable trays / containers
-                                <br />Delivery and self collection available
-                                <br />Minimum 10 pax for delivery orders
-                                <br /><span style="color: #c00; font-weight: bold;">FREE 10 pcs of Thai Coconut Jelly!</span>
-                            <p><a href="<?php _e(site_url('/jtmenu/chokdee')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
-                        </div>
-                    </div>
-
                 </div>
 				<div id="menu-set" class="cateringmenu">
 					<h2>Set Catering Menus</h2>
@@ -440,77 +388,10 @@
 							<p><a href="<?php _e(site_url('/jtmenu/vegetarianmenuc')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>											
 					</div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('jtmenu/chaiyovegan')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Chaiyo Vegan Set Menu" title="Chaiyo Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3>Chaiyo Vegan Set Menu</h3>
-                            <p>6 Dishes (No Drink) @ $19.90 / pax
-                                <br />Food served in disposable trays / containers
-                                <br />Delivery and self collection available
-                                <br />Minimum 10 pax for delivery orders
-                                <br /><span style="color: #c00; font-weight: bold;">FREE 10 pcs of Thai Coconut Jelly!</span>
-                            </p>
-                            <p><a href="<?php _e(site_url('/jtmenu/chaiyovegan')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('jtmenu/sawasdeevegan')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Sawasdee Vegan Set Menu" title="Sawasdee Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3>Sawasdee Vegan Set Menu</h3>
-                            <p>8 Dishes (No Drink) @ $23.90 / pax
-                                <br />Food served in disposable trays / containers
-                                <br />Delivery and self collection available
-                                <br />Minimum 10 pax for delivery orders
-                                <br /><span style="color: #c00; font-weight: bold;">FREE 10 pcs of Thai Coconut Jelly!</span>
-                            </p>
-                            <p><a href="<?php _e(site_url('/jtmenu/sawasdeevegan')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('jtmenu/chokdeevegan')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Chokdee Vegan Set Menu" title="Chokdee Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3>Chokdee Vegan Set Menu</h3>
-                            <p>8 Dishes (No Drink) @ $26.90 / pax
-                                <br />Food served in disposable trays / containers
-                                <br />Delivery and self collection available
-                                <br />Minimum 10 pax for delivery orders
-                                <br /><span style="color: #c00; font-weight: bold;">FREE 10 pcs of Thai Coconut Jelly!</span>
-                            <p><a href="<?php _e(site_url('/jtmenu/chokdeevegan')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
-                        </div>
-                    </div>
-
 				</div>
-                <div id="menu-miniparty-set" class="cateringmenu">
-                    <h2>Mini Party Set Menus</h2>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('/jtmenu/minipartyset')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/miniparty-set.jpg')) ?>" alt="Thai Mixed Platter Appetizers" title="Mixed Platter" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3>Mini Party Set Menu</h3>
-                            <p>6 Dishes (No Drink) @ $12.00 / pax<br />Food served in disposable trays / containers<br />Delivery and self collection available<br />Minimum 20 pax for delivery orders</p>
-                            <p><a href="<?php _e(site_url('/jtmenu/minipartyset')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
+				<div id="menu-miniparty-set" class="cateringmenu">
+					<h2>Mini Party Sets</h2>
+					<div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/chaiyo')); ?>">
                                 <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Chaiyo Set Menu" title="Chaiyo Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
@@ -526,9 +407,9 @@
                             </p>
                             <p><a href="<?php _e(site_url('/jtmenu/chaiyo')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
                         </div>
-                    </div>
+					</div>
 
-                    <div class="row">
+					<div class="row">
                         <div class="col-sm-4">
                             <a href="<?php _e(site_url('jtmenu/sawasdee')); ?>">
                                 <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Sawasdee Set Menu" title="Sawasdee Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
@@ -563,9 +444,13 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('jtmenu/chaiyovegan')); ?>">
+				</div>
+				<div id="menu-vegan-miniparty-set" class="cateringmenu">
+					<h2>Vegan Mini Party Sets</h2>
+
+					<div class="row">
+						<div class="col-sm-4">
+							<a href="<?php _e(site_url('jtmenu/chaiyovegan')); ?>">
                                 <img src="<?php _e(base_url('assets/i/catering-menu/vegan-mini-party-sets.jpg')) ?>" alt="Chaiyo Vegan Set Menu" title="Chaiyo Vegan Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
                             </a>
                         </div>
@@ -613,22 +498,6 @@
                                 <br />Minimum 10 pax for delivery orders
                                 <br /><span style="color: #c00; font-weight: bold;">FREE 10 pcs of Thai Coconut Jelly!</span>
                             <p><a href="<?php _e(site_url('/jtmenu/chokdeevegan')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="<?php _e(site_url('jtmenu/thaicelebration')); ?>">
-                                <img src="<?php _e(base_url('assets/i/catering-menu/mini-party-sets.jpg')) ?>" alt="Thai Celebration Set Menu" title="Thai Celebration Set Menu" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top"  />
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h3>Thai Celebration Set (Serves 10 Pax)</h3>
-                            <p>8 Dishes (No Drink) @ $37.50 / pax
-                                <br />Food served in disposable trays / containers
-                                <br />Delivery and self collection available
-                                <br />Minimum 10 pax for delivery orders
-                            <p><a href="<?php _e(site_url('/jtmenu/thaicelebration')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
                         </div>
                     </div>
 
