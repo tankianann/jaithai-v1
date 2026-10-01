@@ -1,24 +1,44 @@
 <?php
 
-function menuDIYA() {
+function diyFishChoices() {
+	return array(
+		array('label' => 'Deep Fried Fish with Thai Chilli Sauce'),
+		array('label' => 'Deep Fried Fish with Basil Leaf'),
+		array('label' => 'Deep Fried Fish with Pepper & Garlic'),
+		array('label' => 'Deep Fried Fish with Tamarind Sauce'),
+		array('label' => 'Deep Fried Fish with Sweet & Sour Sauce'),
+		array('label' => 'Steamed Fish with Chilli Lemon'),
+		array('label' => 'Steamed Fish with Soy Sauce')
+	);
+}
 
-	$menu = array();
-	$menu['id'] = "DIYA";
-	$menu['url'] = "catering-diy-a.php";
-	$menu['type'] = JT_SETMENU;
-	$menu['pdffile'] = 'catering-diy-a.php';
-	$menu['title'] = 'Catering DIY Menu A';
-	$menu['description'] = "7 Course + Drink @ $15.90 per person (Min 40 pax)";
-	$menu['meta_description'] = "Get a 7 course DIY delicious thai buffet catered to your home or corporate event at just S$13.90 per pax (min 30 pax), inclusive of drinks!";
-	$menu['hasdrink'] = true;
-	$menu['allowpickup'] = false;
-	$menu['pickuplocations'] = array();
-	$menu['hascontainercharge'] = false;
-	$menu['deliverycharge'] = 80;
-	$menu['minorder'] = 40;
-	$menu['numdishes'] = 7;
-	$menu['perpax'] = 15.90;
-	$menu['tnc'] = 	array(
+function diyDessertChoices($mango_label = 'Mango Sticky Rice (+ $1.00 Per Pax)') {
+	return array(
+		array('label' => 'Thai Red Ruby'),
+		array('label' => 'Thai Chendol'),
+		array('label' => 'Tapioca with Coconut Milk'),
+		array('label' => 'Assorted Thai Coconut Jelly'),
+		array('label' => 'Taro Bauloy in Coconut Milk'),
+		array('label' => 'Tako'),
+		array('label' => $mango_label)
+	);
+}
+
+function diyDrinkChoices() {
+	return array(
+		array('label' => 'Lime Juice'),
+		array('label' => 'Ice Lemon Tea'),
+		array('label' => 'Fruit Punch'),
+		array('label' => 'Lemongrass Drink (+ $1.00 Per Pax)'),
+		array('label' => 'Butterfly Pea Drink (+ $1.00 Per Pax)'),
+		array('label' => 'Thai Milk Green Tea (+ $1.00 Per Pax)'),
+		array('label' => 'Thai Milk Tea (+ $1.00 Per Pax)'),
+		array('label' => 'Thai Ice Lemon Tea (+ $1.00 Per Pax)')
+	);
+}
+
+function diyTerms($menu) {
+	return array(
 		"This menu includes:<ul>
 			<li>Tables with skirting</li>
 			<li>Food warmers</li>
@@ -30,131 +50,73 @@ function menuDIYA() {
 		"Minimum order is ". $menu['minorder'] . " pax",
 		"A $". $menu['deliverycharge'] . " transportation charge is applicable"
 	);
-	$menu['agreetnc'] = "";
+}
 
-	//dishes
+function menuDIYA() {
+	$menu = array();
+	$menu['id'] = 'DIYA';
+	$menu['url'] = 'catering-diy-a.php';
+	$menu['type'] = JT_SETMENU;
+	$menu['pdffile'] = 'diy-catering-menu-a.pdf';
+	$menu['title'] = 'DIY Catering Menu A';
+	$menu['description'] = "8 Course + Drink @ $16.90 per person (Min 40 pax)";
+	$menu['meta_description'] = "Jai Thai Catering DIY Menu A offers an 8 course customizable Thai buffet with a drink at $16.90 per person for a minimum of 40 pax.";
+	$menu['hasdrink'] = true;
+	$menu['allowpickup'] = false;
+	$menu['pickuplocations'] = array();
+	$menu['hascontainercharge'] = false;
+	$menu['deliverycharge'] = 80;
+	$menu['minorder'] = 40;
+	$menu['numdishes'] = 8;
+	$menu['perpax'] = 16.90;
+	$menu['tnc'] = diyTerms($menu);
+	$menu['agreetnc'] = '';
+
 	$menudishes = array();
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Money Bag');
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Vegetable Spring Rolls');
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Fish', 'controlname' => 'fishchoice', 'choices' => diyFishChoices());
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Appetizer - Please Choose 1",
-		"controlname" => "appetizerchoice",
-		"choices" => array(
-			array('label' => 'Prawn Cake'),
-			array('label' => 'Fish Cake'),
-			array('label' => 'Deep Fried Bean Curd'),
-			array('label' => 'Thai Spring Rolls')
+		'type' => 'pick1',
+		'label' => 'Choice of Curry',
+		'controlname' => 'currychoice',
+		'choices' => array(
+			array('label' => 'Thai Red Curry'),
+			array('label' => 'Thai Green Curry Chicken'),
+			array('label' => 'Thai Green Curry Vegan'),
+			array('label' => 'Thai Green Curry Beef (+ $1.00 Per Pax)')
 		)
 	);
+	$menudishes[] = array('type' => 'group', 'nextnum' => '5');
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Fried Mixed Vegetable', 'vegecontrol' => 'mixedveg' . JT_VEGCTRL);
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Phad Thai', 'vegecontrol' => 'phadthai' . JT_VEGCTRL);
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Fish - Please Choose 1",
-		"controlname" => "fishchoice",
-		"choices" => array(
-			array('label' => 'Deep Fried Fish Fillet with Chilli Sauce'),
-			array('label' => 'Deep Fried Fish Fillet with Pepper & Garlic'),
-			array('label' => 'Deep Fried Fish Fillet with Basil Leaf'),
-			array('label' => 'Deep Fried Fish Fillet with Tamarind Sauce'),
-			array('label' => 'Deep Fried Fish Fillet with Sweet & Sour Sauce'),
-            array ('label' => 'Steamed Fish with Thai Chili Lemon'),
-            array ('label' => 'Steamed Fish (Seabass Fillet) with Thai Chili Lemon (+ $2.00 Per Pax)'),
-            array ('label' => 'Steamed Fish (Salmon Fillet) with Thai Chili Lemon (+ $3.50 Per Pax)'),
-            array ('label' => 'Steamed Fish with Soy Sauce'),
-            array ('label' => 'Steamed Fish (Seabass Fillet) with Soy Sauce (+ $2.00 Per Pax)'),
-            array ('label' => 'Steamed Fish (Salmon Fillet) with Soy Sauce (+ $3.50 Per Pax)'),
+		'type' => 'pick1',
+		'label' => 'Choice of Rice',
+		'controlname' => 'ricechoice',
+		'choices' => array(
+			array('label' => 'Steamed Rice'),
+			array('label' => 'Brown Rice'),
+			array('label' => 'Turmeric Rice'),
+			array('label' => 'Butterfly Pea Rice')
 		)
 	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Thai Curry Special - Please Choose 1",
-		"controlname" => "thaicurrychoice",
-		"choices" => array(
-			array('label' => 'Green Curry Chicken'),
-			array('label' => 'Green Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Green Curry Vegetarian'),
-			array('label' => 'Red Curry Chicken'),
-			array('label' => 'Red Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Red Curry Vegetarian'),
-			array('label' => 'Dried Curry Chicken'),
-			array('label' => 'Dried Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Dried Curry Vegetarian')
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Vegetable - Please Choose 1",
-		"controlname" => "vegetablechoice",
-		"choices" => array(
-			array('label' => 'Fried Kai Lan Oyster Sauce',                  'vegecontrol' => 'kailanoystersauce' . JT_VEGCTRL),
-			array('label' => 'Fried Kai Lan with Salted Fish'),
-			array('label' => 'Fried Kai Lan with Chinese Mushroom',         'vegecontrol' => 'kailanchimush' . JT_VEGCTRL),
-			array('label' => 'Fried Bean Sprout',                           'vegecontrol' => 'beansprout' . JT_VEGCTRL),
-			array('label' => 'Fried Bean Sprout with Salted Fish'),
-			array('label' => 'Fried Mixed Vegetables',                       'vegecontrol' => 'mixedveg' . JT_VEGCTRL),
-			array('label' => 'Fried Mixed Vegetables with Chinese Mushroom', 'vegecontrol' => 'mixedvegchimush' . JT_VEGCTRL),
-			array('label' => 'Fried Cabbage Oyster Sauce',                  'vegecontrol' => 'cabbageoystersauce' . JT_VEGCTRL),
-			array('label' => 'Fried Cabbage with Chinese Mushroom',         'vegecontrol' => 'cabbagechimush' . JT_VEGCTRL)
-		)
-	);
-	$menudishes[] = array(
-		"type" => "group",
-		"nextnum" => "5"
-	);
-	$menudishes[] = array(
-		"type" => "pick2",
-		"label" => "Noodle / Rice - Please Choose 2",
-		"controlname" => "noodlericechoice",
-		"choices" => array(
-			array('label' => 'Pineapple Rice',               'vegecontrol' => 'pineapplerice' . JT_VEGCTRL),
-			array('label' => 'Olive Rice',                   'vegecontrol' => 'oliverice' . JT_VEGCTRL),
-			array('label' => 'Salted Fish Fried Rice'),
-			array('label' => 'Seafood Fried Rice'),
-			array('label' => 'Fried Rice Basil Leaf',        'vegecontrol' => 'ricebasil' . JT_VEGCTRL),
-			array('label' => 'Fried Tang Hoon',              'vegecontrol' => 'tanghoon' . JT_VEGCTRL),
-			array('label' => 'Fried Spicy Noodle',           'vegecontrol' => 'spicynoodle' . JT_VEGCTRL),
-			array('label' => 'Fried Bee Hoon',               'vegecontrol' => 'beehoon' . JT_VEGCTRL),
-			array('label' => 'Phad Thai',                    'vegecontrol' => 'phadthai' . JT_VEGCTRL),
-			array('label' => 'Fried Hor Fan (Dry)',          'vegecontrol' => 'horfan' . JT_VEGCTRL),
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Dessert - Please Choose 1",
-		"controlname" => "dessertchoice",
-		"choices" => array(
-			array('label' => 'Red Ruby'),
-			array('label' => 'Thai Chendol'),
-			array('label' => 'Tapioca with Coconut Milk'),
-			array('label' => 'Assorted Coconut Jelly'),
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Drink - Please Choose 1",
-		"controlname" => "drinkchoice",
-		"choices" => array(
-			array('label' => 'Iced Lemon Tea'),
-			array('label' => 'Lime Juice'),
-			array('label' => 'Lemongrass Drink (+ $1.00 Per Pax)'),
-			array('label' => 'Thai Iced Tea with Lemon (+ $1.00 Per Pax)'),
-			array('label' => 'Thai Iced Tea with Milk (+ $1.00 Per Pax)'),
-		)
-	);
-
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Dessert', 'controlname' => 'dessertchoice', 'choices' => diyDessertChoices());
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Drink', 'controlname' => 'drinkchoice', 'choices' => diyDrinkChoices());
 	$menu['dishes'] = $menudishes;
 
 	return $menu;
 }
 
 function menuDIYB() {
-
 	$menu = array();
-	$menu['id'] = "DIYB";
+	$menu['id'] = 'DIYB';
 	$menu['url'] = 'catering-diy-b.php';
 	$menu['type'] = JT_SETMENU;
 	$menu['pdffile'] = 'diy-catering-menu-b.pdf';
-	$menu['title'] = 'Catering DIY Menu B';
-	$menu['description'] = "9 Course + Drink @ $18.90 per person (Min 30 pax)";
-	$menu['meta_description'] = "Select your own dishes with our 9 course + drink authentic thai cuisine buffet catering @ $16.90 per person. Perfect for your home party or baby shower!";
+	$menu['title'] = 'DIY Catering Menu B';
+	$menu['description'] = "9 Course + Drink @ $19.90 per person (Min 30 pax)";
+	$menu['meta_description'] = "Jai Thai Catering DIY Menu B offers a 9 course customizable Thai buffet with a drink at $19.90 per person for a minimum of 30 pax.";
 	$menu['hasdrink'] = true;
 	$menu['allowpickup'] = false;
 	$menu['pickuplocations'] = array();
@@ -162,174 +124,77 @@ function menuDIYB() {
 	$menu['deliverycharge'] = 80;
 	$menu['minorder'] = 30;
 	$menu['numdishes'] = 9;
-	$menu['perpax'] = 18.90;
-	$menu['tnc'] = 	array(
-		"This menu includes:<ul>
-			<li>Tables with skirting</li>
-			<li>Food warmers</li>
-			<li>Disposable plates & cutlery</li>
-			<li>Napkins</li>
-			<li>Trash bags</li>
-			<li>Food tags</li></ul>",
-		"No take away container provided",
-		"Minimum order is ". $menu['minorder'] . " pax",
-		"A $". $menu['deliverycharge'] . " transportation charge is applicable"
-	);
-	$menu['agreetnc'] = "";
+	$menu['perpax'] = 19.90;
+	$menu['tnc'] = diyTerms($menu);
+	$menu['agreetnc'] = '';
 
-	//dishes
 	$menudishes = array();
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Vegetable Spring Roll');
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Prawn Cake');
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Fish', 'controlname' => 'fishchoice', 'choices' => diyFishChoices());
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Appetizer - Please Choose 1",
-		"controlname" => "appetizerchoice",
-		"choices" => array(
-			array('label' => 'Prawn Cake'),
-			array('label' => 'Fish Cake'),
-			array('label' => 'Deep Fried Bean Curd'),
-			array('label' => 'Thai Spring Rolls')
+		'type' => 'pick1',
+		'label' => 'Choice of Curry',
+		'controlname' => 'currychoice',
+		'choices' => array(
+			array('label' => 'Thai Red Curry'),
+			array('label' => 'Thai Green Curry Chicken'),
+			array('label' => 'Thai Green Curry Vegan'),
+			array('label' => 'Thai Green Curry Beef (+ $1.00 Per Pax)')
 		)
 	);
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Fish - Please Choose 1",
-		"controlname" => "fishchoice",
-		"choices" => array(
-			array('label' => 'Deep Fried Fish Fillet with Chilli Sauce'),
-			array('label' => 'Deep Fried Fish Fillet with Pepper & Garlic'),
-			array('label' => 'Deep Fried Fish Fillet with Basil Leaf'),
-			array('label' => 'Deep Fried Fish Fillet with Tamarind Sauce'),
-			array('label' => 'Deep Fried Fish Fillet with Sweet & Sour Sauce'),
-            array ('label' => 'Steamed Fish with Thai Chili Lemon'),
-            array ('label' => 'Steamed Fish (Seabass Fillet) with Thai Chili Lemon (+ $2.00 Per Pax)'),
-            array ('label' => 'Steamed Fish (Salmon Fillet) with Thai Chili Lemon (+ $3.50 Per Pax)'),
-            array ('label' => 'Steamed Fish with Soy Sauce'),
-            array ('label' => 'Steamed Fish (Seabass Fillet) with Soy Sauce (+ $2.00 Per Pax)'),
-            array ('label' => 'Steamed Fish (Salmon Fillet) with Soy Sauce (+ $3.50 Per Pax)'),
+		'type' => 'pick1',
+		'label' => 'Choice of Chicken',
+		'controlname' => 'chickenchoice',
+		'choices' => array(
+			array('label' => 'Fried Chicken with Basil Leaf'),
+			array('label' => 'Fried Chicken with Cashew Nut'),
+			array('label' => 'Fried Chicken with Pepper & Garlic'),
+			array('label' => 'Pandan Chicken'),
+			array('label' => 'Lemon Leaf Chicken')
+		)
+	);
+	$menudishes[] = array('type' => 'group', 'nextnum' => '6');
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Fried Mixed Vegetable', 'vegecontrol' => 'mixedveg' . JT_VEGCTRL);
+	$menudishes[] = array(
+		'type' => 'pick1',
+		'label' => 'Choice of Noodle',
+		'controlname' => 'noodlechoice',
+		'choices' => array(
+			array('label' => 'Phad Thai', 'vegecontrol' => 'phadthai' . JT_VEGCTRL),
+			array('label' => 'Fried Tang Hoon', 'vegecontrol' => 'tanghoon' . JT_VEGCTRL),
+			array('label' => 'Tom Yum Bee Hoon', 'vegecontrol' => 'tomyumbeehoon' . JT_VEGCTRL),
+			array('label' => 'Fried Bee Hoon', 'vegecontrol' => 'beehoon' . JT_VEGCTRL)
 		)
 	);
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Squid /  Prawn - Please Choose 1",
-		"controlname" => "squidprawnchoice",
-		"choices" => array(
-			array('label' => 'Squid Pepper & Garlic'),
-			array('label' => 'Squid Chilli Paste'),
-			array('label' => 'Squid Basil Leaf'),
-			array('label' => 'Prawn Chilli Paste (Deshelled)'),
-			array('label' => 'Prawn Basil Leaf (Deshelled)'),
-			array('label' => 'Prawn Curry Powder (Deshelled)'),
-			array('label' => 'Prawn Pepper & Garlic (Deshelled)'),
-			array('label' => 'Prawn Tamarind Sauce (Deshelled)')
+		'type' => 'pick1',
+		'label' => 'Choice of Rice',
+		'controlname' => 'ricechoice',
+		'choices' => array(
+			array('label' => 'Steamed Rice'),
+			array('label' => 'Brown Rice'),
+			array('label' => 'Turmeric Rice'),
+			array('label' => 'Butterfly Pea Rice')
 		)
 	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Meat - Please Choose 1",
-		"controlname" => "meatchoice",
-		"choices" => array(
-			array('label' => 'Stir Fried Beef with Pepper & Garlic (+ $1.00 Per Pax)'),
-			array('label' => 'Stir Fried Beef with Basil Leaf (+ $1.00 Per Pax)'),
-			array('label' => 'Stir Fried Beef with Chilli Paste (+ $1.00 Per Pax)'),
-			array('label' => 'Deep Fried Pandan Chicken'),
-			array('label' => 'Chicken with Cashew Nut'),
-			array('label' => 'Lemon Leaf Chicken'),
-			array('label' => 'Stir Fried Chicken Pepper & Garlic'),
-			array('label' => 'Stir Fried Chicken with Basil Leaf'),
-			array('label' => 'Stir Fried Chicken Chilli Paste')
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Thai Curry Special - Please Choose 1",
-		"controlname" => "thaicurrychoice",
-		"choices" => array(
-			array('label' => 'Green Curry Chicken'),
-			array('label' => 'Green Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Green Curry Vegetarian'),
-			array('label' => 'Red Curry Chicken'),
-			array('label' => 'Red Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Red Curry Vegetarian'),
-			array('label' => 'Dried Curry Chicken'),
-			array('label' => 'Dried Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Dried Curry Vegetarian')
-		)
-	);
-	$menudishes[] = array(
-		"type" => "group",
-		"nextnum" => "6"
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Vegetable - Please Choose 1",
-		"controlname" => "vegetablechoice",
-		"choices" => array(
-			array('label' => 'Fried Kai Lan Oyster Sauce',                  'vegecontrol' => 'kailanoystersauce' . JT_VEGCTRL),
-			array('label' => 'Fried Kai Lan with Salted Fish'),
-			array('label' => 'Fried Kai Lan with Chinese Mushroom',         'vegecontrol' => 'kailanchimush' . JT_VEGCTRL),
-			array('label' => 'Fried Bean Sprout',                           'vegecontrol' => 'beansprout' . JT_VEGCTRL),
-			array('label' => 'Fried Bean Sprout with Salted Fish'),
-			array('label' => 'Fried Mixed Vegetables',                       'vegecontrol' => 'mixedveg' . JT_VEGCTRL),
-			array('label' => 'Fried Mixed Vegetables with Chinese Mushroom', 'vegecontrol' => 'mixedvegchimush' . JT_VEGCTRL),
-			array('label' => 'Fried Cabbage Oyster Sauce',                  'vegecontrol' => 'cabbageoystersauce' . JT_VEGCTRL),
-			array('label' => 'Fried Cabbage with Chinese Mushroom',         'vegecontrol' => 'cabbagechimush' . JT_VEGCTRL)
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick2",
-		"label" => "Noodle / Rice - Please Choose 2",
-		"controlname" => "noodlericechoice",
-		"choices" => array(
-			array('label' => 'Pineapple Rice',               'vegecontrol' => 'pineapplerice' . JT_VEGCTRL),
-			array('label' => 'Olive Rice',                   'vegecontrol' => 'oliverice' . JT_VEGCTRL),
-			array('label' => 'Salted Fish Fried Rice'),
-			array('label' => 'Seafood Fried Rice'),
-			array('label' => 'Fried Rice Basil Leaf',        'vegecontrol' => 'ricebasil' . JT_VEGCTRL),
-			array('label' => 'Fried Tang Hoon',              'vegecontrol' => 'tanghoon' . JT_VEGCTRL),
-			array('label' => 'Fried Spicy Noodle',           'vegecontrol' => 'spicynoodle' . JT_VEGCTRL),
-			array('label' => 'Fried Bee Hoon',               'vegecontrol' => 'beehoon' . JT_VEGCTRL),
-			array('label' => 'Phad Thai',                    'vegecontrol' => 'phadthai' . JT_VEGCTRL),
-			array('label' => 'Fried Hor Fan (Dry)',          'vegecontrol' => 'horfan' . JT_VEGCTRL),
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Dessert - Please Choose 1",
-		"controlname" => "dessertchoice",
-		"choices" => array(
-			array('label' => 'Red Ruby'),
-			array('label' => 'Thai Chendol'),
-			array('label' => 'Tapioca with Coconut Milk'),
-			array('label' => 'Assorted Coconut Jelly'),
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Drink - Please Choose 1",
-		"controlname" => "drinkchoice",
-		"choices" => array(
-			array('label' => 'Iced Lemon Tea'),
-			array('label' => 'Lime Juice'),
-			array('label' => 'Lemongrass Drink (+ $1.00 Per Pax)'),
-			array('label' => 'Thai Iced Tea with Lemon (+ $1.00 Per Pax)'),
-			array('label' => 'Thai Iced Tea with Milk (+ $1.00 Per Pax)'),
-		)
-	);
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Dessert', 'controlname' => 'dessertchoice', 'choices' => diyDessertChoices());
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Drink', 'controlname' => 'drinkchoice', 'choices' => diyDrinkChoices());
 	$menu['dishes'] = $menudishes;
 
 	return $menu;
 }
 
 function menuDIYC() {
-
 	$menu = array();
-	$menu['id'] = "DIYC";
+	$menu['id'] = 'DIYC';
 	$menu['url'] = 'catering-diy-c.php';
 	$menu['type'] = JT_SETMENU;
 	$menu['pdffile'] = 'diy-catering-menu-c.pdf';
-	$menu['title'] = 'Catering DIY Menu C';
-	$menu['description'] = "10 Course + Drink @ $21.90 per person (Min 30 pax)";
-	$menu['meta_description'] = "Cater a 10 course sumptuous buffet for your corporate event at $19.90 per person (min 30 pax). With our DIY sets, you can pick from a variety of dishes.";
+	$menu['title'] = 'DIY Catering Menu C';
+	$menu['description'] = "10 Course + Drink @ $22.90 per person (Min 30 pax)";
+	$menu['meta_description'] = "Jai Thai Catering DIY Menu C offers a 10 course customizable Thai buffet with a drink at $22.90 per person for a minimum of 30 pax.";
 	$menu['hasdrink'] = true;
 	$menu['allowpickup'] = false;
 	$menu['pickuplocations'] = array();
@@ -337,182 +202,95 @@ function menuDIYC() {
 	$menu['deliverycharge'] = 80;
 	$menu['minorder'] = 30;
 	$menu['numdishes'] = 10;
-	$menu['perpax'] = 21.90;
-	$menu['tnc'] = 	array(
-		"This menu includes:<ul>
-			<li>Tables with skirting</li>
-			<li>Food warmers</li>
-			<li>Disposable plates & cutlery</li>
-			<li>Napkins</li>
-			<li>Trash bags</li>
-			<li>Food tags</li></ul>",
-		"No take away container provided",
-		"Minimum order is ". $menu['minorder'] . " pax",
-		"A $". $menu['deliverycharge'] . " transportation charge is applicable"
-	);
-	$menu['agreetnc'] = "";
+	$menu['perpax'] = 22.90;
+	$menu['tnc'] = diyTerms($menu);
+	$menu['agreetnc'] = '';
 
-	//dishes
 	$menudishes = array();
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Prawn Cake');
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Appetizer - Please Choose 1",
-		"controlname" => "appetizerchoice",
-		"choices" => array(
-			array('label' => 'Prawn Cake'),
-			array('label' => 'Fish Cake'),
-			array('label' => 'Deep Fried Bean Curd'),
-			array('label' => 'Thai Spring Rolls')
+		'type' => 'pick1',
+		'label' => 'Choice of Salad',
+		'controlname' => 'saladchoice',
+		'choices' => array(
+			array('label' => 'Mango Salad'),
+			array('label' => 'Mango Salad Vegan'),
+			array('label' => 'Smoked Duck Garden Salad with Thai Spicy Dressing')
+		)
+	);
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Fish', 'controlname' => 'fishchoice', 'choices' => diyFishChoices());
+	$menudishes[] = array(
+		'type' => 'pick1',
+		'label' => 'Choice of Tom Yum Seafood Soup',
+		'controlname' => 'tomyumchoice',
+		'choices' => array(
+			array('label' => 'Tom Yum Seafood Clear Soup (Aromatic with Herbal and Spices Taste)'),
+			array('label' => 'Tom Yum Seafood Chilli Paste (Slightly Thicker Soup with Red Chilli Paste)')
 		)
 	);
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Fish - Please Choose 1",
-		"controlname" => "fishchoice",
-		"choices" => array(
-			array('label' => 'Deep Fried Fish Fillet with Chilli Sauce'),
-			array('label' => 'Deep Fried Fish Fillet with Pepper & Garlic'),
-			array('label' => 'Deep Fried Fish Fillet with Basil Leaf'),
-			array('label' => 'Deep Fried Fish Fillet with Tamarind Sauce'),
-			array('label' => 'Deep Fried Fish Fillet with Sweet & Sour Sauce'),
-            array ('label' => 'Steamed Fish with Thai Chili Lemon'),
-            array ('label' => 'Steamed Fish (Seabass Fillet) with Thai Chili Lemon (+ $2.00 Per Pax)'),
-            array ('label' => 'Steamed Fish (Salmon Fillet) with Thai Chili Lemon (+ $3.50 Per Pax)'),
-            array ('label' => 'Steamed Fish with Soy Sauce'),
-            array ('label' => 'Steamed Fish (Seabass Fillet) with Soy Sauce (+ $2.00 Per Pax)'),
-            array ('label' => 'Steamed Fish (Salmon Fillet) with Soy Sauce (+ $3.50 Per Pax)'),
+		'type' => 'pick1',
+		'label' => 'Choice of Chicken',
+		'controlname' => 'chickenchoice',
+		'choices' => array(
+			array('label' => 'Fried Chicken with Basil Leaf'),
+			array('label' => 'Fried Chicken with Cashew Nut'),
+			array('label' => 'Fried Chicken with Pepper & Garlic'),
+			array('label' => 'Pandan Chicken'),
+			array('label' => 'Lemon Leaf Chicken')
 		)
 	);
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Squid /  Prawn - Please Choose 1",
-		"controlname" => "squidprawnchoice",
-		"choices" => array(
-			array('label' => 'Squid Pepper & Garlic'),
-			array('label' => 'Squid Chilli Paste'),
-			array('label' => 'Squid Basil Leaf'),
-			array('label' => 'Prawn Chilli Paste (Deshelled)'),
-			array('label' => 'Prawn Basil Leaf (Deshelled)'),
-			array('label' => 'Prawn Curry Powder (Deshelled)'),
-			array('label' => 'Prawn Pepper & Garlic (Deshelled)'),
-			array('label' => 'Prawn Tamarind Sauce (Deshelled)')
+		'type' => 'pick1',
+		'label' => 'Choice of Prawn',
+		'controlname' => 'prawnchoice',
+		'choices' => array(
+			array('label' => 'Fried Prawn with Chilli Paste'),
+			array('label' => 'Fried Prawn with Basil Leaf'),
+			array('label' => 'Fried Prawn with Cashew Nut'),
+			array('label' => 'Fried Prawn with Pepper & Garlic')
+		)
+	);
+	$menudishes[] = array('type' => 'group', 'nextnum' => '7');
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Fried Mixed Vegetable', 'vegecontrol' => 'mixedveg' . JT_VEGCTRL);
+	$menudishes[] = array(
+		'type' => 'pick1',
+		'label' => 'Choice of Noodle',
+		'controlname' => 'noodlechoice',
+		'choices' => array(
+			array('label' => 'Phad Thai', 'vegecontrol' => 'phadthai' . JT_VEGCTRL),
+			array('label' => 'Fried Tang Hoon', 'vegecontrol' => 'tanghoon' . JT_VEGCTRL),
+			array('label' => 'Tom Yum Bee Hoon', 'vegecontrol' => 'tomyumbeehoon' . JT_VEGCTRL),
+			array('label' => 'Fried Bee Hoon', 'vegecontrol' => 'beehoon' . JT_VEGCTRL)
 		)
 	);
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Meat - Please Choose 1",
-		"controlname" => "meatchoice",
-		"choices" => array(
-			array('label' => 'Stir Fried Beef with Pepper & Garlic (+ $1.00 Per Pax)'),
-			array('label' => 'Stir Fried Beef with Basil Leaf (+ $1.00 Per Pax)'),
-			array('label' => 'Stir Fried Beef with Chilli Paste (+ $1.00 Per Pax)'),
-			array('label' => 'Deep Fried Pandan Chicken'),
-			array('label' => 'Chicken with Cashew Nut'),
-			array('label' => 'Lemon Leaf Chicken'),
-			array('label' => 'Stir Fried Chicken Pepper & Garlic'),
-			array('label' => 'Stir Fried Chicken with Basil Leaf'),
-			array('label' => 'Stir Fried Chicken Chilli Paste')
+		'type' => 'pick1',
+		'label' => 'Choice of Rice',
+		'controlname' => 'ricechoice',
+		'choices' => array(
+			array('label' => 'Pineapple Rice', 'vegecontrol' => 'pineapplerice' . JT_VEGCTRL),
+			array('label' => 'Olive Rice', 'vegecontrol' => 'oliverice' . JT_VEGCTRL),
+			array('label' => 'Tom Yum Fried Rice', 'vegecontrol' => 'tomyumfriedrice' . JT_VEGCTRL),
+			array('label' => 'Egg Fried Rice')
 		)
 	);
-	$menudishes[] = array(
-		"type" => "pick2",
-		"label" => "Thai Curry / Soup Special - Please Choose 2",
-		"controlname" => "thaicurrychoice",
-		"choices" => array(
-			array('label' => 'Green Curry Chicken'),
-			array('label' => 'Green Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Green Curry Vegetarian'),
-			array('label' => 'Red Curry Chicken'),
-			array('label' => 'Red Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Red Curry Vegetarian'),
-			array('label' => 'Dried Curry Chicken'),
-			array('label' => 'Dried Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Dried Curry Vegetarian'),
-			array('label' => 'Tom Yum Seafood Soup (Clear Soup)'),
-			array('label' => 'Tom Yum Seafood Soup (with Chilli Paste)'),
-			array('label' => 'Tom Yum Chicken Soup (Clear Soup)'),
-			array('label' => 'Tom Yum Chicken Soup (with Chilli Paste)'),
-			array('label' => 'Tom Yum Vegetarian Soup (Clear Soup)'),
-			array('label' => 'Tom Yum Vegetarian Soup (with Chilli Paste)'),
-			array('label' => 'Blue Ginger Soup with Chicken'),
-			array('label' => 'Om Khai (Jungle Chicken Soup)')
-		)
-	);
-	$menudishes[] = array(
-		"type" => "group",
-		"nextnum" => "6"
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Vegetable - Please Choose 1",
-		"controlname" => "vegetablechoice",
-		"choices" => array(
-			array('label' => 'Fried Kai Lan Oyster Sauce',                  'vegecontrol' => 'kailanoystersauce' . JT_VEGCTRL),
-			array('label' => 'Fried Kai Lan with Salted Fish'),
-			array('label' => 'Fried Kai Lan with Chinese Mushroom',         'vegecontrol' => 'kailanchimush' . JT_VEGCTRL),
-			array('label' => 'Fried Bean Sprout',                           'vegecontrol' => 'beansprout' . JT_VEGCTRL),
-			array('label' => 'Fried Bean Sprout with Salted Fish'),
-			array('label' => 'Fried Mixed Vegetables',                       'vegecontrol' => 'mixedveg' . JT_VEGCTRL),
-			array('label' => 'Fried Mixed Vegetables with Chinese Mushroom', 'vegecontrol' => 'mixedvegchimush' . JT_VEGCTRL),
-			array('label' => 'Fried Cabbage Oyster Sauce',                  'vegecontrol' => 'cabbageoystersauce' . JT_VEGCTRL),
-			array('label' => 'Fried Cabbage with Chinese Mushroom',         'vegecontrol' => 'cabbagechimush' . JT_VEGCTRL)
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick2",
-		"label" => "Noodle / Rice - Please Choose 2",
-		"controlname" => "noodlericechoice",
-		"choices" => array(
-			array('label' => 'Pineapple Rice',               'vegecontrol' => 'pineapplerice' . JT_VEGCTRL),
-			array('label' => 'Olive Rice',                   'vegecontrol' => 'oliverice' . JT_VEGCTRL),
-			array('label' => 'Salted Fish Fried Rice'),
-			array('label' => 'Seafood Fried Rice'),
-			array('label' => 'Fried Rice Basil Leaf',        'vegecontrol' => 'ricebasil' . JT_VEGCTRL),
-			array('label' => 'Fried Tang Hoon',              'vegecontrol' => 'tanghoon' . JT_VEGCTRL),
-			array('label' => 'Fried Spicy Noodle',           'vegecontrol' => 'spicynoodle' . JT_VEGCTRL),
-			array('label' => 'Fried Bee Hoon',               'vegecontrol' => 'beehoon' . JT_VEGCTRL),
-			array('label' => 'Phad Thai',                    'vegecontrol' => 'phadthai' . JT_VEGCTRL),
-			array('label' => 'Fried Hor Fan (Dry)',          'vegecontrol' => 'horfan' . JT_VEGCTRL),
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Dessert - Please Choose 1",
-		"controlname" => "dessertchoice",
-		"choices" => array(
-			array('label' => 'Red Ruby'),
-			array('label' => 'Thai Chendol'),
-			array('label' => 'Tapioca with Coconut Milk'),
-			array('label' => 'Assorted Coconut Jelly'),
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Drink - Please Choose 1",
-		"controlname" => "drinkchoice",
-		"choices" => array(
-			array('label' => 'Iced Lemon Tea'),
-			array('label' => 'Lime Juice'),
-			array('label' => 'Lemongrass Drink (+ $1.00 Per Pax)'),
-			array('label' => 'Thai Iced Tea with Lemon (+ $1.00 Per Pax)'),
-			array('label' => 'Thai Iced Tea with Milk (+ $1.00 Per Pax)'),
-		)
-	);
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Dessert', 'controlname' => 'dessertchoice', 'choices' => diyDessertChoices());
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Drink', 'controlname' => 'drinkchoice', 'choices' => diyDrinkChoices());
 	$menu['dishes'] = $menudishes;
 
 	return $menu;
 }
 
 function menuDIYD() {
-
 	$menu = array();
-	$menu['id'] = "DIYD";
+	$menu['id'] = 'DIYD';
 	$menu['url'] = 'catering-diy-d.php';
 	$menu['type'] = JT_SETMENU;
 	$menu['pdffile'] = 'diy-catering-menu-d.pdf';
-	$menu['title'] = 'Catering DIY Menu D';
+	$menu['title'] = 'DIY Catering Menu D';
 	$menu['description'] = "11 Course + Drink @ $25.90 per person (Min 30 pax)";
-	$menu['meta_description'] = "Looking for catering for your corporate event or party? Get Jai Thai's 11 Course + Drink authentic thai buffet catering @ $23.90 per person (Min 30 pax).";
+	$menu['meta_description'] = "Jai Thai Catering DIY Menu D offers an 11 course customizable Thai buffet with a drink at $25.90 per person for a minimum of 30 pax.";
 	$menu['hasdrink'] = true;
 	$menu['allowpickup'] = false;
 	$menu['pickuplocations'] = array();
@@ -521,177 +299,80 @@ function menuDIYD() {
 	$menu['minorder'] = 30;
 	$menu['numdishes'] = 11;
 	$menu['perpax'] = 25.90;
-	$menu['tnc'] = 	array(
-		"This menu includes:<ul>
-			<li>Tables with skirting</li>
-			<li>Food warmers</li>
-			<li>Disposable plates & cutlery</li>
-			<li>Napkins</li>
-			<li>Trash bags</li>
-			<li>Food tags</li></ul>",
-		"No take away container provided",
-		"Minimum order is ". $menu['minorder'] . " pax",
-		"A $". $menu['deliverycharge'] . " transportation charge is applicable"
-	);
-	$menu['agreetnc'] = "";
+	$menu['tnc'] = diyTerms($menu);
+	$menu['agreetnc'] = '';
 
-	//dishes
 	$menudishes = array();
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Prawn Cake');
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Appetizer - Please Choose 1",
-		"controlname" => "appetizerchoice",
-		"choices" => array(
-			array('label' => 'Prawn Cake'),
-			array('label' => 'Fish Cake'),
-			array('label' => 'Deep Fried Bean Curd'),
-			array('label' => 'Thai Spring Rolls')
+		'type' => 'pick1',
+		'label' => 'Choice of Salad',
+		'controlname' => 'saladchoice',
+		'choices' => array(
+			array('label' => 'Mango Salad'),
+			array('label' => 'Mango Salad Vegan'),
+			array('label' => 'Smoked Duck Garden Salad with Thai Spicy Dressing')
+		)
+	);
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Fish', 'controlname' => 'fishchoice', 'choices' => diyFishChoices());
+	$menudishes[] = array(
+		'type' => 'pick1',
+		'label' => 'Choice of Tom Yum Seafood Soup',
+		'controlname' => 'tomyumchoice',
+		'choices' => array(
+			array('label' => 'Tom Yum Seafood Clear Soup (Aromatic with Herbal and Spices Taste)'),
+			array('label' => 'Tom Yum Seafood Chilli Paste (Slightly Thicker Soup with Red Chilli Paste)')
 		)
 	);
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Salad - Please Choose 1",
-		"controlname" => "saladchoice",
-		"choices" => array(
-			array('label' => 'Mango Salad',         'vegecontrol' => 'mangosalad' . JT_VEGCTRL),
-			array('label' => 'Tang Hoon Salad',     'vegecontrol' => 'tanghoonsalad' . JT_VEGCTRL),
-			array('label' => 'Beef Salad (+ $1.00 Per Pax)'),
-			array('label' => 'Seafood Salad')
+		'type' => 'pick1',
+		'label' => 'Choice of Chicken',
+		'controlname' => 'chickenchoice',
+		'choices' => array(
+			array('label' => 'Fried Chicken with Basil Leaf'),
+			array('label' => 'Fried Chicken with Cashew Nut'),
+			array('label' => 'Fried Chicken with Pepper & Garlic'),
+			array('label' => 'Pandan Chicken'),
+			array('label' => 'Lemon Leaf Chicken')
 		)
 	);
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Fish - Please Choose 1",
-		"controlname" => "fishchoice",
-		"choices" => array(
-			array('label' => 'Deep Fried Fish Fillet with Chilli Sauce'),
-			array('label' => 'Deep Fried Fish Fillet with Pepper & Garlic'),
-			array('label' => 'Deep Fried Fish Fillet with Basil Leaf'),
-			array('label' => 'Deep Fried Fish Fillet with Tamarind Sauce'),
-			array('label' => 'Deep Fried Fish Fillet with Sweet & Sour Sauce'),
-            array ('label' => 'Steamed Fish with Thai Chili Lemon'),
-            array ('label' => 'Steamed Fish (Seabass Fillet) with Thai Chili Lemon (+ $2.00 Per Pax)'),
-            array ('label' => 'Steamed Fish (Salmon Fillet) with Thai Chili Lemon (+ $3.50 Per Pax)'),
-            array ('label' => 'Steamed Fish with Soy Sauce'),
-            array ('label' => 'Steamed Fish (Seabass Fillet) with Soy Sauce (+ $2.00 Per Pax)'),
-            array ('label' => 'Steamed Fish (Salmon Fillet) with Soy Sauce (+ $3.50 Per Pax)'),
+		'type' => 'pick1',
+		'label' => 'Choice of Prawn',
+		'controlname' => 'prawnchoice',
+		'choices' => array(
+			array('label' => 'Fried Prawn with Chilli Paste'),
+			array('label' => 'Fried Prawn with Basil Leaf'),
+			array('label' => 'Fried Prawn with Cashew Nut')
 		)
 	);
+	$menudishes[] = array('type' => 'group', 'nextnum' => '7');
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Squid /  Prawn - Please Choose 1",
-		"controlname" => "squidprawnchoice",
-		"choices" => array(
-			array('label' => 'Squid Pepper & Garlic'),
-			array('label' => 'Squid Chilli Paste'),
-			array('label' => 'Squid Basil Leaf'),
-			array('label' => 'Prawn Chilli Paste (Deshelled)'),
-			array('label' => 'Prawn Basil Leaf (Deshelled)'),
-			array('label' => 'Prawn Curry Powder (Deshelled)'),
-			array('label' => 'Prawn Pepper & Garlic (Deshelled)'),
-			array('label' => 'Prawn Tamarind Sauce (Deshelled)')
+		'type' => 'pick1',
+		'label' => 'Choice of Squid',
+		'controlname' => 'squidchoice',
+		'choices' => array(
+			array('label' => 'Fried Squid with Chilli Paste'),
+			array('label' => 'Fried Squid with Basil Leaf'),
+			array('label' => 'Fried Squid with Cashew Nut'),
+			array('label' => 'Fried Squid with Pepper & Garlic')
 		)
 	);
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Fried Broccoli with Chinese Mushroom', 'vegecontrol' => 'broccolichimush' . JT_VEGCTRL);
+	$menudishes[] = array('type' => 'fixed', 'label' => 'Phad Thai', 'vegecontrol' => 'phadthai' . JT_VEGCTRL);
 	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Meat - Please Choose 1",
-		"controlname" => "meatchoice",
-		"choices" => array(
-			array('label' => 'Stir Fried Beef with Pepper & Garlic (+ $1.00 Per Pax)'),
-			array('label' => 'Stir Fried Beef with Basil Leaf (+ $1.00 Per Pax)'),
-			array('label' => 'Stir Fried Beef with Chilli Paste (+ $1.00 Per Pax)'),
-			array('label' => 'Deep Fried Pandan Chicken'),
-			array('label' => 'Chicken with Cashew Nut'),
-			array('label' => 'Lemon Leaf Chicken'),
-			array('label' => 'Stir Fried Chicken Pepper & Garlic'),
-			array('label' => 'Stir Fried Chicken with Basil Leaf'),
-			array('label' => 'Stir Fried Chicken Chilli Paste')
+		'type' => 'pick1',
+		'label' => 'Choice of Rice',
+		'controlname' => 'ricechoice',
+		'choices' => array(
+			array('label' => 'Pineapple Rice', 'vegecontrol' => 'pineapplerice' . JT_VEGCTRL),
+			array('label' => 'Olive Rice', 'vegecontrol' => 'oliverice' . JT_VEGCTRL),
+			array('label' => 'Tom Yum Fried Rice', 'vegecontrol' => 'tomyumfriedrice' . JT_VEGCTRL),
+			array('label' => 'Egg Fried Rice')
 		)
 	);
-	$menudishes[] = array(
-		"type" => "pick2",
-		"label" => "Thai Curry / Soup Special - Please Choose 2",
-		"controlname" => "thaicurrychoice",
-		"choices" => array(
-			array('label' => 'Green Curry Chicken'),
-			array('label' => 'Green Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Green Curry Vegetarian'),
-			array('label' => 'Red Curry Chicken'),
-			array('label' => 'Red Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Red Curry Vegetarian'),
-			array('label' => 'Dried Curry Chicken'),
-			array('label' => 'Dried Curry Beef (+ $1.00 Per Pax)'),
-			array('label' => 'Dried Curry Vegetarian'),
-			array('label' => 'Tom Yum Seafood Soup (Clear Soup)'),
-			array('label' => 'Tom Yum Seafood Soup (with Chilli Paste)'),
-			array('label' => 'Tom Yum Chicken Soup (Clear Soup)'),
-			array('label' => 'Tom Yum Chicken Soup (with Chilli Paste)'),
-			array('label' => 'Tom Yum Vegetarian Soup (Clear Soup)'),
-			array('label' => 'Tom Yum Vegetarian Soup (with Chilli Paste)'),
-			array('label' => 'Blue Ginger Soup with Chicken'),
-			array('label' => 'Om Khai (Jungle Chicken Soup)')
-		)
-	);
-	$menudishes[] = array(
-		"type" => "group",
-		"nextnum" => "7"
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Vegetable - Please Choose 1",
-		"controlname" => "vegetablechoice",
-		"choices" => array(
-			array('label' => 'Fried Kai Lan Oyster Sauce',                  'vegecontrol' => 'kailanoystersauce' . JT_VEGCTRL),
-			array('label' => 'Fried Kai Lan with Salted Fish'),
-			array('label' => 'Fried Kai Lan with Chinese Mushroom',         'vegecontrol' => 'kailanchimush' . JT_VEGCTRL),
-			array('label' => 'Fried Bean Sprout',                           'vegecontrol' => 'beansprout' . JT_VEGCTRL),
-			array('label' => 'Fried Bean Sprout with Salted Fish'),
-			array('label' => 'Fried Mixed Vegetables',                       'vegecontrol' => 'mixedveg' . JT_VEGCTRL),
-			array('label' => 'Fried Mixed Vegetables with Chinese Mushroom', 'vegecontrol' => 'mixedvegchimush' . JT_VEGCTRL),
-			array('label' => 'Fried Cabbage Oyster Sauce',                  'vegecontrol' => 'cabbageoystersauce' . JT_VEGCTRL),
-			array('label' => 'Fried Cabbage with Chinese Mushroom',         'vegecontrol' => 'cabbagechimush' . JT_VEGCTRL)
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick2",
-		"label" => "Noodle / Rice - Please Choose 2",
-		"controlname" => "noodlericechoice",
-		"choices" => array(
-			array('label' => 'Pineapple Rice',               'vegecontrol' => 'pineapplerice' . JT_VEGCTRL),
-			array('label' => 'Olive Rice',                   'vegecontrol' => 'oliverice' . JT_VEGCTRL),
-			array('label' => 'Salted Fish Fried Rice'),
-			array('label' => 'Seafood Fried Rice'),
-			array('label' => 'Fried Rice Basil Leaf',        'vegecontrol' => 'ricebasil' . JT_VEGCTRL),
-			array('label' => 'Fried Tang Hoon',              'vegecontrol' => 'tanghoon' . JT_VEGCTRL),
-			array('label' => 'Fried Spicy Noodle',           'vegecontrol' => 'spicynoodle' . JT_VEGCTRL),
-			array('label' => 'Fried Bee Hoon',               'vegecontrol' => 'beehoon' . JT_VEGCTRL),
-			array('label' => 'Phad Thai',                    'vegecontrol' => 'phadthai' . JT_VEGCTRL),
-			array('label' => 'Fried Hor Fan (Dry)',          'vegecontrol' => 'horfan' . JT_VEGCTRL),
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Dessert - Please Choose 1",
-		"controlname" => "dessertchoice",
-		"choices" => array(
-			array('label' => 'Red Ruby'),
-			array('label' => 'Thai Chendol'),
-			array('label' => 'Tapioca with Coconut Milk'),
-			array('label' => 'Assorted Coconut Jelly'),
-		)
-	);
-	$menudishes[] = array(
-		"type" => "pick1",
-		"label" => "Drink - Please Choose 1",
-		"controlname" => "drinkchoice",
-		"choices" => array(
-			array('label' => 'Iced Lemon Tea'),
-			array('label' => 'Lime Juice'),
-			array('label' => 'Lemongrass Drink (+ $1.00 Per Pax)'),
-			array('label' => 'Thai Iced Tea with Lemon (+ $1.00 Per Pax)'),
-			array('label' => 'Thai Iced Tea with Milk (+ $1.00 Per Pax)'),
-		)
-	);
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Dessert', 'controlname' => 'dessertchoice', 'choices' => diyDessertChoices('Change to Mango Sticky Rice (+ $1.00 Per Pax)'));
+	$menudishes[] = array('type' => 'pick1', 'label' => 'Choice of Drink', 'controlname' => 'drinkchoice', 'choices' => diyDrinkChoices());
 	$menu['dishes'] = $menudishes;
 
 	return $menu;

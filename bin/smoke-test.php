@@ -252,6 +252,10 @@ $checks = array(
 	array('/', 200, 'Jai Thai Restaurant and Thai Catering Singapore', 'public home page'),
 	array('/jtpages/cateringmenu', 200, 'Set Catering Menu A', 'catering collection page'),
 	array('/jtmenu/cateringmenua', 200, 'name="numpax"', 'individual catering menu form'),
+	array('/jtmenu/cateringdiya', 200, 'DIY Catering Menu A', 'DIY Catering Menu A form'),
+	array('/jtmenu/cateringdiyb', 200, 'DIY Catering Menu B', 'DIY Catering Menu B form'),
+	array('/jtmenu/cateringdiyc', 200, 'DIY Catering Menu C', 'DIY Catering Menu C form'),
+	array('/jtmenu/cateringdiyd', 200, 'DIY Catering Menu D', 'DIY Catering Menu D form'),
 	array('/cart', 200, 'Shopping Cart', 'shopping cart page'),
 	array('/jtadmin/login', 200, 'Please Login', 'administrator login page'),
 );
@@ -305,6 +309,29 @@ foreach (array('Catering Menu A', 'Thai Green Curry Chicken', 'Thai Red Ruby') a
 }
 
 smoke_result(response_has_no_php_error($populated_cart), 'populated cart contains no rendered PHP error');
+
+$add_diy_to_cart = smoke_request($curl, $base_url, '/jtmenu/cateringdiya', array(
+	'formSubmitted' => '1',
+	'fishchoice' => 'Deep Fried Fish with Thai Chilli Sauce',
+	'currychoice' => 'Thai Green Curry Vegan',
+	'mixedveg-vege' => 'REG',
+	'phadthai-vege' => 'VEG',
+	'ricechoice' => 'Steamed Rice',
+	'dessertchoice' => 'Thai Red Ruby',
+	'drinkchoice' => 'Lime Juice',
+	'numpax' => '40',
+));
+
+smoke_result($add_diy_to_cart['status'] === 302, 'valid DIY menu selection redirects after add-to-cart', 'HTTP '.$add_diy_to_cart['status']);
+
+$diy_cart = smoke_request($curl, $base_url, '/cart');
+smoke_result($diy_cart['status'] === 200, 'cart containing a DIY menu is reachable', 'HTTP '.$diy_cart['status']);
+
+foreach (array('DIY Catering Menu A', 'Thai Green Curry Vegan', 'Phad Thai (Vegan)', 'Lime Juice') as $cart_marker) {
+	smoke_result(response_contains($diy_cart, $cart_marker), 'DIY cart contains '.$cart_marker);
+}
+
+smoke_result(response_has_no_php_error($diy_cart), 'DIY cart contains no rendered PHP error');
 
 $admin_login = smoke_request($curl, $base_url, '/jtadmin/login', array(
 	'formSubmitted' => '1',

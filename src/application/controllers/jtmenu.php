@@ -416,29 +416,14 @@ class JTMenu extends KA_Controller {
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
 
-        $formdatadefaults['kailanoystersauce' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['kailanchimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['beansprout' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['mixedvegchimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['cabbageoystersauce' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['cabbagechimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['ricebasil' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['tanghoon' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['spicynoodle' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['beehoon' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['horfan' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
 
-		$formdatadefaults['appetizerchoice'] = "Prawn Cake";
-		$formdatadefaults['fishchoice'] = "Deep Fried Fish Fillet with Chilli Sauce";
-		$formdatadefaults['thaicurrychoice'] = "Green Curry Chicken";
-		$formdatadefaults['vegetablechoice'] = "Fried Kai Lan Oyster Sauce";
-		$formdatadefaults['noodlericechoice'] = array();
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
-		$formdatadefaults['drinkchoice'] = "Iced Lemon Tea";
+		$formdatadefaults['fishchoice'] = "Deep Fried Fish with Thai Chilli Sauce";
+		$formdatadefaults['currychoice'] = "Thai Red Curry";
+		$formdatadefaults['ricechoice'] = "Steamed Rice";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
+		$formdatadefaults['drinkchoice'] = "Lime Juice";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 
 		if ($this->formSubmitted()) {
@@ -448,44 +433,22 @@ class JTMenu extends KA_Controller {
 			//retrieve from POST
 			$formdata = array();
 
-            $formdata['kailanoystersauce' . JT_VEGCTRL] = $this->input->post('kailanoystersauce' . JT_VEGCTRL);
-            $formdata['kailanchimush' . JT_VEGCTRL] = $this->input->post('kailanchimush' . JT_VEGCTRL);
-            $formdata['beansprout' . JT_VEGCTRL] = $this->input->post('beansprout' . JT_VEGCTRL);
-            $formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
-            $formdata['mixedvegchimush' . JT_VEGCTRL] = $this->input->post('mixedvegchimush' . JT_VEGCTRL);
-            $formdata['cabbageoystersauce' . JT_VEGCTRL] = $this->input->post('cabbageoystersauce' . JT_VEGCTRL);
-            $formdata['cabbagechimush' . JT_VEGCTRL] = $this->input->post('cabbagechimush' . JT_VEGCTRL);
-            $formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
-            $formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
-            $formdata['ricebasil' . JT_VEGCTRL] = $this->input->post('ricebasil' . JT_VEGCTRL);
-            $formdata['tanghoon' . JT_VEGCTRL] = $this->input->post('tanghoon' . JT_VEGCTRL);
-            $formdata['spicynoodle' . JT_VEGCTRL] = $this->input->post('spicynoodle' . JT_VEGCTRL);
-            $formdata['beehoon' . JT_VEGCTRL] = $this->input->post('beehoon' . JT_VEGCTRL);
-            $formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
-            $formdata['horfan' . JT_VEGCTRL] = $this->input->post('horfan' . JT_VEGCTRL);
+			$formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
+			$formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
 
-            $formdata['appetizerchoice'] = $this->input->post('appetizerchoice');
 			$formdata['fishchoice'] = $this->input->post('fishchoice');
-			$formdata['thaicurrychoice'] = $this->input->post('thaicurrychoice');
-			$formdata['vegetablechoice'] = $this->input->post('vegetablechoice');
-			$formdata['noodlericechoice'] = $this->input->post('noodlericechoice');
+			$formdata['currychoice'] = $this->input->post('currychoice');
+			$formdata['ricechoice'] = $this->input->post('ricechoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['drinkchoice'] = $this->input->post('drinkchoice');
 			$formdata['numpax'] = $this->input->post('numpax');
 
 			//pre validation processsing
 			$formdata['numpax'] = intval(trim($formdata['numpax']));
-			if (($formdata['noodlericechoice'] == "") || (!is_array($formdata['noodlericechoice']))) {
-				$formdata['noodlericechoice'] = array(); 
-			}
-		
 			//validation
 			$errors = array();
 			if ($formdata['numpax'] < $menu['minorder']) { 
 				$errors[] = "Minimum order is " . $menu['minorder'] . " pax"; 
-			}
-			if (sizeof($formdata['noodlericechoice']) != 2) { 
-				$errors[] = "Please pick two dishes from Noodle / Rice choices"; 
 			}
 			
 			//check if validation went thru
@@ -551,31 +514,19 @@ class JTMenu extends KA_Controller {
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
 
-        $formdatadefaults['kailanoystersauce' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['kailanchimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['beansprout' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['mixedvegchimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['cabbageoystersauce' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['cabbagechimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['ricebasil' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['tanghoon' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['spicynoodle' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['beehoon' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['horfan' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['tanghoon' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['tomyumbeehoon' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['beehoon' . JT_VEGCTRL] = JT_REG;
 
-        $formdatadefaults['appetizerchoice'] = "Prawn Cake";
-		$formdatadefaults['fishchoice'] = "Deep Fried Fish Fillet with Chilli Sauce";
-		$formdatadefaults['squidprawnchoice'] = "Squid Pepper & Garlic";
-		$formdatadefaults['meatchoice'] = "Stir Fried Beef with Pepper & Garlic";
-		$formdatadefaults['thaicurrychoice'] = "Green Curry Chicken";
-		$formdatadefaults['vegetablechoice'] = "Fried Kai Lan Oyster Sauce";
-		$formdatadefaults['noodlericechoice'] = array();
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
-		$formdatadefaults['drinkchoice'] = "Iced Lemon Tea";
+		$formdatadefaults['fishchoice'] = "Deep Fried Fish with Thai Chilli Sauce";
+		$formdatadefaults['currychoice'] = "Thai Red Curry";
+		$formdatadefaults['chickenchoice'] = "Fried Chicken with Basil Leaf";
+		$formdatadefaults['noodlechoice'] = "Phad Thai";
+		$formdatadefaults['ricechoice'] = "Steamed Rice";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
+		$formdatadefaults['drinkchoice'] = "Lime Juice";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 
 		if ($this->formSubmitted()) {
@@ -585,46 +536,27 @@ class JTMenu extends KA_Controller {
 			//retrieve from POST
 			$formdata = array();
 
-            $formdata['kailanoystersauce' . JT_VEGCTRL] = $this->input->post('kailanoystersauce' . JT_VEGCTRL);
-            $formdata['kailanchimush' . JT_VEGCTRL] = $this->input->post('kailanchimush' . JT_VEGCTRL);
-            $formdata['beansprout' . JT_VEGCTRL] = $this->input->post('beansprout' . JT_VEGCTRL);
-            $formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
-            $formdata['mixedvegchimush' . JT_VEGCTRL] = $this->input->post('mixedvegchimush' . JT_VEGCTRL);
-            $formdata['cabbageoystersauce' . JT_VEGCTRL] = $this->input->post('cabbageoystersauce' . JT_VEGCTRL);
-            $formdata['cabbagechimush' . JT_VEGCTRL] = $this->input->post('cabbagechimush' . JT_VEGCTRL);
-            $formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
-            $formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
-            $formdata['ricebasil' . JT_VEGCTRL] = $this->input->post('ricebasil' . JT_VEGCTRL);
-            $formdata['tanghoon' . JT_VEGCTRL] = $this->input->post('tanghoon' . JT_VEGCTRL);
-            $formdata['spicynoodle' . JT_VEGCTRL] = $this->input->post('spicynoodle' . JT_VEGCTRL);
-            $formdata['beehoon' . JT_VEGCTRL] = $this->input->post('beehoon' . JT_VEGCTRL);
-            $formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
-            $formdata['horfan' . JT_VEGCTRL] = $this->input->post('horfan' . JT_VEGCTRL);
+			$formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
+			$formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
+			$formdata['tanghoon' . JT_VEGCTRL] = $this->input->post('tanghoon' . JT_VEGCTRL);
+			$formdata['tomyumbeehoon' . JT_VEGCTRL] = $this->input->post('tomyumbeehoon' . JT_VEGCTRL);
+			$formdata['beehoon' . JT_VEGCTRL] = $this->input->post('beehoon' . JT_VEGCTRL);
 
-            $formdata['appetizerchoice'] = $this->input->post('appetizerchoice');
 			$formdata['fishchoice'] = $this->input->post('fishchoice');
-			$formdata['squidprawnchoice'] = $this->input->post('squidprawnchoice');
-			$formdata['meatchoice'] = $this->input->post('meatchoice');
-			$formdata['thaicurrychoice'] = $this->input->post('thaicurrychoice');
-			$formdata['vegetablechoice'] = $this->input->post('vegetablechoice');
-			$formdata['noodlericechoice'] = $this->input->post('noodlericechoice');
+			$formdata['currychoice'] = $this->input->post('currychoice');
+			$formdata['chickenchoice'] = $this->input->post('chickenchoice');
+			$formdata['noodlechoice'] = $this->input->post('noodlechoice');
+			$formdata['ricechoice'] = $this->input->post('ricechoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['drinkchoice'] = $this->input->post('drinkchoice');
 			$formdata['numpax'] = $this->input->post('numpax');
 
 			//pre validation processsing
 			$formdata['numpax'] = intval(trim($formdata['numpax']));
-			if (($formdata['noodlericechoice'] == "") || (!is_array($formdata['noodlericechoice']))) {
-				$formdata['noodlericechoice'] = array(); 
-			}
-		
 			//validation
 			$errors = array();
 			if ($formdata['numpax'] < $menu['minorder']) { 
 				$errors[] = "Minimum order is " . $menu['minorder'] . " pax"; 
-			}
-			if (sizeof($formdata['noodlericechoice']) != 2) { 
-				$errors[] = "Please pick two dishes from Noodle / Rice choices"; 
 			}
 			
 			//check if validation went thru
@@ -690,31 +622,24 @@ class JTMenu extends KA_Controller {
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
 
-        $formdatadefaults['kailanoystersauce' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['kailanchimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['beansprout' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['mixedvegchimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['cabbageoystersauce' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['cabbagechimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['ricebasil' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['tanghoon' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['spicynoodle' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['beehoon' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['horfan' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['tanghoon' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['tomyumbeehoon' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['beehoon' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['tomyumfriedrice' . JT_VEGCTRL] = JT_REG;
 
-        $formdatadefaults['appetizerchoice'] = "Prawn Cake";
-		$formdatadefaults['fishchoice'] = "Deep Fried Fish Fillet with Chilli Sauce";
-		$formdatadefaults['squidprawnchoice'] = "Squid Pepper & Garlic";
-		$formdatadefaults['meatchoice'] = "Stir Fried Beef with Pepper & Garlic";
-		$formdatadefaults['thaicurrychoice'] = array();
-		$formdatadefaults['vegetablechoice'] = "Fried Kai Lan Oyster Sauce";
-		$formdatadefaults['noodlericechoice'] = array();
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
-		$formdatadefaults['drinkchoice'] = "Iced Lemon Tea";
+		$formdatadefaults['saladchoice'] = "Mango Salad";
+		$formdatadefaults['fishchoice'] = "Deep Fried Fish with Thai Chilli Sauce";
+		$formdatadefaults['tomyumchoice'] = "Tom Yum Seafood Clear Soup (Aromatic with Herbal and Spices Taste)";
+		$formdatadefaults['chickenchoice'] = "Fried Chicken with Basil Leaf";
+		$formdatadefaults['prawnchoice'] = "Fried Prawn with Chilli Paste";
+		$formdatadefaults['noodlechoice'] = "Phad Thai";
+		$formdatadefaults['ricechoice'] = "Pineapple Rice";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
+		$formdatadefaults['drinkchoice'] = "Lime Juice";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 
 		if ($this->formSubmitted()) {
@@ -724,52 +649,32 @@ class JTMenu extends KA_Controller {
 			//retrieve from POST
 			$formdata = array();
 
-            $formdata['kailanoystersauce' . JT_VEGCTRL] = $this->input->post('kailanoystersauce' . JT_VEGCTRL);
-            $formdata['kailanchimush' . JT_VEGCTRL] = $this->input->post('kailanchimush' . JT_VEGCTRL);
-            $formdata['beansprout' . JT_VEGCTRL] = $this->input->post('beansprout' . JT_VEGCTRL);
-            $formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
-            $formdata['mixedvegchimush' . JT_VEGCTRL] = $this->input->post('mixedvegchimush' . JT_VEGCTRL);
-            $formdata['cabbageoystersauce' . JT_VEGCTRL] = $this->input->post('cabbageoystersauce' . JT_VEGCTRL);
-            $formdata['cabbagechimush' . JT_VEGCTRL] = $this->input->post('cabbagechimush' . JT_VEGCTRL);
-            $formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
-            $formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
-            $formdata['ricebasil' . JT_VEGCTRL] = $this->input->post('ricebasil' . JT_VEGCTRL);
-            $formdata['tanghoon' . JT_VEGCTRL] = $this->input->post('tanghoon' . JT_VEGCTRL);
-            $formdata['spicynoodle' . JT_VEGCTRL] = $this->input->post('spicynoodle' . JT_VEGCTRL);
-            $formdata['beehoon' . JT_VEGCTRL] = $this->input->post('beehoon' . JT_VEGCTRL);
-            $formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
-            $formdata['horfan' . JT_VEGCTRL] = $this->input->post('horfan' . JT_VEGCTRL);
+			$formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
+			$formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
+			$formdata['tanghoon' . JT_VEGCTRL] = $this->input->post('tanghoon' . JT_VEGCTRL);
+			$formdata['tomyumbeehoon' . JT_VEGCTRL] = $this->input->post('tomyumbeehoon' . JT_VEGCTRL);
+			$formdata['beehoon' . JT_VEGCTRL] = $this->input->post('beehoon' . JT_VEGCTRL);
+			$formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
+			$formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
+			$formdata['tomyumfriedrice' . JT_VEGCTRL] = $this->input->post('tomyumfriedrice' . JT_VEGCTRL);
 
-            $formdata['appetizerchoice'] = $this->input->post('appetizerchoice');
+			$formdata['saladchoice'] = $this->input->post('saladchoice');
 			$formdata['fishchoice'] = $this->input->post('fishchoice');
-			$formdata['squidprawnchoice'] = $this->input->post('squidprawnchoice');
-			$formdata['meatchoice'] = $this->input->post('meatchoice');
-			$formdata['thaicurrychoice'] = $this->input->post('thaicurrychoice');
-			$formdata['vegetablechoice'] = $this->input->post('vegetablechoice');
-			$formdata['noodlericechoice'] = $this->input->post('noodlericechoice');
+			$formdata['tomyumchoice'] = $this->input->post('tomyumchoice');
+			$formdata['chickenchoice'] = $this->input->post('chickenchoice');
+			$formdata['prawnchoice'] = $this->input->post('prawnchoice');
+			$formdata['noodlechoice'] = $this->input->post('noodlechoice');
+			$formdata['ricechoice'] = $this->input->post('ricechoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['drinkchoice'] = $this->input->post('drinkchoice');
 			$formdata['numpax'] = $this->input->post('numpax');
 
 			//pre validation processsing
 			$formdata['numpax'] = intval(trim($formdata['numpax']));
-			if (($formdata['thaicurrychoice'] == "") || (!is_array($formdata['thaicurrychoice']))) {
-				$formdata['thaicurrychoice'] = array(); 
-			}
-			if (($formdata['noodlericechoice'] == "") || (!is_array($formdata['noodlericechoice']))) { 
-				$formdata['noodlericechoice'] = array(); 
-			}
-		
 			//validation
 			$errors = array();
 			if ($formdata['numpax'] < $menu['minorder']) { 
 				$errors[] = "Minimum order is " . $menu['minorder'] . " pax"; 
-			}
-			if (sizeof($formdata['thaicurrychoice']) != 2) { 
-				$errors[] = "Please pick two dishes from Thai Curry / Soup Special choices"; 
-			}
-			if (sizeof($formdata['noodlericechoice']) != 2) { 
-				$errors[] = "Please pick two dishes from Noodle / Rice choices"; 
 			}
 			
 			//check if validation went thru
@@ -835,34 +740,21 @@ class JTMenu extends KA_Controller {
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
 
-        $formdatadefaults['mangosalad' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['tanghoonsalad' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['kailanoystersauce' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['kailanchimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['beansprout' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['mixedveg' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['mixedvegchimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['cabbageoystersauce' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['cabbagechimush' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['ricebasil' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['tanghoon' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['spicynoodle' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['beehoon' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
-        $formdatadefaults['horfan' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['broccolichimush' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['phadthai' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['pineapplerice' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['oliverice' . JT_VEGCTRL] = JT_REG;
+		$formdatadefaults['tomyumfriedrice' . JT_VEGCTRL] = JT_REG;
 
-        $formdatadefaults['appetizerchoice'] = "Prawn Cake";
 		$formdatadefaults['saladchoice'] = "Mango Salad";
-		$formdatadefaults['fishchoice'] = "Deep Fried Fish Fillet with Chilli Sauce";
-		$formdatadefaults['squidprawnchoice'] = "Squid Pepper & Garlic";
-		$formdatadefaults['meatchoice'] = "Stir Fried Beef with Pepper & Garlic";
-		$formdatadefaults['thaicurrychoice'] = array();
-		$formdatadefaults['vegetablechoice'] = "Fried Kai Lan Oyster Sauce";
-		$formdatadefaults['noodlericechoice'] = array();
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
-		$formdatadefaults['drinkchoice'] = "Iced Lemon Tea";
+		$formdatadefaults['fishchoice'] = "Deep Fried Fish with Thai Chilli Sauce";
+		$formdatadefaults['tomyumchoice'] = "Tom Yum Seafood Clear Soup (Aromatic with Herbal and Spices Taste)";
+		$formdatadefaults['chickenchoice'] = "Fried Chicken with Basil Leaf";
+		$formdatadefaults['prawnchoice'] = "Fried Prawn with Chilli Paste";
+		$formdatadefaults['squidchoice'] = "Fried Squid with Chilli Paste";
+		$formdatadefaults['ricechoice'] = "Pineapple Rice";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
+		$formdatadefaults['drinkchoice'] = "Lime Juice";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 
 		if ($this->formSubmitted()) {
@@ -872,55 +764,29 @@ class JTMenu extends KA_Controller {
 			//retrieve from POST
 			$formdata = array();
 
-            $formdata['mangosalad' . JT_VEGCTRL] = $this->input->post('mangosalad' . JT_VEGCTRL);
-            $formdata['tanghoonsalad' . JT_VEGCTRL] = $this->input->post('tanghoonsalad' . JT_VEGCTRL);
-            $formdata['kailanoystersauce' . JT_VEGCTRL] = $this->input->post('kailanoystersauce' . JT_VEGCTRL);
-            $formdata['kailanchimush' . JT_VEGCTRL] = $this->input->post('kailanchimush' . JT_VEGCTRL);
-            $formdata['beansprout' . JT_VEGCTRL] = $this->input->post('beansprout' . JT_VEGCTRL);
-            $formdata['mixedveg' . JT_VEGCTRL] = $this->input->post('mixedveg' . JT_VEGCTRL);
-            $formdata['mixedvegchimush' . JT_VEGCTRL] = $this->input->post('mixedvegchimush' . JT_VEGCTRL);
-            $formdata['cabbageoystersauce' . JT_VEGCTRL] = $this->input->post('cabbageoystersauce' . JT_VEGCTRL);
-            $formdata['cabbagechimush' . JT_VEGCTRL] = $this->input->post('cabbagechimush' . JT_VEGCTRL);
-            $formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
-            $formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
-            $formdata['ricebasil' . JT_VEGCTRL] = $this->input->post('ricebasil' . JT_VEGCTRL);
-            $formdata['tanghoon' . JT_VEGCTRL] = $this->input->post('tanghoon' . JT_VEGCTRL);
-            $formdata['spicynoodle' . JT_VEGCTRL] = $this->input->post('spicynoodle' . JT_VEGCTRL);
-            $formdata['beehoon' . JT_VEGCTRL] = $this->input->post('beehoon' . JT_VEGCTRL);
-            $formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
-            $formdata['horfan' . JT_VEGCTRL] = $this->input->post('horfan' . JT_VEGCTRL);
+			$formdata['broccolichimush' . JT_VEGCTRL] = $this->input->post('broccolichimush' . JT_VEGCTRL);
+			$formdata['phadthai' . JT_VEGCTRL] = $this->input->post('phadthai' . JT_VEGCTRL);
+			$formdata['pineapplerice' . JT_VEGCTRL] = $this->input->post('pineapplerice' . JT_VEGCTRL);
+			$formdata['oliverice' . JT_VEGCTRL] = $this->input->post('oliverice' . JT_VEGCTRL);
+			$formdata['tomyumfriedrice' . JT_VEGCTRL] = $this->input->post('tomyumfriedrice' . JT_VEGCTRL);
 
-            $formdata['appetizerchoice'] = $this->input->post('appetizerchoice');
 			$formdata['saladchoice'] = $this->input->post('saladchoice');
 			$formdata['fishchoice'] = $this->input->post('fishchoice');
-			$formdata['squidprawnchoice'] = $this->input->post('squidprawnchoice');
-			$formdata['meatchoice'] = $this->input->post('meatchoice');
-			$formdata['thaicurrychoice'] = $this->input->post('thaicurrychoice');
-			$formdata['vegetablechoice'] = $this->input->post('vegetablechoice');
-			$formdata['noodlericechoice'] = $this->input->post('noodlericechoice');
+			$formdata['tomyumchoice'] = $this->input->post('tomyumchoice');
+			$formdata['chickenchoice'] = $this->input->post('chickenchoice');
+			$formdata['prawnchoice'] = $this->input->post('prawnchoice');
+			$formdata['squidchoice'] = $this->input->post('squidchoice');
+			$formdata['ricechoice'] = $this->input->post('ricechoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['drinkchoice'] = $this->input->post('drinkchoice');
 			$formdata['numpax'] = $this->input->post('numpax');
 
 			//pre validation processsing
 			$formdata['numpax'] = intval(trim($formdata['numpax']));
-			if (($formdata['thaicurrychoice'] == "") || (!is_array($formdata['thaicurrychoice']))) {
-				$formdata['thaicurrychoice'] = array(); 
-			}
-			if (($formdata['noodlericechoice'] == "") || (!is_array($formdata['noodlericechoice']))) { 
-				$formdata['noodlericechoice'] = array(); 
-			}
-
 			//validation
 			$errors = array();
 			if ($formdata['numpax'] < $menu['minorder']) { 
 				$errors[] = "Minimum order is " . $menu['minorder'] . " pax"; 
-			}
-			if (sizeof($formdata['thaicurrychoice']) != 2) { 
-				$errors[] = "Please pick two dishes from Thai Curry / Soup Special choices"; 
-			}
-			if (sizeof($formdata['noodlericechoice']) != 2) { 
-				$errors[] = "Please pick two dishes from Noodle / Rice choices"; 
 			}
 			
 			//check if validation went thru

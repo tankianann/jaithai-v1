@@ -288,7 +288,7 @@
 						</div>						
 						<div class="col-sm-8">
 							<h3>DIY Catering Menu A</h3>
-							<p>7 Dishes + Drink @ $15.90/ pax<br />Minimum 40 pax</p>
+							<p>8 Dishes + Drink @ $16.90 / pax<br />Minimum 40 pax</p>
 							<p><a href="<?php _e(site_url('/jtmenu/cateringdiya')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>											
 					</div>
@@ -300,7 +300,7 @@
 						</div>						
 						<div class="col-sm-8">
 							<h3>DIY Catering Menu B</h3>
-							<p>9 Dishes + Drink @ $18.90 / pax<br />Minimum 30 pax</p>
+							<p>9 Dishes + Drink @ $19.90 / pax<br />Minimum 30 pax</p>
 							<p><a href="<?php _e(site_url('/jtmenu/cateringdiyb')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>											
 					</div>
@@ -312,7 +312,7 @@
 						</div>						
 						<div class="col-sm-8">
 							<h3>DIY Catering Menu C</h3>
-							<p>10 Dishes + Drink @ $21.90 / pax<br />Minimum 30 pax</p>
+							<p>10 Dishes + Drink @ $22.90 / pax<br />Minimum 30 pax</p>
 							<p><a href="<?php _e(site_url('/jtmenu/cateringdiyc')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>											
 					</div>

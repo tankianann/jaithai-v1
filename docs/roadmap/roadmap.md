@@ -30,7 +30,7 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 | Phase 3 — Catering-menu update | [M3.1A — Existing menu image replacements](../milestones/M3.1A-existing-menu-image-replacements.md) | Complete | Replace approved images for existing menus without changing menu behaviour. | None. |
 | Phase 3 — Catering-menu update | [M3.1B — Catering menu tab organization](../milestones/M3.1B-catering-menu-tab-organization.md) | Complete | Separate the catering landing-page cards into the approved menu-family tabs without changing tab behavior. | Manual visual and smoke verification remains part of the wider Phase 3 regression pass. |
 | Phase 3 — Catering-menu update | [M3.2A — Set Catering menu replacements](../milestones/M3.2A-set-catering-menu-replacements.md) | Implemented | Replace Set Catering A–D dishes and prices without adding new ordering functionality. | Live smoke and visual verification, independent review, and milestone commit. |
-| Phase 3 — Catering-menu update | M3.2B — DIY Catering menu replacements | Planned | Replace DIY Catering A–D dishes and prices without unrelated behaviour changes. | M3.2A reviewed. |
+| Phase 3 — Catering-menu update | [M3.2B — DIY Catering menu replacements](../milestones/M3.2B-diy-catering-menu-replacements.md) | Implemented | Replace DIY Catering A–D dishes and prices without unrelated behaviour changes. | Live smoke and visual verification, independent review, and milestone commit. |
 | Phase 3 — Catering-menu update | M3.2C — Vegan Catering menu replacements | Planned | Replace Vegan Catering A–C and introduce the approved Menu D through separately reviewed scope. | M3.2B reviewed; Menu D implementation boundary confirmed. |
 | Phase 3 — Catering-menu update | M3.3 — Menu regression verification | Planned | Verify the updated customer-facing menus and affected cart/order behaviour across the agreed local test surface. | M3.2A–M3.2C implemented. |
 | Phase 4 — Constrained modernization | M4.1 — Security hardening priorities | Planned | Address the highest-value application risks that can be improved without changing PHP or CodeIgniter versions. | Baseline running; risk review and scope approval. |
@@ -38,7 +38,7 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Active Milestone
 
-[M3.2A — Set Catering menu replacements](../milestones/M3.2A-set-catering-menu-replacements.md) is implemented in source. Set Catering A–D now contain the approved replacement dishes, choices, prices, minimums, and summaries without any new ordering control type. Live visual and smoke verification, independent review, and commit remain.
+[M3.2B — DIY Catering menu replacements](../milestones/M3.2B-diy-catering-menu-replacements.md) is implemented in source. DIY Catering A–D now contain the approved replacement dishes, choices, prices, minimums, and summaries using only the existing radio, Regular/Vegan dropdown, and surcharge mechanisms. Live visual and smoke verification, independent review, and commit remain.
 
 ## Dependencies and Decision Points
 
@@ -62,4 +62,4 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Immediate Next Step
 
-Run the live visual review and smoke suite, then review and commit M3.2A before starting the DIY Catering replacements in M3.2B.
+Run the live visual review and smoke suite, then review and commit the implemented Set and DIY Catering replacements before starting the Vegan Catering replacements in M3.2C.
