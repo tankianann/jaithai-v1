@@ -846,13 +846,12 @@ class JTMenu extends KA_Controller {
 		$displaydata['menu'] = $menu;
 
 		//initalize display data with some default values
-		$displaydata['meta_title'] = "Vegetarian Catering Singapore: " . $menu['title'] . " @ \$" . sprintf("%.2f", $menu['perpax']) . "/Pax - Jai Thai";
+		$displaydata['meta_title'] = "Vegan Catering Singapore: " . $menu['title'] . " @ \$" . sprintf("%.2f", $menu['perpax']) . "/Pax - Jai Thai";
 		$displaydata['meta_description'] = $menu['meta_description'];
 	
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
-		$formdatadefaults['beancurdchoice'] = "Deep Fried Bean Curd with Chilli Sauce (Spicy)";
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
 		$formdatadefaults['addondrink'] = "No Drink";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 		
@@ -862,7 +861,6 @@ class JTMenu extends KA_Controller {
 			
 			//retrieve from POST
 			$formdata = array();
-			$formdata['beancurdchoice'] = $this->input->post('beancurdchoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['addondrink'] = $this->input->post('addondrink');
 			$formdata['numpax'] = $this->input->post('numpax');
@@ -926,14 +924,12 @@ class JTMenu extends KA_Controller {
 		$displaydata['menu'] = $menu;
 
 		//initalize display data with some default values
-		$displaydata['meta_title'] = "Vegetarian Catering Singapore: " . $menu['title'] . " @ \$" . sprintf("%.2f", $menu['perpax']) . "/Pax - Jai Thai";
+		$displaydata['meta_title'] = "Vegan Catering Singapore: " . $menu['title'] . " @ \$" . sprintf("%.2f", $menu['perpax']) . "/Pax - Jai Thai";
 		$displaydata['meta_description'] = $menu['meta_description'];
 	
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
-		$formdatadefaults['beancurdchoice'] = "Deep Fried Bean Curd with Chilli Sauce (Spicy)";
-		$formdatadefaults['ricechoice'] = "Olive Rice";
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
 		$formdatadefaults['addondrink'] = "No Drink";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 		
@@ -943,8 +939,6 @@ class JTMenu extends KA_Controller {
 			
 			//retrieve from POST
 			$formdata = array();
-			$formdata['beancurdchoice'] = $this->input->post('beancurdchoice');
-			$formdata['ricechoice'] = $this->input->post('ricechoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['addondrink'] = $this->input->post('addondrink');
 			$formdata['numpax'] = $this->input->post('numpax');
@@ -1008,14 +1002,15 @@ class JTMenu extends KA_Controller {
 		$displaydata['menu'] = $menu;
 
 		//initalize display data with some default values
-		$displaydata['meta_title'] = "Vegetarian Catering Singapore: " . $menu['title'] . " @ \$" . sprintf("%.2f", $menu['perpax']) . "/Pax - Jai Thai";
+		$displaydata['meta_title'] = "Vegan Catering Singapore: " . $menu['title'] . " @ \$" . sprintf("%.2f", $menu['perpax']) . "/Pax - Jai Thai";
 		$displaydata['meta_description'] = $menu['meta_description'];
 	
 		//initialize form defaults data with form defaults
 		$formdatadefaults = array();
-		$formdatadefaults['beancurdchoice'] = "Deep Fried Bean Curd with Chilli Sauce (Spicy)";
-		$formdatadefaults['ricechoice'] = "Olive Rice";
-		$formdatadefaults['dessertchoice'] = "Red Ruby";
+		$formdatadefaults['vegetablechoice'] = "Vegan Fried Mixed Vegetable";
+		$formdatadefaults['noodlechoice'] = "Vegan Phad Thai";
+		$formdatadefaults['ricechoice'] = "Vegan Pineapple Rice";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
 		$formdatadefaults['addondrink'] = "No Drink";
 		$formdatadefaults['numpax'] = $menu['minorder'];
 		
@@ -1025,7 +1020,8 @@ class JTMenu extends KA_Controller {
 			
 			//retrieve from POST
 			$formdata = array();
-			$formdata['beancurdchoice'] = $this->input->post('beancurdchoice');
+			$formdata['vegetablechoice'] = $this->input->post('vegetablechoice');
+			$formdata['noodlechoice'] = $this->input->post('noodlechoice');
 			$formdata['ricechoice'] = $this->input->post('ricechoice');
 			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
 			$formdata['addondrink'] = $this->input->post('addondrink');
@@ -1079,6 +1075,61 @@ class JTMenu extends KA_Controller {
 		}	
 	}//end vegetarianMenuC
 	
+
+	public function vegetarianMenuD() {
+		$displaydata = array();
+
+		$menu = getJaiThaiMenu('VEGED');
+		$displaydata['menu'] = $menu;
+		$displaydata['meta_title'] = "Vegan Catering Singapore: " . $menu['title'] . " @ \$" . sprintf("%.2f", $menu['perpax']) . "/Pax - Jai Thai";
+		$displaydata['meta_description'] = $menu['meta_description'];
+
+		$formdatadefaults = array();
+		$formdatadefaults['saladchoice'] = "Vegan Mango Salad";
+		$formdatadefaults['tomyumchoice'] = "Tom Yum Vegan Clear Soup (Aromatic with Herbal and Spices Taste)";
+		$formdatadefaults['vegetablechoice'] = "Vegan Fried Mixed Vegetable";
+		$formdatadefaults['noodlechoice'] = "Vegan Phad Thai";
+		$formdatadefaults['ricechoice'] = "Vegan Pineapple Rice";
+		$formdatadefaults['dessertchoice'] = "Thai Red Ruby";
+		$formdatadefaults['addondrink'] = "No Drink";
+		$formdatadefaults['numpax'] = $menu['minorder'];
+
+		if ($this->formSubmitted()) {
+			$formdata = array();
+			$formdata['saladchoice'] = $this->input->post('saladchoice');
+			$formdata['tomyumchoice'] = $this->input->post('tomyumchoice');
+			$formdata['vegetablechoice'] = $this->input->post('vegetablechoice');
+			$formdata['noodlechoice'] = $this->input->post('noodlechoice');
+			$formdata['ricechoice'] = $this->input->post('ricechoice');
+			$formdata['dessertchoice'] = $this->input->post('dessertchoice');
+			$formdata['addondrink'] = $this->input->post('addondrink');
+			$formdata['numpax'] = intval(trim($this->input->post('numpax')));
+
+			$errors = array();
+			if ($formdata['numpax'] < $menu['minorder']) {
+				$errors[] = "Minimum order is " . $menu['minorder'] . " pax";
+			}
+
+			if (sizeof($errors)) {
+				$errors = "<ul><li>" . implode("</li><li>", $errors) . "</li></ul>";
+				$this->errorMessage($errors);
+				$displaydata['formdata'] = $formdata;
+				$displaydata['template'] = 'setmenu_view';
+				$this->load->view(KA_CITHEME . '/index', $displaydata);
+			}
+			else {
+				$this->cart_model->addItem('VEGED', $formdata);
+				$this->successMessage("Menu added to cart.");
+				redirect('cart.php');
+			}
+		}
+		else {
+			$displaydata['formdata'] = $formdatadefaults;
+			$displaydata['template'] = 'setmenu_view';
+			$this->load->view(KA_CITHEME . '/index', $displaydata);
+		}
+	}//end vegetarianMenuD
+
 	
 	public function miniPartySet() {
 		

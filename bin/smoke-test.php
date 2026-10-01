@@ -256,6 +256,10 @@ $checks = array(
 	array('/jtmenu/cateringdiyb', 200, 'DIY Catering Menu B', 'DIY Catering Menu B form'),
 	array('/jtmenu/cateringdiyc', 200, 'DIY Catering Menu C', 'DIY Catering Menu C form'),
 	array('/jtmenu/cateringdiyd', 200, 'DIY Catering Menu D', 'DIY Catering Menu D form'),
+	array('/jtmenu/vegetarianmenua', 200, 'Vegan Catering Menu A', 'Vegan Catering Menu A form'),
+	array('/jtmenu/vegetarianmenub', 200, 'Vegan Catering Menu B', 'Vegan Catering Menu B form'),
+	array('/jtmenu/vegetarianmenuc', 200, 'Vegan Catering Menu C', 'Vegan Catering Menu C form'),
+	array('/jtmenu/vegetarianmenud', 200, 'Vegan Catering Menu D', 'Vegan Catering Menu D form'),
 	array('/cart', 200, 'Shopping Cart', 'shopping cart page'),
 	array('/jtadmin/login', 200, 'Please Login', 'administrator login page'),
 );
@@ -332,6 +336,29 @@ foreach (array('DIY Catering Menu A', 'Thai Green Curry Vegan', 'Phad Thai (Vega
 }
 
 smoke_result(response_has_no_php_error($diy_cart), 'DIY cart contains no rendered PHP error');
+
+$add_vegan_to_cart = smoke_request($curl, $base_url, '/jtmenu/vegetarianmenud', array(
+	'formSubmitted' => '1',
+	'saladchoice' => 'Vegan Mango Salad',
+	'tomyumchoice' => 'Tom Yum Vegan Clear Soup (Aromatic with Herbal and Spices Taste)',
+	'vegetablechoice' => 'Vegan Fried Mixed Vegetable',
+	'noodlechoice' => 'Vegan Phad Thai',
+	'ricechoice' => 'Vegan Pineapple Rice',
+	'dessertchoice' => 'Thai Red Ruby',
+	'addondrink' => 'No Drink',
+	'numpax' => '30',
+));
+
+smoke_result($add_vegan_to_cart['status'] === 302, 'valid Vegan Menu D selection redirects after add-to-cart', 'HTTP '.$add_vegan_to_cart['status']);
+
+$vegan_cart = smoke_request($curl, $base_url, '/cart');
+smoke_result($vegan_cart['status'] === 200, 'cart containing Vegan Menu D is reachable', 'HTTP '.$vegan_cart['status']);
+
+foreach (array('Vegan Catering Menu D', 'Tom Yum Vegan Clear Soup', 'Vegan Phad Thai', 'Vegan Pineapple Rice') as $cart_marker) {
+	smoke_result(response_contains($vegan_cart, $cart_marker), 'Vegan Menu D cart contains '.$cart_marker);
+}
+
+smoke_result(response_has_no_php_error($vegan_cart), 'Vegan Menu D cart contains no rendered PHP error');
 
 $admin_login = smoke_request($curl, $base_url, '/jtadmin/login', array(
 	'formSubmitted' => '1',

@@ -1,6 +1,6 @@
 # Catering Menu Image Inventory
 
-**Status:** Existing-menu replacements implemented; new Vegan Catering Menu D and KIV assets remain pending
+**Status:** All approved menu replacements implemented; KIV assets remain inactive
 
 **Recorded:** 2026-10-01
 
@@ -8,9 +8,9 @@
 
 ## Scope
 
-This inventory records the use of every image originally supplied under `inbox/pending/new-images/` and now preserved under `inbox/processed/`. On 2026-10-01, the 15 source images assigned to existing menus were visually reviewed, copied unchanged into `src/assets/i/catering-menu/`, and wired into every corresponding card occurrence.
+This inventory records the use of every image originally supplied under `inbox/pending/new-images/` and now preserved under `inbox/processed/`. The 16 source images assigned to approved menus were copied unchanged into `src/assets/i/catering-menu/` and wired into every corresponding card occurrence.
 
-All 20 supplied image files are accounted for below: 15 are implemented for existing menus, one is reserved for the future Vegan Catering Menu D, and four are marked KIV.
+All 20 supplied image files are accounted for below: 16 are implemented and four are marked KIV.
 
 ## Approved Replacements
 
@@ -30,7 +30,7 @@ All 20 supplied image files are accounted for below: 15 are implemented for exis
 | `20261001112919-vegan-catering-menu-a.jpg` | Vegan Catering Menu A | Implemented as `vegan-catering-menu-a.jpg`. |
 | `20261001112919-vegan-catering-menu-b.jpg` | Vegan Catering Menu B | Implemented as `vegan-catering-menu-b.jpg`. |
 | `20261001112919-vegan-catering-menu-c.jpg` | Vegan Catering Menu C | Implemented as `vegan-catering-menu-c.jpg`. |
-| `20261001112919-vegan-catering-menu-d.jpg` | New Vegan Catering Menu D | Pending creation of the new Menu D route and card. |
+| `20261001112919-vegan-catering-menu-d.jpg` | Vegan Catering Menu D | Implemented as `vegan-catering-menu-d.jpg`. |
 | `20261001112919-vegan-mini-party-sets.jpg` | Chaiyo Vegan, Chokdee Vegan, and Sawasdee Vegan menus | Implemented as the shared `vegan-mini-party-sets.jpg` asset for every card occurrence. |
 
 ## Keep in View
@@ -51,7 +51,7 @@ The existing `Mini Party Set` card currently uses `miniparty-set.jpg`. The suppl
 ## Implementation Record
 
 - Preserve each processed source image unchanged as provenance.
-- The 15 implemented application assets are byte-for-byte copies of their processed source files and retain their supplied 1280×720 JPEG format.
+- The 16 implemented application assets are byte-for-byte copies of their processed source files and retain their supplied 1280×720 JPEG format.
 - Every repeated card occurrence uses the appropriate shared non-vegan or vegan mini-party image.
 - New filenames avoid serving a previously cached image under an old URL.
 - Image `alt` and `title` text identifies the corresponding menu rather than describing the retired image.

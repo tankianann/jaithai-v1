@@ -31,6 +31,7 @@ function getJaiThaiMenu($id) {
 		"VEGEA" => "menuVEGEA",
 		"VEGEB" => "menuVEGEB",
 		"VEGEC" => "menuVEGEC",
+		"VEGED" => "menuVEGED",
 		"MPSET" => "menuMPSET",
 		"MPALACARTE" => "menuMPALACARTE",
 		"SANOOK" => "menuSanook",

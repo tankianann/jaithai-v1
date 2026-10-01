@@ -13,6 +13,7 @@ function getMenuDisplayColumns($id) {
 		case "VEGEA":
 		case "VEGEB":
 		case "VEGEC":
+		case "VEGED":
         case "MPSET":
 		case "MPALACARTE":
 		case "BENTO":
@@ -106,6 +107,9 @@ function getMenuImages($id) {
 		case "VEGEC":
 			$images[] = array('fried-mixed-vegetables.jpg', 'Fried Mixed Vegetables');
 			$images[] = array('pineapple-rice.jpg', 'Thai Pineapple Rice');
+			break;
+
+		case "VEGED":
 			break;
 					
 		case "MPSET":

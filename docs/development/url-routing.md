@@ -47,12 +47,13 @@ These are the active 301 mappings in `src/.htaccess`. Query strings are retained
 | `/vegetarian-menu-a.php` | `/jtmenu/vegetarianmenua` | Vegan/vegetarian Catering Menu A |
 | `/vegetarian-menu-b.php` | `/jtmenu/vegetarianmenub` | Vegan/vegetarian Catering Menu B |
 | `/vegetarian-menu-c.php` | `/jtmenu/vegetarianmenuc` | Vegan/vegetarian Catering Menu C |
+| None | `/jtmenu/vegetarianmenud` | Vegan Catering Menu D; native route only |
 | `/mini-parties-package.php` | `/jtmenu/minipartyset` | Mini Party Set |
 | `/mini-parties.php` | `/jtmenu/minipartyalacarte` | Mini Party DIY/a la carte |
 | `/catering-bento-set.php` | `/jtmenu/bento` | Bento set |
 | `/catering-sanook-set.php` | `/jtmenu/sanook` | Sanook set |
 
-There is not yet a `/jtmenu/vegetarianmenud` route or a legacy `.php` alias for Vegan Catering Menu D. Adding that native route is part of the planned menu implementation.
+Vegan Catering Menu D uses only the native `/jtmenu/vegetarianmenud` route. No legacy `.php` alias is provided, at the user's direction.
 
 ### Cart and Customer Actions
 

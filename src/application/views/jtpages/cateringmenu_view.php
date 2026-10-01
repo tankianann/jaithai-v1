@@ -339,7 +339,7 @@
 						</div>						
 						<div class="col-sm-8">
 							<h3>Vegan Catering Menu A</h3>
-							<p>7 Dishes (No Drink) @ $14.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 40 pax</p>
+							<p>8 Dishes (No Drink) @ $15.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 40 pax</p>
 							<p><a href="<?php _e(site_url('/jtmenu/vegetarianmenua')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>											
 					</div>
@@ -351,7 +351,7 @@
 						</div>						
 						<div class="col-sm-8">
 							<h3>Vegan Catering Menu B</h3>
-							<p>9 Dishes (No Drink) @ $17.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 30 pax</p>
+							<p>9 Dishes (No Drink) @ $18.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 30 pax</p>
 							<p><a href="<?php _e(site_url('/jtmenu/vegetarianmenub')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>											
 					</div>
@@ -363,9 +363,21 @@
 						</div>						
 						<div class="col-sm-8">
 							<h3>Vegan Catering Menu C</h3>
-							<p>10 Dishes (No Drink) @ $20.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 30 pax</p>
+							<p>10 Dishes (No Drink) @ $21.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 30 pax</p>
 							<p><a href="<?php _e(site_url('/jtmenu/vegetarianmenuc')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
 						</div>											
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<a href="<?php _e(site_url('/jtmenu/vegetarianmenud')); ?>">
+								<img src="<?php _e(base_url('assets/i/catering-menu/vegan-catering-menu-d.jpg')) ?>" alt="Vegan Catering Menu D" title="Vegan Catering Menu D" class="img-responsive dotooltip" data-toggle="tooltip" data-placement="top" />
+							</a>
+						</div>
+						<div class="col-sm-8">
+							<h3>Vegan Catering Menu D</h3>
+							<p>11 Dishes (No Drink) @ $24.00 / pax<br />Drinks available with addition of $1.00 / pax<br />Minimum 30 pax</p>
+							<p><a href="<?php _e(site_url('/jtmenu/vegetarianmenud')); ?>" class='btn btn-danger'>View Menu &raquo;</a></p>
+						</div>
 					</div>
 				</div>
 				<div id="menu-miniparty-set" class="cateringmenu">
