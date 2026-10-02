@@ -1,10 +1,10 @@
 # Current Status
 
-**Last updated:** 2026-10-01
+**Last updated:** 2026-10-02
 
-**Stage:** Phase 3 — Catering-menu update
+**Stage:** Phase 4 — Constrained modernization
 
-**Active milestone:** [M3.3 — Menu regression verification](../milestones/M3.3-menu-regression-verification.md)
+**Active milestone:** [M4.2 — URL contract and v2 migration](../milestones/M4.2-url-contract-and-v2-migration.md)
 
 Phase 1 is complete. The sanitized CodeIgniter 2.2.2 application source is committed under `src/` and pushed to the new GitHub repository without the historical secret-bearing Git history. The user confirmed rotation of the historical credentials on 2026-09-30.
 
@@ -25,10 +25,12 @@ The safe development fixtures and expanded 59-check smoke suite were committed a
 - [M3.2A — Set Catering menu replacements](../milestones/M3.2A-set-catering-menu-replacements.md) — approved Essential, Classic, Signature, and Supreme content committed as `a75a1e4`.
 - [M3.2B — DIY Catering menu replacements](../milestones/M3.2B-diy-catering-menu-replacements.md) — approved DIY collection content committed as `eb658f3`.
 - [M3.2C — Vegan Catering menu replacements](../milestones/M3.2C-vegan-catering-menu-replacements.md) — approved Vegan collection content and new Menu D committed as `6d9ab7a`.
+- [M3.3 — Menu regression verification](../milestones/M3.3-menu-regression-verification.md) — 173 PHP 7.4 menu checks, 106 live smoke checks, and the manual browser review committed as `e1e0e6c`.
 
-## Implemented Milestone Awaiting Commit
+## Implemented Milestone Awaiting Review and Commit
 
-- [M3.3 — Menu regression verification](../milestones/M3.3-menu-regression-verification.md) — 173 PHP 7.4 menu regression checks and 106 live smoke checks pass; the user confirmed the manual browser review.
+- [M4.1 — Security hardening priorities](../milestones/M4.1-security-hardening-priorities.md) — records exposure containment, authentication, CSRF, sensitive-document, output, abuse, and integration risks as KIV requirements for v2; no v1 behavior changes are planned.
+- [M4.2 — URL contract and v2 migration](../milestones/M4.2-url-contract-and-v2-migration.md) — defines controller-independent v2 canonical URLs and direct launch redirects from legacy `.php` and current controller-style paths without changing v1 routing.
 
 ## Current Runtime State
 
@@ -43,4 +45,4 @@ The safe development fixtures and expanded 59-check smoke suite were committed a
 
 ## Immediate Next Step
 
-Commit the completed M3.3 verification changes, then define the M4.1 security-hardening scope and acceptance criteria before modifying application behavior.
+Review the proposed v2 canonical URL names, supplement the source inventory with production access logs and Search Console data, then commit the M4.1 and M4.2 documentation. Do not change v1 routes during its final month; implement and test the redirect matrix in v2 before launch.

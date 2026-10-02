@@ -1,6 +1,6 @@
 # Jai Thai Recovery and Maintenance Roadmap
 
-**Last updated:** 2026-10-01
+**Last updated:** 2026-10-02
 
 ## Project Outcome
 
@@ -32,13 +32,18 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 | Phase 3 — Catering-menu update | [M3.2A — Set Catering menu replacements](../milestones/M3.2A-set-catering-menu-replacements.md) | Complete | Replace Set Catering A–D dishes and prices without adding new ordering functionality. | None. |
 | Phase 3 — Catering-menu update | [M3.2B — DIY Catering menu replacements](../milestones/M3.2B-diy-catering-menu-replacements.md) | Complete | Replace DIY Catering A–D dishes and prices without unrelated behaviour changes. | None. |
 | Phase 3 — Catering-menu update | [M3.2C — Vegan Catering menu replacements](../milestones/M3.2C-vegan-catering-menu-replacements.md) | Complete | Replace Vegan Catering A–C and introduce the approved Menu D through separately reviewed scope. | None. |
-| Phase 3 — Catering-menu update | [M3.3 — Menu regression verification](../milestones/M3.3-menu-regression-verification.md) | Implemented | Verify the updated customer-facing menus and affected cart/order behaviour across the agreed local test surface. | Commit the verified milestone changes. |
-| Phase 4 — Constrained modernization | M4.1 — Security hardening priorities | Planned | Address the highest-value application risks that can be improved without changing PHP or CodeIgniter versions. | Baseline running; risk review and scope approval. |
-| Phase 4 — Constrained modernization | M4.2 — Maintainability improvements | Planned | Reduce the cost and risk of future content and code changes while preserving supported behaviour. | Identify repeated pain points during recovery and menu delivery. |
+| Phase 3 — Catering-menu update | [M3.3 — Menu regression verification](../milestones/M3.3-menu-regression-verification.md) | Complete | Verify the updated customer-facing menus and affected cart/order behaviour across the agreed local test surface. | None. |
+| Phase 4 — Constrained modernization | [M4.1 — Security hardening priorities](../milestones/M4.1-security-hardening-priorities.md) | Implemented | Identify and prioritize the highest-value application risks without destabilizing the legacy application. | Review and milestone commit. |
+| Phase 4 — Constrained modernization | M4.1A — Public exposure containment | Deferred | Protect unauthenticated administration, API, cron, utility-controller, archive, and sensitive-document boundaries. | KIV for v1 stability; carry into v2. |
+| Phase 4 — Constrained modernization | M4.1B — Administrator authentication | Deferred | Replace the serialized identity cookie and legacy password hashing with a server-side session identity and compatible modern hashes. | KIV for v1 stability; design correctly in v2. |
+| Phase 4 — Constrained modernization | M4.1C — CSRF and mutation safety | Deferred | Protect state-changing forms and AJAX operations with request tokens and POST-only semantics. | KIV for v1 stability; design correctly in v2. |
+| Phase 4 — Constrained modernization | M4.1D — Sensitive data and output boundaries | Deferred | Protect generated documents and public tokens, validate requests, and encode customer-controlled output. | KIV for v1 stability; design correctly in v2. |
+| Phase 4 — Constrained modernization | M4.1E — Abuse and integration containment | Deferred | Add measured throttling, security headers, and integration-specific containment. | KIV for v1 stability; design correctly in v2. |
+| Phase 4 — Constrained modernization | [M4.2 — URL contract and v2 migration](../milestones/M4.2-url-contract-and-v2-migration.md) | Implemented | Define controller-independent canonical URLs and a safe v1-to-v2 redirect contract without changing v1 behavior. | Review canonical names, supplement with production traffic evidence, and commit. |
 
 ## Active Milestone
 
-[M3.3 — Menu regression verification](../milestones/M3.3-menu-regression-verification.md) has passed 173 PHP 7.4 menu checks, 106 live smoke checks, and the user-completed browser review. Its final milestone commit remains; M4.1 security hardening priorities follows.
+[M4.2 — URL contract and v2 migration](../milestones/M4.2-url-contract-and-v2-migration.md) is documented. V1 routing remains unchanged; v2 receives clean canonical paths and direct one-hop redirects from both `.php` and controller-style URLs at launch.
 
 ## Dependencies and Decision Points
 
@@ -62,4 +67,4 @@ Recover the legacy Jai Thai catering website into a clean, secret-free repositor
 
 ## Immediate Next Step
 
-Commit the completed M3.3 verification changes, then define the M4.1 security-hardening scope before modifying application behavior.
+Review the proposed v2 canonical URL names, supplement the mapping with production logs and Search Console data, then commit the M4.1 and M4.2 documentation before implementing the route contract in v2.

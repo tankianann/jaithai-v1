@@ -61,4 +61,4 @@ Run the safe local baseline with `php bin/smoke-test.php`. The command expects t
 
 Run `php bin/menu-regression.php` for the Docker-independent catering-menu checks. This command reads tracked PHP definitions and source files only; it does not connect to a database or make network requests.
 
-Phase 3 menu delivery and regression verification have passed their automated and manual checks. The active delivery step is committing M3.3; the next planned milestone is M4.1 security hardening priorities within the fixed PHP 7.4 and CodeIgniter 2.2.2 constraints.
+Phase 3 menu delivery and regression verification are complete. M4.1 records security findings as KIV requirements for v2, and M4.2 defines a controller-independent v2 URL contract and launch redirect plan without changing v1 route behavior. Local web-root archives remain excluded from Git and production deployments.

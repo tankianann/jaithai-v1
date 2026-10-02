@@ -1,6 +1,6 @@
 # URL and Routing Inventory
 
-**Last reviewed:** 2026-10-01
+**Last reviewed:** 2026-10-02
 
 This document records the application-owned URLs discovered in the current CodeIgniter source. It covers dynamic application routes and legacy aliases, not individual files under `assets/`, framework files, or generated PDFs.
 
@@ -252,6 +252,110 @@ This does not require `RedirectRelative On`. That Apache 2.4.58+ directive contr
 There is one canonical-host trade-off. On a request to bare `jai-thai.com`, a path-only `Redirect` first preserves that host, and the existing host-canonicalization rule may then send a second redirect to `www.jai-thai.com`. Keeping fully qualified destinations avoids that extra hop. If local portability matters more, use path-only destinations and test both bare-domain and `www` behavior; if single-hop canonical production redirects matter more, keep the canonical host in production configuration rather than application-wide rules.
 
 No redirect change has been made as part of this documentation inventory.
+
+## Proposed V2 Canonical URL Contract
+
+These are the proposed public canonical paths for v2. They deliberately describe content rather than exposing CodeIgniter controller or method names. V1 should keep its current behavior during the final month; both the `.php` and controller-style sources should redirect directly to these destinations at v2 launch.
+
+### General and Restaurant Pages
+
+| V1 source URLs | Proposed v2 canonical URL | Content |
+| --- | --- | --- |
+| `/`, `/jtpages`, `/jtpages/index` | `/` | Home |
+| `/restaurant-menu.php`, `/jtpages/restaurantmenu` | `/restaurant-menu` | Restaurant-menu landing page |
+| `/menu-family-set.php`, `/jtpages/menufamilyset` | `/restaurant-menu/family-sets` | Family sets |
+| `/menu-individual-set.php`, `/jtpages/menuindividualset` | `/restaurant-menu/individual-sets` | Individual sets |
+| `/menu-jaithai.php`, `/jtpages/menujaithai` | `/restaurant-menu/jai-thai` | Jai Thai restaurant menu |
+| `/menu-vegetarian.php`, `/jtpages/menuvegetarian` | `/restaurant-menu/vegetarian` | Vegetarian restaurant menu |
+| `/catering-menu.php`, `/jtpages/cateringmenu` | `/catering` | Catering landing page |
+| `/about-achievements.php`, `/jtpages/aboutachievements` | `/about/achievements` | Achievements |
+| `/about-history.php`, `/jtpages/abouthistory` | `/about/history` | History |
+| `/about-outlets.php`, `/jtpages/aboutoutlets` | `/about/outlets` | Outlets |
+| `/jtpages/terms` | `/terms` | Terms |
+| `/jtpages/remembrance` | `/remembrance` | Remembrance page, if retained |
+| `/jtpages/promo` | `/promotions` | Promotions page, if retained |
+
+`/about-employment.php` currently redirects to the home page even though employment content is retired. V2 should return 410 or redirect to a real careers page only if one exists.
+
+### Current Catering Collection
+
+| V1 source URLs | Proposed v2 canonical URL | Content |
+| --- | --- | --- |
+| `/catering-menu-a.php`, `/jtmenu/cateringmenua` | `/catering/set-menu-a` | Set Catering Menu A |
+| `/catering-menu-b.php`, `/jtmenu/cateringmenub` | `/catering/set-menu-b` | Set Catering Menu B |
+| `/catering-menu-c.php`, `/jtmenu/cateringmenuc` | `/catering/set-menu-c` | Set Catering Menu C |
+| `/catering-menu-d.php`, `/jtmenu/cateringmenud` | `/catering/set-menu-d` | Set Catering Menu D |
+| `/catering-diy-a.php`, `/jtmenu/cateringdiya` | `/catering/diy-menu-a` | DIY Catering Menu A |
+| `/catering-diy-b.php`, `/jtmenu/cateringdiyb` | `/catering/diy-menu-b` | DIY Catering Menu B |
+| `/catering-diy-c.php`, `/jtmenu/cateringdiyc` | `/catering/diy-menu-c` | DIY Catering Menu C |
+| `/catering-diy-d.php`, `/jtmenu/cateringdiyd` | `/catering/diy-menu-d` | DIY Catering Menu D |
+| `/vegetarian-menu-a.php`, `/jtmenu/vegetarianmenua` | `/catering/vegan-menu-a` | Vegan Catering Menu A |
+| `/vegetarian-menu-b.php`, `/jtmenu/vegetarianmenub` | `/catering/vegan-menu-b` | Vegan Catering Menu B |
+| `/vegetarian-menu-c.php`, `/jtmenu/vegetarianmenuc` | `/catering/vegan-menu-c` | Vegan Catering Menu C |
+| `/jtmenu/vegetarianmenud` | `/catering/vegan-menu-d` | Vegan Catering Menu D |
+| `/jtmenu/thaicelebration` | `/catering/mini-party/thai-celebration` | Thai Celebration set |
+| `/jtmenu/chaiyo` | `/catering/mini-party/chaiyo` | Chaiyo set |
+| `/jtmenu/sawasdee` | `/catering/mini-party/sawasdee` | Sawasdee set |
+| `/jtmenu/chokdee` | `/catering/mini-party/chokdee` | Chokdee set |
+| `/jtmenu/chaiyovegan` | `/catering/mini-party/vegan/chaiyo` | Chaiyo vegan set |
+| `/jtmenu/sawasdeevegan` | `/catering/mini-party/vegan/sawasdee` | Sawasdee vegan set |
+| `/jtmenu/chokdeevegan` | `/catering/mini-party/vegan/chokdee` | Chokdee vegan set |
+| `/mini-parties.php`, `/jtmenu/minipartyalacarte` | `/catering/mini-party/diy` | Mini Party DIY |
+| `/catering-bento-set.php`, `/jtmenu/bento` | `/catering/bento` | Bento sets |
+
+The retired generic `/mini-parties-package.php` and `/jtmenu/minipartyset` routes should map to a genuine v2 mini-party landing page only if that page exists; otherwise return 410. `/catering-sanook-set.php` and `/jtmenu/sanook` should be treated the same way if Sanook is not carried into v2.
+
+### Seasonal Menus
+
+| V1 source URL | Proposed v2 canonical URL |
+| --- | --- |
+| `/cnymenu/cnyjoy` | `/seasonal/chinese-new-year/joy` |
+| `/cnymenu/cnyfortune` | `/seasonal/chinese-new-year/fortune` |
+| `/cnymenu/cnyprosperity` | `/seasonal/chinese-new-year/prosperity` |
+| `/cnymenu/cnyfamilyset` | `/seasonal/chinese-new-year/family-set` |
+| `/cnymenu/cnyaddons` | `/seasonal/chinese-new-year/add-ons` |
+| `/cnymenu/yusheng` | `/seasonal/chinese-new-year/yusheng` |
+| `/xmasmenu/xmascatering` | `/seasonal/christmas/catering` |
+| `/xmasmenu/xmasminiparty` | `/seasonal/christmas/mini-party` |
+| `/specialmenu/mothersday` | `/seasonal/mothers-day` |
+
+Seasonal URLs that are stale in v1 should return 404 or 410 unless their content is intentionally recreated in v2. Avoid redirecting different retired seasonal menus to an unrelated generic page.
+
+### Cart and Customer Actions
+
+| V1 source URLs | Proposed v2 endpoint | Migration note |
+| --- | --- | --- |
+| `/cart.php`, `/cart` | `/cart` | Canonical browser page and submission target |
+| `/orderplaced.php`, `/cart/orderplaced` | `/checkout/complete` | Session-dependent completion page; do not treat as indexable |
+| `/acknowledgeorder.php?oh={hash}`, `/cart/acknowledgeorder?oh={hash}` | `/orders/acknowledge?token={token}` | V2 must support the new token contract before redirecting old emailed links |
+| `/leavefeedback.php?oh={hash}`, `/cart/leavefeedback?oh={hash}` | `/orders/feedback?token={token}` | V2 must preserve already-issued links or provide a compatibility lookup |
+| `/cart/paypalcancel` | `/checkout/payment/cancel` | Configure PayPal to use the v2 URL directly |
+| `/cart/paypalreturn` | `/checkout/payment/return` | Configure PayPal to use the v2 URL directly |
+| `/cart/paypalipn` | `/integrations/paypal/ipn` | Machine callback; update PayPal configuration rather than relying on a redirect |
+
+Cart mutations such as clear, change, remove, upsells, and menu submissions are application endpoints rather than indexable pages. V2 should generate them through named routes and accept only the intended HTTP methods; they do not need SEO redirects.
+
+### Browser-Service Endpoints
+
+| V1 source URL | Proposed v2 endpoint |
+| --- | --- |
+| `/ajax/checkpostalsurcharge/{postalCode}` | `/api/postal-codes/{postalCode}/surcharge` |
+| `/ajax/getpostaladdress/{postalCode}` | `/api/postal-codes/{postalCode}/address` |
+
+The v1 `/api/orders/*`, `/cron/*`, `/kianann/*`, and `/jtadmin/*` routes are not public page contracts. V2 should define authenticated API, scheduler, utility, and `/admin` route groups from its own requirements rather than preserving controller-derived names. Operator bookmarks may receive targeted redirects after the v2 administration workflows are finalized, but state-changing requests must not depend on redirects.
+
+## V2 Launch Checklist
+
+1. Export recent production access logs, analytics landing pages, Search Console links, and any sitemap before freezing the mapping.
+2. Compare that evidence with every source URL in this document and add missing externally used paths.
+3. Implement and test every canonical v2 page before enabling redirects.
+4. Update v2 navigation, forms, emails, PDFs, payment settings, callbacks, and JavaScript to use v2 routes directly.
+5. Redirect each old `.php` and controller-style GET page directly to its final destination in one hop.
+6. Preserve query strings only where the destination explicitly accepts them.
+7. Add self-referencing canonical tags and publish a sitemap containing only the final indexable URLs.
+8. Verify 200, 301, 404, and 410 responses with an automated matrix before launch.
+9. Monitor 404s, redirect traffic, Search Console, order completion, payment callbacks, and customer email links after launch.
+10. Retain useful permanent redirects for at least one year and preferably indefinitely.
 
 ## Maintenance Checklist
 
