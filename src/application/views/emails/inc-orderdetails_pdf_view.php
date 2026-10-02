@@ -179,14 +179,18 @@
 								<?php endif;?>								
 								@ $<?php _e($cartitem['perpax']) ?> Per Pax
 							</strong></p>
-							<ol>
-								<?php foreach($cartitem['dishes'] as $dish): ?>
-									<li><?php _e($dish); ?></li>
-								<?php endforeach;?>
-								<?php if ($cartitem['addondrink'] != "No Drink"): ?>
-									<li><?php _e($cartitem['addondrink']); ?></li>
-								<?php endif;?>
-							</ol>
+                            <?php if (orderUsesUnnumberedSetMenu($orderdata['id'])): ?>
+                                <?php foreach($cartitem['dishes'] as $dish) { _e($dish . "<br />"); }  ?>
+                            <?php else : ?>
+                                <ol>
+                                    <?php foreach($cartitem['dishes'] as $dish): ?>
+                                        <li><?php _e($dish); ?></li>
+                                    <?php endforeach;?>
+                                    <?php if ($cartitem['addondrink'] != "No Drink"): ?>
+                                        <li><?php _e($cartitem['addondrink']); ?></li>
+                                    <?php endif;?>
+                                </ol>
+                            <?php endif;?>
 						</td>
 						<td style="text-align:left; vertical-align: top; padding: 5px; border-left: 1px solid #333; border-right: 1px solid #333;"><?php _e($cartitem['numpax']) ?> pax</td>
 						<td style="text-align:left; vertical-align: top; padding: 5px; border-left: 1px solid #333; border-right: 1px solid #333;"><?php _e(sprintf("$%0.2f", $cartitem['foodprice'])); ?></td>

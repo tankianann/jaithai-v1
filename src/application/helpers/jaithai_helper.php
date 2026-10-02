@@ -45,6 +45,17 @@ function createOrderHash($orderid) {
 //end createOrderHash()
 
 
+function orderUsesUnnumberedSetMenu($orderid) {
+
+	static $orderids = array(
+		12977,
+	);
+
+	return in_array((int) $orderid, $orderids, true);
+
+}
+
+
 function kidspicy($i) {
 	
 	switch ($i) {

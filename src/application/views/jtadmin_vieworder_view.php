@@ -168,14 +168,18 @@
 								@ $<?php _e($cartitem['perpax']) ?> Per Pax
                                 <?php endif; ?>
 							</strong></p>
-							<ol>
-								<?php foreach($cartitem['dishes'] as $dish): ?>
-									<li><?php _e($dish); ?></li>
-								<?php endforeach;?>
-								<?php if ($cartitem['addondrink'] != "No Drink"): ?>
-									<li><?php _e($cartitem['addondrink']); ?></li>
-								<?php endif;?>
-							</ol>
+                            <?php if (orderUsesUnnumberedSetMenu($orderdata['id'])): ?>
+                                <?php foreach($cartitem['dishes'] as $dish) { _e($dish . "<br />"); }  ?>
+                            <?php else : ?>
+                                <ol>
+                                    <?php foreach($cartitem['dishes'] as $dish): ?>
+                                        <li><?php _e($dish); ?></li>
+                                    <?php endforeach;?>
+                                    <?php if ($cartitem['addondrink'] != "No Drink"): ?>
+                                        <li><?php _e($cartitem['addondrink']); ?></li>
+                                    <?php endif;?>
+                                </ol>
+                            <?php endif;?>
 							<p class="itemcontrol">
 								<?php if ($jtuser['type'] == 'admin'): ?>
 									(<a href="<?php _e(site_url('jtadmin/editorderitemsetmenu/'. $orderdata['id'] . "/" . $key)); ?>">Edit</a>) 
