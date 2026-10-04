@@ -45,6 +45,14 @@ function createOrderHash($orderid) {
 //end createOrderHash()
 
 
+/**
+ * Preserve the unnumbered set-menu presentation requested for legacy order
+ * database ID 12977 across the administration, email, and PDF views.
+ *
+ * This is a v1-only rendering exception for an existing order. Do not carry
+ * the order-ID allowlist into v2; model any future presentation requirement
+ * explicitly in v2 order data instead.
+ */
 function orderUsesUnnumberedSetMenu($orderid) {
 
 	static $orderids = array(

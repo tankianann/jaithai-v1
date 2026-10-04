@@ -27,6 +27,7 @@ define('JT_VEGCTRL', '-vege');
 require_once $application_root.'/application/helpers/menudb_cateringset_helper.php';
 require_once $application_root.'/application/helpers/menudb_diyset_helper.php';
 require_once $application_root.'/application/helpers/menudb_vegeset_helper.php';
+require_once $application_root.'/application/helpers/jaithai_helper.php';
 
 function menu_regression_result($condition, $label, $detail = '')
 {
@@ -127,6 +128,26 @@ function menu_regression_controller_body($source, $method, $next_method)
 	}
 
 	return substr($source, $start, $end - $start);
+}
+
+menu_regression_result(orderUsesUnnumberedSetMenu(12977), 'Legacy order 12977 uses unnumbered set-menu rendering');
+menu_regression_result(orderUsesUnnumberedSetMenu('12977'), 'Legacy order 12977 accepts the database string form');
+menu_regression_result( ! orderUsesUnnumberedSetMenu(12976), 'Other orders retain numbered set-menu rendering');
+menu_regression_result( ! orderUsesUnnumberedSetMenu(NULL), 'A missing order ID retains numbered set-menu rendering');
+
+$unnumbered_order_views = array(
+	'administration order view' => 'application/views/jtadmin_vieworder_view.php',
+	'customer email view' => 'application/views/emails/inc-orderdetails_view.php',
+	'order-details PDF view' => 'application/views/emails/inc-orderdetails_pdf_view.php',
+	'delivery-order PDF view' => 'application/views/emails/delivery_order_pdf_view.php',
+);
+
+foreach ($unnumbered_order_views as $label => $relative_path) {
+	$source = file_get_contents($application_root.'/'.$relative_path);
+	menu_regression_result(
+		strpos($source, 'orderUsesUnnumberedSetMenu($orderdata[\'id\'])') !== FALSE,
+		'Legacy unnumbered-order rule is wired into the '.$label
+	);
 }
 
 $expected = array(
