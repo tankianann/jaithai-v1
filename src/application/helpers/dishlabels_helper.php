@@ -27,10 +27,12 @@ function dishlabel($label)
         'Fried Broccoli with Chinese Mushroom' => 'Broccoli with Chinese Mushroom',
         'Fried Broccoli' => 'Broccoli Oyster Sauce',
 
-        'Phad Thai (Fried Thai Small Kway Teow)' => 'Phad Thai',
         'Fried Hor Fan (Dry)' => 'Fried Hor Fan',
         '[FREE] 12 pcs of ' => '',
 
+        '(Thai Fish Cake, Prawn Cake, Spring Rolls, DF. Bean Curd)' => '',
+        '(Fried Thai Small Kway Teow)' => '',
+        '(Aromatic with Herbal and Spices Taste)' => '',
         '(Vegan)' => '',
         '(Deshelled)' => '',
         '(+ $1.00 Per Pax)' => '',
