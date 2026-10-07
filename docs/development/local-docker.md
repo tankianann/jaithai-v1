@@ -2,7 +2,9 @@
 
 ## Runtime
 
-The local stack runs PHP 7.4.33 with Apache and MariaDB 10.11.19. Apache serves `src/` on `127.0.0.1:8080`, while MariaDB is available to the web container as `mariadb:3306` and to host database tools on `127.0.0.1:3307`.
+The local stack runs PHP 7.4.33 with Apache and MariaDB 10.11.18. Apache serves `src/` on `127.0.0.1:8080`, while MariaDB is available to the web container as `mariadb:3306` and to host database tools on `127.0.0.1:3307`.
+
+The MariaDB image matches production's exact `1:10.11.18+maria~ubu2204` package version. Production uses Apache `2.4.67-1+ubuntu22.04+1` behind NGINX `1.31.1-1+ubuntu22.04+1`; the local stack intentionally continues to serve Apache directly and therefore does not reproduce those two Ubuntu web-server packages. See [ADR-001](../decisions/ADR-001-local-docker-runtime.md).
 
 The PHP image includes the extensions demonstrated by the application source and bundled document/email libraries: `curl`, `dom`, `exif`, `gd`, `mbstring`, `mysqli`, and `zip`. Apache has `rewrite` and `headers` enabled and permits the application's `.htaccess` rules.
 

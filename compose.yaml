@@ -25,7 +25,7 @@ services:
       retries: 5
 
   mariadb:
-    image: mariadb:10.11.19@sha256:7f22313fc130a377a44999965bcb0a08dd5b21e8502824c1b864f792f9bc66ab
+    image: mariadb:10.11.18@sha256:8020e05c4c498d06c87f0a1db010eb79bd6f8fb30e9b763d4690c34ce1e61008
     ports:
       - "127.0.0.1:3307:3306"
     environment:
